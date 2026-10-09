@@ -46,12 +46,12 @@ def main():
     '## 방법과 평가 규칙\n',
     '```mermaid\nflowchart LR\n V[Video] --> F[Frozen DINOv2 features]\n F --> T[Causal cycle tracker]\n F --> A[Pooled PCA + local memory]\n T --> C[Fourier mean + shared residual PCA]\n T --> P[Alignment / innovation / progress]\n A --> S[Normal-reference calibration]\n C --> S\n P --> S\n S --> Q[Variant-specific normal q99 threshold]\n```\n',
     '- DINOv2-base / 336px letterbox / layer -1,-3 / 6×6 patches / FP16 / primary stride 2.\n- Fit, validation, reference, threshold 영상을 분리합니다. 테스트 라벨로 설정·임계값을 고르지 않습니다.\n- 실제 cycle 경계가 없는 `weak_recording_alignment`입니다. Cycle 위치 정확도는 미측정입니다.\n- 원본 recording group 정보가 없어 파일 간 그룹 독립성은 입증하지 못했습니다.\n- 주지표: frame AUROC/AP. 표의 값은 %이며, `AUROC / AP` 순서입니다. Macro는 네 장면의 단순 평균입니다.\n- FPR/Recall/Event coverage는 정상 holdout q99 임계값 기준입니다. 지연은 탐지된 이벤트에 한정한 원본 프레임 수입니다.\n',
-    '[전체 사전 실험 규칙](docs/EXPERIMENT_PROTOCOL.md) · [환경 및 패키지 버전](results/E0/environment.json) · [고정 데이터 분할](results/E0/splits.json)\n']
+    '[구현 방법](docs/METHOD.md) · [전체 사전 실험 규칙](docs/EXPERIMENT_PROTOCOL.md) · [환경 및 패키지 버전](results/E0/environment.json) · [고정 데이터 분할](results/E0/splits.json)\n']
     if (ROOT/'results/E0/data_audit.json').exists():
         a=read('results/E0/data_audit.json'); lines+=['## E0 — 데이터와 재현 기반\n',table(['장면','학습 영상','학습 프레임','테스트 영상','테스트 프레임','유효 평가','제외 프레임'],[[s]+[a['scenes'][s][k] for k in ['train_videos','train_frames','test_videos','test_frames','valid_frames','unknown_frames']] for s in SCENES])]
         lines+=['R02 테스트 12/13/14의 라벨 길이가 각각 1프레임씩 다릅니다. 원본을 수정하지 않고 세 영상 전체 1,912프레임을 평가에서 제외합니다. 모든 모델에 같은 `strict-v1` 마스크를 적용하며, 전체 공식 benchmark와 동일한 평가라고 주장하지 않습니다.\n', '[검사 결과](results/E0/data_audit.json) · [테스트 로그](results/E0/test_output.txt)\n']
         fig,ax=plt.subplots(figsize=(8,3.5)); x=np.arange(4); valid=[a['scenes'][s]['valid_frames'] for s in SCENES]; unknown=[a['scenes'][s]['unknown_frames'] for s in SCENES]
-        ax.bar(x,valid,color='#4277ae',label='Evaluated'); ax.bar(x,unknown,bottom=valid,color='#cd7555',label='Excluded: label mismatch'); ax.set_xticks(x,SCENES); ax.set_ylabel('Test frames'); ax.set_title('Evaluation coverage by scene'); ax.legend(frameon=False,loc='upper left',bbox_to_anchor=(0,1.23),ncol=2); ax.grid(axis='y',alpha=.2); ax.set_axisbelow(True); save(fig,'E0_coverage'); lines+=['![평가 대상 프레임](docs/figures/E0_coverage.svg)\n']
+        ax.bar(x,valid,color='#4277ae',label='Evaluated'); ax.bar(x,unknown,bottom=valid,color='#cd7555',label='Excluded: label mismatch'); ax.set_xticks(x,SCENES); ax.set_ylabel('Test frames'); ax.set_title('Evaluation coverage by scene',pad=52); ax.legend(frameon=False,loc='upper left',bbox_to_anchor=(0,1.23),ncol=2); ax.grid(axis='y',alpha=.2); ax.set_axisbelow(True); save(fig,'E0_coverage'); lines+=['![평가 대상 프레임](docs/figures/E0_coverage.svg)\n']
     if 'E1' in status:
         m=read('results/E1/R02/metrics.json'); old={'appearance':(.796916,.726953),'cycle_conditioned':(.796962,.727088),'combined':(.916316,.874450)}
         comparison=[]
@@ -90,6 +90,15 @@ def main():
             for v,c in [('appearance','#b38c36'),('full','#4277ae')]: ax.plot(x,t['scores'][v],color=c,label=LABELS[v])
             ax.axhline(t['thresholds']['full'],ls='--',color='#24303d',label='Full threshold'); ax.fill_between(x,0,1,where=np.array(t['labels'])==1,transform=ax.get_xaxis_transform(),color='#cd7555',alpha=.15,label='Anomaly label'); ax.set_title(t['id'],loc='left'); ax.set_ylabel('Calibrated score')
         axes[0].legend(ncol=4,fontsize=9,frameon=False); axes[-1].set_xlabel('Source frame index'); fig.tight_layout(); save(fig,'E5_timelines'); lines+=['![탐지 타임라인](docs/figures/E5_timelines.svg)\n','각 장면에서 이름순으로 처음 나타나는 유효 이상 영상을 표시했습니다. 성능이 좋은 사례를 골라내지 않았습니다.\n']
+    if 'E5' in status:
+        failures=[]
+        for scene in SCENES:
+            rs=[r for r in read(f'results/E2/{scene}/per_sequence.json') if r['variant']=='full' and r['valid_frames']>0]
+            fp=[r for r in rs if r['fpr'] is not None]
+            fn=[r for r in rs if r['recall'] is not None]
+            for kind,chosen in [('highest FPR',max(fp,key=lambda r:r['fpr'])),('lowest recall',min(fn,key=lambda r:r['recall']))]:
+                failures.append([scene,kind,chosen['id'],fmt(chosen['fpr']),fmt(chosen['recall']),f"{chosen['detected_events']}/{chosen['events']}"])
+        lines+=['### 오류 사례 점검\n',table(['장면','선정 기준','영상','FPR','Recall','탐지 이벤트'],failures),'각 장면에서 Full의 FPR 최대 영상과 Recall 최소 이상 영상을 진단 목적으로 선정했습니다. 대표 표본이 아니며 이상 유형의 원인을 자동 확정하지 않습니다.\n']
     if status:
         lines+=['## 실행 비용\n',table(['단계','실측 wall time (초)'],[[s,f'{v["elapsed_seconds"]:.1f}'] for s,v in status.items()]),'E0 시간은 테스트 실행만 포함합니다. E1 이후 시간은 해당 단계의 특징 추출·학습·공유 점수 계산을 포함하며 업로드/환경 설치 시간은 제외합니다. 개별 ablation의 독립 추론 latency로 해석하지 않습니다.\n']
     lines+=['## 재현\n','```bash\npython3 -m venv .venv\n.venv/bin/pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128\n.venv/bin/pip install -r requirements-local.txt\nexport PYTHONPATH=src\nexport HF_HOME="$PWD/.cache/huggingface"\nexport MPLCONFIGDIR="$PWD/.cache/matplotlib"\nexport OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4\n.venv/bin/python scripts/audit.py --data-root /path/to/IPAD_dataset\n.venv/bin/python -m pytest -q\n# E1 → E2 → E3 → E4 → E5 순서로 실행\n.venv/bin/python scripts/run_stage.py --stage E1 --data-root /path/to/IPAD_dataset\n.venv/bin/python scripts/report.py\n```\n','실제 실행 환경은 [lock 파일](results/E0/requirements-lock.txt)을 참고하세요. E0 완료 표시는 검사·테스트 통과 후 기록합니다. 원본 프레임, 특징 캐시, 모델 체크포인트는 Git에 포함하지 않습니다. 각 단계의 JSON/CSV, 설정, 코드 fingerprint와 그래프를 공개합니다.\n','## 한계\n','실제 cycle 경계, 원본 recording 그룹, pixel localization GT가 없는 상태입니다. R02 라벨 불일치 영상은 제외했고 알려진 이상 유형별 주석이 없어 정지/역행/생략별 실데이터 탐지 성능을 별도로 주장하지 않습니다. 테스트 비교 결과로 최적 모델을 자동 선택하지 않습니다.\n']

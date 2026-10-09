@@ -29,3 +29,34 @@ def test_ablation_full_matches_original_model():
     single=m.tracker.predict(__import__('cycle_vad.model',fromlist=['descriptor']).descriptor(d),d['indices'],progress_lags=(1,))
     np.testing.assert_array_equal(multi['angle'],single['angle'])
     assert np.all(single['progress']<=multi['progress'])
+
+
+def test_variant_thresholds_are_normal_only_and_full_is_reproduced(tmp_path):
+    import json
+    from cycle_vad.ablation import evaluate_variants, CORE, REMOVALS
+    from cycle_vad.pipeline import fit_scene, evaluate_scene
+    rows=[]
+    for part,count in [('training',10),('testing',2)]:
+        for i in range(count):
+            rid=f'R01/{part}/{i:02d}'
+            label=tmp_path/f'label_{i}.npy'
+            row={'id':rid,'scene':'R01','partition':part,'sequence':f'{i:02d}','frames':128,'labels':str(label)}
+            rows.append(row)
+            d=synthetic(200+i)
+            if part=='testing':
+                d['global'][20:35]+=1
+                np.save(label,np.r_[np.zeros(40),np.ones(30),np.zeros(58)].astype(np.int8))
+            p=tmp_path/'cache'/(rid+'.npz'); p.parent.mkdir(parents=True,exist_ok=True); np.savez_compressed(p,**d)
+    cfg={'seed':42,'stride':2,'model':CONFIG}
+    m=fit_scene(rows,tmp_path,cfg)
+    original=evaluate_scene(m,rows,tmp_path)
+    result=evaluate_variants(m,rows,tmp_path,tmp_path/'extended',extended=True)
+    assert set(result)==set(CORE+REMOVALS)
+    for key in ['threshold','auroc','ap','fpr','recall']:
+        np.testing.assert_allclose(result['full'][key],original['combined'][key])
+    before=json.loads((tmp_path/'extended/protocol.json').read_text())['thresholds']
+    for r in rows:
+        if r['partition']=='testing': np.save(r['labels'],np.zeros(128,dtype=np.int8))
+    evaluate_variants(m,rows,tmp_path,tmp_path/'changed',extended=True)
+    after=json.loads((tmp_path/'changed/protocol.json').read_text())['thresholds']
+    assert before==after

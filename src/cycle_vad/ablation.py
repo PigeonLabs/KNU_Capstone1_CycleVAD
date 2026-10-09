@@ -137,5 +137,5 @@ def evaluate_variants(model, rows, run_root, destination, extended=False):
         rid=r['id']; rec=memo[rid]
         write_json(out/'timeline.json',{'id':rid,'indices':rec['indices'].tolist(),'labels':y[rec['indices']].tolist(),'angle':rec['angle'].tolist(),'confidence':rec['confidence'].tolist(),'thresholds':thresholds,'scores':{v:streams[rid][v].tolist() for v in CORE}})
         break
-    print(f'[ablations] {model.scene}: '+', '.join(f'{v}={aggregate[v]["auroc"]:.4f}' for v in selected),flush=True)
+    print(f'[ablations] {model.scene}: '+', '.join(f'{v}={aggregate[v]["auroc"]}' for v in selected),flush=True)
     return aggregate

@@ -9,5 +9,10 @@
     "status": "completed",
     "completed_at": "2026-10-09T10:45:53.037939+09:00",
     "elapsed_seconds": 96.18762787099695
+  },
+  "E2": {
+    "status": "completed",
+    "completed_at": "2026-10-09T10:49:23.756575+09:00",
+    "elapsed_seconds": 191.42692971900397
   }
 }
