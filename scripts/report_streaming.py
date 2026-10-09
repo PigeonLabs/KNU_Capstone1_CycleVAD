@@ -86,6 +86,8 @@ def main():
     axes[1].bar(x,p50,color=color,label='p50');axes[1].scatter(x,p95,color='#222',marker='D',label='p95');axes[1].scatter(x,p99,color='#222',marker='x',label='p99');axes[1].set_xticks(x,labels);axes[1].set_ylabel('Fresh JPEG-to-alarm latency (ms)');axes[1].set_ylim(0,max(p99)*1.3);axes[1].legend(frameon=False)
     for ax in axes:ax.spines[['top','right']].set_visible(False)
     fig.tight_layout();fig.savefig(ROOT/'docs/figures/E16_runtime.svg',bbox_inches='tight',metadata={'Date':None});fig.savefig(ROOT/'docs/figures/E16_runtime.png',bbox_inches='tight',dpi=150);plt.close(fig)
+    if (ROOT/'results/E17/summary.json').exists():
+        text=text.replace('Stride 1의 이상 탐지 정확도·임계값 보정은 재검증하지 않았습니다.', 'E16에서는 Stride 1 정확도를 미평가했으며, 후속 E17에서 전체 영상의 온라인 AUROC/AP를 평가했습니다. 임계값 재보정은 하지 않았습니다.')
     (ROOT/'docs/STREAMING_RESULTS.md').write_text(text.replace('](docs/','](').replace('](configs/','](../configs/').replace('](results/','](../results/'))
     p=ROOT/'README.md';old=p.read_text();title='## 실제 입력 스트리밍 성능 E16';start=old.find(title)
     if start>=0:

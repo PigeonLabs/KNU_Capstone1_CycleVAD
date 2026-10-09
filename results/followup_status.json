@@ -18,5 +18,6 @@
   "E15B": "complete_no_operating_improvement",
   "E15C": "complete_target_not_achieved",
   "E15R01": "blinded_packet_prepared_human_review_required",
-  "E16": "jpeg_streaming_complete_camera_codec_pipeline_not_measured"
+  "E16": "jpeg_streaming_complete_camera_codec_pipeline_not_measured",
+  "E17": "complete_full_historical_causal_accuracy_frozen_seed42"
 }
