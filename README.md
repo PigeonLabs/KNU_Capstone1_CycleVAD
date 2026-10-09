@@ -4,7 +4,7 @@
 
 로컬 **NVIDIA RTX PRO 6000 Blackwell Max-Q 96GB**에서 특징을 추출하고 CPU에서 통계 모델을 학습합니다. 수치는 실제 결과 JSON에서 자동 생성합니다.
 
-## 주요 관찰
+## 초기 실험 E0–E5 관찰
 
 - Seed 42, stride 2의 Full Macro AUROC는 **78.31%**, Appearance는 **76.05%**입니다.
 - 진행 점수의 추가 효과(A2−A0)는 Macro AUROC **+2.269 pp**입니다. 조건부 외형의 추가 효과는 현재 설정에서 거의 없습니다.
@@ -154,7 +154,88 @@ E7: T0/T1/T2 인과적 예측을 로컬에 저장했으며 [독립적인 실제 
 
 [E8B 요약](results/E8B/summary.json) · [paired CI](results/E8B/paired_bootstrap.json) · [점수 재검증](results/E8B/validation.txt) · [분할별 원자료](results/E8B/)
 
-E9S는 전체 seed·stride 실행과 결과 검증을 진행 중입니다. 완료 수치와 오경보 분석은 다음 단계 커밋으로 공개합니다.
+### E9S — 합성 진행 이상 검증 완료
+
+정상 OOF 영상 111개에 정지·역행·생략·인접 구간 교환을 적용했습니다. 길이 조건을 통과한 3,910개 편집을 seed 42/43/44, stride 2에서 반복하고 seed 42는 stride 1에서도 확인했습니다(총 15,640개 편집 평가, 80개 모델 분할). 제외한 86개 후보도 사전 목록에 남겼습니다. 실제 산업 고장 유형이나 위치 GT 검증을 의미하지 않습니다.
+
+원본 프레임 순서를 편집한 뒤 출력 시간을 샘플링하고 추적 상태·차분·AR 예측을 처음부터 다시 계산했습니다. 모델은 원본 인덱스와 편집 위치를 입력받지 않습니다. 인과적 descriptor lag=4, 차분/진행 lag=2·8·32 원본 프레임으로 두 stride를 맞췄습니다. FIT 영상 길이 중앙값 T는 실제 cycle 주석이 아닌 약한 시간 기준입니다.
+
+| 모델 | Window AUROC % | AP % | Event hit % | Matched normal FAR % | Grid normal FAR % |
+| --- | --- | --- | --- | --- | --- |
+| P0 Appearance | 48.22 | 51.36 | 7.88 | 6.86 | 7.86 |
+| P1 + alignment | 52.37 | 55.70 | 12.41 | 6.78 | 7.61 |
+| P2 + innovation | 73.43 | 73.73 | 41.16 | 7.62 | 8.14 |
+| P3 + progress | 74.41 | 75.49 | 44.47 | 9.86 | 9.41 |
+| P4 + all process | 78.66 | 79.44 | 50.24 | 9.78 | 8.88 |
+| P5 + AR(1) | 64.79 | 66.53 | 31.66 | 9.58 | 8.81 |
+| P6 + difference 2 | 64.83 | 63.89 | 18.40 | 7.72 | 8.53 |
+| P7 + difference 2/8/32 | 66.13 | 65.15 | 19.17 | 8.76 | 9.16 |
+| P8 + innovation/progress | 78.29 | 79.11 | 51.98 | 9.86 | 9.41 |
+| P9 + observation-only process | 76.01 | 77.80 | 49.82 | 6.73 | 8.08 |
+
+주 운영점은 별도 정상 threshold 영상의 0.2T window maximum q99입니다. Event는 편집 후 0.2T 이내 탐지, AUROC/AP는 동일 길이 0.4T 원본/편집 window maximum 비교입니다. AP의 가중 양성 비율은 50%입니다. 정상 matched FAR은 편집 위치와 같은 원본 창, grid FAR은 정상 영상 전체의 고정 창입니다. q99는 평가 정상 영상에서 1% FAR을 보장하지 않습니다.
+
+각 scene/fold/type/severity 안에서 원본 영상마다 같은 총 가중치를 주고, fold AUROC/AP를 적격 영상 수로 평균한 뒤 severity/type/scene을 동일 비중으로 평균했습니다. 서로 다른 fold의 점수를 합쳐 AUROC를 계산하지 않았습니다.
+
+![진행 이상 탐지 및 유형 비교](docs/figures/E9S_detection.svg)
+
+| 편집 유형 | P4 event % | P5 event % | P7 event % | P9 event % |
+| --- | --- | --- | --- | --- |
+| freeze | 6.99 | 5.23 | 27.65 | 4.23 |
+| reverse | 52.69 | 38.21 | 15.18 | 61.10 |
+| skip | 63.41 | 37.86 | 16.11 | 61.60 |
+| swap_adjacent_blocks | 77.88 | 45.35 | 17.76 | 72.33 |
+
+**정지는 뚜렷한 예외입니다.** P4의 정지 탐지율은 6.99%로, 양방향 다중 차분 P7의 27.65%보다 낮습니다. 평균 향상은 주로 역행·생략·구간 교환에서 나왔으며, 세 가지 진행 이상을 모두 잘 잡는다고 주장하면 안 됩니다.
+
+| 비교 | Event 차이 pp [95% CI] |
+| --- | --- |
+| P4-P0 | +42.37 [+38.89, +45.82] |
+| P4-P5 | +18.58 [+14.43, +22.61] |
+| P4-P7 | +31.07 [+26.60, +35.64] |
+| P8-P1 | +39.56 [+35.82, +43.52] |
+| P4-P9 | +0.43 [-2.94, +3.59] |
+
+원본 영상으로 묶은 paired bootstrap 2,000회이며 모델은 고정했습니다. 모든 편집·원본 창은 같은 cluster에 남깁니다. 전체 AUROC/AP·정상 FAR 구간도 JSON으로 공개합니다.
+
+| 장면 | P4 event % | P4−P7 event pp | P4 matched FAR % | P4 grid FAR % |
+| --- | --- | --- | --- | --- |
+| R01 | 43.46 | +32.56 | 12.66 | 10.50 |
+| R02 | 60.60 | +41.48 | 6.39 | 5.89 |
+| R03 | 54.10 | +16.10 | 16.41 | 12.91 |
+| R04 | 42.81 | +34.14 | 3.67 | 6.22 |
+
+**진행 이상 탐지의 추가 가치는 관찰되지만, 사전 오경보 기준은 미충족입니다.** P4의 정상 matched/grid FAR이 여러 장면에서 5%를 넘습니다. P4−P9 이벤트 차이의 CI는 0을 포함하므로, 누적 위치 추적이 관측 기반 진행 점수보다 운영점 탐지율을 높였다고 확정할 수 없습니다. P1도 시간 차분 descriptor를 쓰므로 순수 정적 외형 비교군이 아닙니다. 이 결과로 주장할 수 있는 범위는 “위치·진행 일관성 점수의 합성 시간 교란 탐지 효과”이며, 실제 정상 오경보 보정과 실제 공정 주석 검증이 남아 있습니다.
+
+![정상 오경보와 탐지율](docs/figures/E9S_operating_curves.svg)
+
+주 q99는 큰 점으로 표시했습니다. 곡선은 사전 고정 q90/q95/q97.5/q99/q99.5의 별도 보정 결과이며 평가 데이터를 보고 임계값을 선택하지 않았습니다. 두 축은 장면별 macro matched FAR/event입니다.
+
+| Stride / seed | P4 AUROC % | P4 event % | P4−P5 event pp | P4−P7 event pp | P4−P9 event pp |
+| --- | --- | --- | --- | --- | --- |
+| 2 / 42 | 78.66 | 50.24 | +18.58 | +31.07 | +0.43 |
+| 2 / 43 | 77.81 | 50.08 | +20.19 | +31.91 | +1.90 |
+| 2 / 44 | 78.11 | 49.03 | +16.02 | +26.55 | -1.64 |
+| 1 / 42 | 74.86 | 51.28 | +19.38 | +33.32 | +2.02 |
+
+Stride 비교는 원본 시간 lag와 transition 분산·restart hazard를 맞춘 민감도 실험입니다. 관측 밀도와 정상 학습 통계는 여전히 달라집니다. seed 반복은 독립 데이터 반복이 아닙니다.
+
+| Speed stress (seed 42, stride 2) | P0 grid alarm % | P4 grid alarm % | P7 grid alarm % | P9 grid alarm % |
+| --- | --- | --- | --- | --- |
+| 0.8 | 7.78 | 9.08 | 10.26 | 7.62 |
+| 1.0 | 7.86 | 8.88 | 9.16 | 8.08 |
+| 1.2 | 7.78 | 11.12 | 10.45 | 9.96 |
+
+속도 변형은 실제 정상 허용 범위가 확인되지 않은 stress test입니다. 실행 중 Identity replay 최대 오차는 모든 분할에서 0이었습니다. 저장 모델을 다시 읽어 320개 편집을 재계산했을 때 최대 점수 차이는 9.93×10⁻⁶이었고, 검사한 탐지 시점은 모두 같았습니다. 최초 32프레임 경계 반응과 편집 내부 반응을 분리하여 저장했습니다. skip에는 지속되는 내부 구간 GT를 만들지 않았으며, 내부 구간이 없는 짧은 편집은 해당 지표에서 제외했습니다. 탐지 지연은 탐지된 사례에 조건부이므로 miss 비율(1−event)과 함께 해석해야 합니다. 유형·강도별 지연과 내부 구간 coverage는 각 요약에 있습니다.
+
+| 보조 frame-q99 운영점 | P0 | P4 | P5 | P7 | P9 |
+| --- | --- | --- | --- | --- | --- |
+| Event hit % | 18.45 | 60.35 | 46.04 | 44.56 | 61.28 |
+| Matched normal FAR % | 17.00 | 18.02 | 24.17 | 24.40 | 15.59 |
+
+보조 frame-q99는 주 window-q99와 별도이며 서로 같은 오경보 예산으로 해석하지 않습니다.
+
+[Seed 42 상세](results/E9S/stride2/seed42/summary.json) · [Seed 43](results/E9S/stride2/seed43/summary.json) · [Seed 44](results/E9S/stride2/seed44/summary.json) · [Stride 1](results/E9S/stride1/seed42/summary.json) · [paired CI](results/E9S/stride2/seed42/paired_bootstrap.json) · [아티팩트 재검증](results/E9S/validation.txt)
 
 재실행: `PYTHONPATH=src python scripts/run_phase_process.py --stage E8B --resume`, `--stage E9S --resume`, `--stage E9S --stride 1 --seeds 42 --resume`. 이어 `scripts/summarize_phase_process.py --stage E8B` 및 E9S의 각 `--seed`/`--stride`를 실행합니다. 주 E9S는 `--bootstrap`을 붙입니다. `scripts/check_phase_process.py --stage E8B`/`E9S`로 검증하고 `scripts/report_phase_process.py --include-e9`로 문서를 재생성합니다. 특징 추출은 로컬 RTX PRO 6000의 고정 캐시를 재사용했고 새 통계 모델은 CPU에서 학습했습니다.
 

@@ -51,6 +51,12 @@ def e9():
     text+='주 운영점은 별도 정상 threshold 영상의 0.2T window maximum q99입니다. Event는 편집 후 0.2T 이내 탐지, AUROC/AP는 동일 길이 0.4T 원본/편집 window maximum 비교입니다. AP의 가중 양성 비율은 50%입니다. 정상 matched FAR은 편집 위치와 같은 원본 창, grid FAR은 정상 영상 전체의 고정 창입니다. q99는 평가 정상 영상에서 1% FAR을 보장하지 않습니다.\n\n'
     text+='각 scene/fold/type/severity 안에서 원본 영상마다 같은 총 가중치를 주고, fold AUROC/AP를 적격 영상 수로 평균한 뒤 severity/type/scene을 동일 비중으로 평균했습니다. 서로 다른 fold의 점수를 합쳐 AUROC를 계산하지 않았습니다.\n\n'
     text+='![진행 이상 탐지 및 유형 비교](docs/figures/E9S_detection.svg)\n\n'
+    type_rows=[]
+    for edit in ['freeze','reverse','skip','swap_adjacent_blocks']:
+        group=[r for r in s['groups'] if r['edit']==edit]
+        type_rows.append([edit]+[pct(np.mean([r['event'][i] for r in group])) for i in [4,5,7,9]])
+    text+=table(['편집 유형','P4 event %','P5 event %','P7 event %','P9 event %'],type_rows)
+    text+=f'**정지는 뚜렷한 예외입니다.** P4의 정지 탐지율은 {type_rows[0][1]}%로, 양방향 다중 차분 P7의 {type_rows[0][3]}%보다 낮습니다. 평균 향상은 주로 역행·생략·구간 교환에서 나왔으며, 세 가지 진행 이상을 모두 잘 잡는다고 주장하면 안 됩니다.\n\n'
     contrasts=[r for r in b['contrasts'] if r['metric']=='event_gain_pp']
     text+=table(['비교','Event 차이 pp [95% CI]'],[[r['contrast'],ci(r['macro'])] for r in contrasts])
     text+='원본 영상으로 묶은 paired bootstrap 2,000회이며 모델은 고정했습니다. 모든 편집·원본 창은 같은 cluster에 남깁니다. 전체 AUROC/AP·정상 FAR 구간도 JSON으로 공개합니다.\n\n'
@@ -60,7 +66,7 @@ def e9():
     text+=table(['Stride / seed','P4 AUROC %','P4 event %','P4−P5 event pp','P4−P7 event pp','P4−P9 event pp'],[[f'{r["stride"]} / {r["seed"]}',pct(r['macro']['auroc'][4]),pct(r['macro']['event'][4])]+[f'{100*(r["macro"]["event"][4]-r["macro"]["event"][i]):+.2f}' for i in [5,7,9]] for r in allruns])
     text+='Stride 비교는 원본 시간 lag와 transition 분산·restart hazard를 맞춘 민감도 실험입니다. 관측 밀도와 정상 학습 통계는 여전히 달라집니다. seed 반복은 독립 데이터 반복이 아닙니다.\n\n'
     text+=table(['Speed stress (seed 42, stride 2)','P0 grid alarm %','P4 grid alarm %','P7 grid alarm %','P9 grid alarm %'],[[v]+[pct(np.mean([s['speed_stress'][sc][str(v)]['window_alarm'][i] for sc in SCENES])) for i in [0,4,7,9]] for v in [.8,1.,1.2]])
-    text+='속도 변형은 실제 정상 허용 범위가 확인되지 않은 stress test입니다. Identity replay 최대 오차는 모든 분할에서 0이었습니다. 최초 32프레임 경계 반응과 편집 내부 반응을 분리하여 저장했습니다. skip에는 지속되는 내부 구간 GT를 만들지 않았으며, 내부 구간이 없는 짧은 편집은 해당 지표에서 제외했습니다. 탐지 지연은 탐지된 사례에 조건부이므로 miss 비율(1−event)과 함께 해석해야 합니다. 유형·강도별 지연과 내부 구간 coverage는 각 요약에 있습니다.\n\n'
+    text+='속도 변형은 실제 정상 허용 범위가 확인되지 않은 stress test입니다. 실행 중 Identity replay 최대 오차는 모든 분할에서 0이었습니다. 저장 모델을 다시 읽어 320개 편집을 재계산했을 때 최대 점수 차이는 9.93×10⁻⁶이었고, 검사한 탐지 시점은 모두 같았습니다. 최초 32프레임 경계 반응과 편집 내부 반응을 분리하여 저장했습니다. skip에는 지속되는 내부 구간 GT를 만들지 않았으며, 내부 구간이 없는 짧은 편집은 해당 지표에서 제외했습니다. 탐지 지연은 탐지된 사례에 조건부이므로 miss 비율(1−event)과 함께 해석해야 합니다. 유형·강도별 지연과 내부 구간 coverage는 각 요약에 있습니다.\n\n'
     frameop=np.mean([np.array(s['normal'][sc]['frameq99_event_matchedfar']) for sc in SCENES],axis=0)
     text+=table(['보조 frame-q99 운영점','P0','P4','P5','P7','P9'],[[label]+[pct(frameop[j,i]) for i in [0,4,5,7,9]] for j,label in enumerate(['Event hit %','Matched normal FAR %'])])
     text+='보조 frame-q99는 주 window-q99와 별도이며 서로 같은 오경보 예산으로 해석하지 않습니다.\n\n'
@@ -73,11 +79,12 @@ def e9():
         for j in range(4):axs[1].text(j,y,f'{mat[y,j]:.1f}',ha='center',va='center',color='white' if mat[y,j]>55 else '#142c38')
     fig.colorbar(im,ax=axs[1],shrink=.8);fig.tight_layout();save(fig,'E9S_detection')
     fig,axes=plt.subplots(2,2,figsize=(10,8),sharex=True,sharey=True)
+    xmax=5*np.ceil(max(np.array(s['normal'][sc]['operating_curves_event_matchedfar'])[1,:, [0,4,5,7,9]].max()*100 for sc in SCENES)/5)+1
     for ax,scene in zip(axes.flat,SCENES):
         curve=np.array(s['normal'][scene]['operating_curves_event_matchedfar'])*100
         for a in [0,4,5,7,9]:
             ax.plot(curve[1,:,a],curve[0,:,a],'-o',ms=3,color=COLORS[a],label=f'P{a}');ax.scatter(curve[1,3,a],curve[0,3,a],s=70,color=COLORS[a],edgecolors='white',zorder=4)
-        ax.axvline(5,ls='--',color='#89949a',lw=1);ax.set_title(scene);ax.set_xlim(left=0);ax.set_ylim(0,100);ax.grid(alpha=.15);ax.set_xlabel('Matched normal window alarm (%)');ax.set_ylabel('Event hit (%)')
+        ax.axvline(5,ls='--',color='#89949a',lw=1);ax.set_title(scene);ax.set_xlim(0,xmax);ax.set_ylim(0,100);ax.grid(alpha=.15);ax.set_xlabel('Matched normal window alarm (%)');ax.set_ylabel('Event hit (%)')
     axes[0,0].legend(frameon=False,ncol=3);fig.suptitle('Fixed normal-calibration quantiles; large markers = primary q99');fig.tight_layout();save(fig,'E9S_operating_curves')
     return text
 
@@ -92,6 +99,7 @@ def main():
     if start<0:start=end
     old=old[:start]+text+old[end:]
     old=old.replace('모델 실험은 아직 미실행입니다.','실행 결과는 아래 E8B / E9S 절에 정리했습니다.').replace('E9S: 합성 편집 검증은 E7 주석과 독립적으로 실행할 계획입니다.','E9S: 합성 편집 검증은 E7 주석과 독립적으로 진행하며 아래 실행 결과를 따릅니다.')
+    old=old.replace('## 주요 관찰','## 초기 실험 E0–E5 관찰')
     path.write_text(old)
     status=read('results/followup_status.json');status.update(E8B='complete',E9S='complete' if a.include_e9 else 'running',E9='synthetic_complete_real_annotations_required' if a.include_e9 else 'synthetic_running');(ROOT/'results/followup_status.json').write_text(json.dumps(status,indent=2)+'\n')
     print('Reports and figures generated:', 'E8B + E9S' if a.include_e9 else 'E8B')

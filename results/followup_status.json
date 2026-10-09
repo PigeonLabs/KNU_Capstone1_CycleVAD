@@ -3,8 +3,8 @@
   "E7": "predictions_ready_independent_annotations_required",
   "E8": "complete",
   "E8B": "complete",
-  "E9": "synthetic_running",
-  "E9S": "running",
+  "E9": "synthetic_complete_real_annotations_required",
+  "E9S": "complete",
   "E9R": "independent_process_annotations_required",
   "E10": "new_independent_recordings_required"
 }
