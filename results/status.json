@@ -4,5 +4,10 @@
     "completed_at": "2026-10-09T10:44:01.027490+09:00",
     "elapsed_seconds": 3.957,
     "timing_scope": "test suite only; environment setup and audit excluded"
+  },
+  "E1": {
+    "status": "completed",
+    "completed_at": "2026-10-09T10:45:53.037939+09:00",
+    "elapsed_seconds": 96.18762787099695
   }
 }

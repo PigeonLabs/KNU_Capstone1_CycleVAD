@@ -1,11 +1,12 @@
 """Registered score ablations with per-variant normal-only thresholds."""
 from __future__ import annotations
 import csv
+import hashlib
 import json
 import time
 from pathlib import Path
 import numpy as np
-from .data import balanced_sample, hold, labels_for, load_cache, write_json
+from .data import balanced_sample, fingerprint, hold, labels_for, load_cache, write_json
 from .metrics import frame_metrics, event_metrics
 from .model import ResidualSpace, TailCalibrator, descriptor
 from .pipeline import cache_path, code_fingerprint, validate_model_cache
@@ -77,19 +78,22 @@ def evaluate_variants(model, rows, run_root, destination, extended=False):
         discrete=DiscretePhase().fit(model,[load(rid) for rid in splits['fit']])
         write_json(out/'discrete_model.json',discrete.diagnostics)
     raw_dir=Path(run_root)/model.scene/'ablation_raw'; raw_dir.mkdir(parents=True,exist_ok=True)
+    checkpoint_digest=hashlib.sha256((Path(run_root)/model.scene/'model.joblib').read_bytes()).hexdigest()
     memo={}
     for part in ('reference','threshold','testing'):
         ids=splits[part] if part!='testing' else [r['id'] for r in rows if r['partition']=='testing']
         for rid in ids:
             d=load(rid); validate_model_cache(model,d)
-            # Raw caches belong to this immutable fitted checkpoint; stage reruns
-            # clear them on refit through the runner's fresh output directory.
+            provenance=fingerprint({'checkpoint':checkpoint_digest,'feature_signature':str(d['signature']),'raw_schema':1})
             target=raw_dir/(rid.replace('/','_')+'.npz')
+            record=None
             if target.exists():
-                with np.load(target,allow_pickle=False) as a: record={k:a[k] for k in a.files}
-            else:
+                with np.load(target,allow_pickle=False) as a:
+                    if 'provenance' in a.files and str(a['provenance'])==provenance:
+                        record={k:a[k] for k in a.files}
+            if record is None:
                 raw,cycle,_=model.raw(d)
-                record={**raw,'angle':cycle['angle'],'confidence':cycle['confidence'],'indices':d['indices'],'frame_count':d['frame_count']}
+                record={'provenance':np.array(provenance),**raw,'angle':cycle['angle'],'confidence':cycle['confidence'],'indices':d['indices'],'frame_count':d['frame_count']}
             if extended:
                 z=descriptor(d)
                 record['single_progress']=model.tracker.predict(z,d['indices'],progress_lags=(1,))['progress']
