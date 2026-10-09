@@ -74,7 +74,11 @@ def main():
                 if (out/'metrics.json').exists(): continue
                 model=fit_scene(sr,root,c); evaluate_variants(model,sr,root,out)
                 shutil.copyfile(root/scene/'fit_report.json',out/'fit_report.json')
-    write_json(dest/'environment.json',environment()); mark(args.stage,start)
+    env=environment()
+    if args.stage=='E5':
+        import torch
+        env.update(gpu=torch.cuda.get_device_name(0),cuda=torch.version.cuda,peak_allocated_bytes=torch.cuda.max_memory_allocated(),peak_reserved_bytes=torch.cuda.max_memory_reserved(),memory_scope='PyTorch allocator peak within E5 process; excludes other processes and driver allocations')
+    write_json(dest/'environment.json',env); mark(args.stage,start)
     print(f'[{args.stage} COMPLETE] {time.perf_counter()-start:.1f}s',flush=True)
 
 if __name__=='__main__': main()
