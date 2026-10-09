@@ -43,6 +43,47 @@ CI는 seed 42의 고정 모델에 대해 장면별 원본 영상 paired bootstra
 
 조건부 점수 계산은 float64로 수행했습니다. float32 행렬 연산의 batch 길이에 따른 반올림이 경험적 보정 점수에 증폭되는 것을 발견하여 모든 E11 분할을 다시 실행했고, 편집 이전 점수·추적 상태 불변성을 검사했습니다. [아티팩트 검증](../results/E11/validation.txt) · [Historical 수치](../results/E11/seed42/historical_summary.json) · [합성 수치](../results/E11/seed42/synthetic_summary.json) · [Historical CI](../results/E11/seed42/historical_bootstrap.json) · [합성 CI](../results/E11/seed42/synthetic_bootstrap.json)
 
+### E12 — 평균 함수와 공유 subspace 분리 비교 완료
+
+60개 scene×fold×seed에서 9개 구조×3개 FIT 비율을 평가했습니다. S1은 연속 평균+공유 PCA이며, S3은 같은 연속 평균에 phase별 PCA를 적용해 공유 여부만 바꿉니다. 모든 PCA 조건은 해당 분할·부분집합의 동일한 총 rank를 사용하고 variance 조기 절단을 하지 않았습니다. 아래는 seed 42, FIT 100%입니다.
+
+| 구조 | Head AP % | A+Head AP % | Head AUROC % | 모델 배열 KiB | 보정 포함 KiB | 완료 분할 |
+| --- | --- | --- | --- | --- | --- | --- |
+| S0 global mean/shared | 68.08 | 67.88 | 76.74 | 792.2 | 805.0 | 20/20 |
+| S1 continuous/shared | 72.45 | 71.07 | 79.37 | 984.2 | 997.0 | 20/20 |
+| S2_K4 4-bin mean/shared | 68.92 | 68.36 | 77.28 | 828.2 | 841.0 | 20/20 |
+| S2_K8 8-bin mean/shared | 69.09 | 68.15 | 76.94 | 876.2 | 889.0 | 20/20 |
+| S3_K4 continuous/4 PCA | 68.88 | 68.56 | 76.51 | 1020.2 | 1033.0 | 20/20 |
+| S3_K8 continuous/8 PCA | 64.10 | 67.80 | 73.35 | 1068.2 | 1081.0 | 20/20 |
+| S4_K4 4-bin mean/4 PCA | 64.76 | 67.64 | 74.59 | 864.2 | 877.0 | 20/20 |
+| S4_K8 8-bin mean/8 PCA | 64.20 | 67.90 | 72.75 | 960.2 | 973.0 | 20/20 |
+| S5 continuous/norm only | 62.00 | 67.95 | 72.98 | 204.0 | 210.4 | 20/20 |
+
+AP/AUROC는 historical fold 0의 장면 평균입니다. 저장량은 20개 scene/fold 평균이며 추적기·공통 A·encoder는 제외합니다. 같은 총 rank라도 phase별 평균·고유값 및 μ 계수의 저장량이 달라 **동일 bytes 비교가 아닙니다**. 실제 저장량–성능 관계를 보고합니다.
+
+| 비교 | Head AP 차이 pp [95% CI] |
+| --- | --- |
+| S1-S0 | +4.37 [+2.78, +6.42] |
+| S1-S2_K4 | +3.53 [+2.25, +5.24] |
+| S1-S2_K8 | +3.37 [+2.06, +5.19] |
+| S1-S3_K4 | +3.58 [+1.42, +6.07] |
+| S1-S3_K8 | +8.35 [+5.34, +11.94] |
+| S1-S5 | +10.45 [+6.73, +14.46] |
+
+![공유 subspace 구조와 표본 효율](figures/E12_subspaces.svg)
+
+| FIT 비율 | S0 AP % | S1 AP % | S3_K4 AP % | S3_K8 AP % | S5 AP % |
+| --- | --- | --- | --- | --- | --- |
+| 25% | 61.94 | 65.99 | 64.23 | 62.55 | 60.86 |
+| 50% | 66.66 | 70.71 | 67.32 | 64.34 | 61.58 |
+| 100% | 68.08 | 72.45 | 68.88 | 64.10 | 62.00 |
+
+부분집합은 원본 FIT 영상의 고정 해시 순서로 중첩 구성했습니다. 추적기·A와 평균 함수의 하이퍼파라미터는 full FIT/normal validation에서 고정했으므로 **외형 head의 표본 효율 실험이며 전체 시스템 few-shot 성능이 아닙니다**. 각 조건의 유지 rank, phase 표본·영상 수, 정상 μ MSE/외부 잔차, 정상 FPR, seed 43/44와 readout별 결과를 공개합니다. Head 단독 batch1 지연은 공유 호스트의 참고 실측이며 encoder/추적기를 포함한 실시간 지연이 아닙니다.
+
+1,620개 head가 모두 완료되었고 unavailable 조건은 없었습니다. Full FIT의 모든 PCA 조건은 총 rank 64였습니다. 다만 seed 44 / R03 / fold 1의 FIT 25%에서는 한 phase bin에 표본이 3개뿐이어서, 사전 규칙에 따라 **모든 PCA 비교군의 총 rank를 함께 8로 낮췄습니다**. 나머지 부분집합은 총 rank 64입니다. 이 데이터와 총 rank 예산에서는 연속 평균+공유 PCA가 전역 평균, phase별 PCA, norm-only 대조군보다 좋은 AP를 보였습니다. 이는 공유 잔차 공간의 선택을 지지하지만, phase별 PCA에 더 큰 rank나 별도 조율을 허용한 경우까지 우월함을 입증하지는 않습니다.
+
+[전체 구조·비율·seed 수치](../results/E12/summary.json) · [paired CI](../results/E12/paired_bootstrap.json) · [저장 점수 재검증](../results/E12/validation.txt)
+
 ### E14A — 기존 합성 편집의 경계·내부 반응 분석 완료
 
 E9S 15,640개 편집 평가에서 최초 32프레임과 유효한 편집 내부를 분리하고, 각 구간과 정확히 같은 위치·길이의 원본 정상 창을 비교했습니다. 아래는 seed 42, stride 2입니다. 값은 **편집 경보율 / 원본 경보율 %**입니다.

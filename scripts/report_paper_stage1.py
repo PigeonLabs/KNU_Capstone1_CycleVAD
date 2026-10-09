@@ -69,14 +69,16 @@ def e12():
     text+='![공유 subspace 구조와 표본 효율](docs/figures/E12_subspaces.svg)\n\n'
     text+=table(['FIT 비율','S0 AP %','S1 AP %','S3_K4 AP %','S3_K8 AP %','S5 AP %'],[[f'{int(f*100)}%']+[pct(row(a,f)['historical_macro_ap']) for a in ['S0','S1','S3_K4','S3_K8','S5']] for f in [.25,.5,1.]])
     text+='부분집합은 원본 FIT 영상의 고정 해시 순서로 중첩 구성했습니다. 추적기·A와 평균 함수의 하이퍼파라미터는 full FIT/normal validation에서 고정했으므로 **외형 head의 표본 효율 실험이며 전체 시스템 few-shot 성능이 아닙니다**. 각 조건의 유지 rank, phase 표본·영상 수, 정상 μ MSE/외부 잔차, 정상 FPR, seed 43/44와 readout별 결과를 공개합니다. Head 단독 batch1 지연은 공유 호스트의 참고 실측이며 encoder/추적기를 포함한 실시간 지연이 아닙니다.\n\n'
-    text+='1,620개 head가 모두 완료되었고 unavailable 조건은 없었습니다. 모든 PCA 조건의 총 rank는 64였습니다. 이 데이터와 총 rank 예산에서는 연속 평균+공유 PCA가 전역 평균, phase별 PCA, norm-only 대조군보다 좋은 AP를 보였습니다. 이는 공유 잔차 공간의 선택을 지지하지만, phase별 PCA에 더 큰 rank나 별도 조율을 허용한 경우까지 우월함을 입증하지는 않습니다.\n\n'
+    text+='1,620개 head가 모두 완료되었고 unavailable 조건은 없었습니다. Full FIT의 모든 PCA 조건은 총 rank 64였습니다. 다만 seed 44 / R03 / fold 1의 FIT 25%에서는 한 phase bin에 표본이 3개뿐이어서, 사전 규칙에 따라 **모든 PCA 비교군의 총 rank를 함께 8로 낮췄습니다**. 나머지 부분집합은 총 rank 64입니다. 이 데이터와 총 rank 예산에서는 연속 평균+공유 PCA가 전역 평균, phase별 PCA, norm-only 대조군보다 좋은 AP를 보였습니다. 이는 공유 잔차 공간의 선택을 지지하지만, phase별 PCA에 더 큰 rank나 별도 조율을 허용한 경우까지 우월함을 입증하지는 않습니다.\n\n'
     text+='[전체 구조·비율·seed 수치](results/E12/summary.json) · [paired CI](results/E12/paired_bootstrap.json) · [저장 점수 재검증](results/E12/validation.txt)\n\n'
-    fig,axes=plt.subplots(1,2,figsize=(12,4.5));colors=plt.get_cmap('tab10').colors
+    fig,axes=plt.subplots(1,2,figsize=(12,4.8));colors=plt.get_cmap('tab10').colors
     for j,a in enumerate(arms):
-        r=row(a);axes[0].scatter(r['head_array_bytes']/1024,r['historical_macro_ap']*100,s=45,color=colors[j]);axes[0].annotate(a,(r['head_array_bytes']/1024,r['historical_macro_ap']*100),xytext=(4,4),textcoords='offset points',fontsize=9)
+        r=row(a);axes[0].scatter(r['head_array_bytes']/1024,r['historical_macro_ap']*100,s=45,color=colors[j])
+        offset={'S0':(-23,-16),'S2_K4':(-40,23),'S2_K8':(8,12)}.get(a,(4,4))
+        axes[0].annotate(a,(r['head_array_bytes']/1024,r['historical_macro_ap']*100),xytext=offset,textcoords='offset points',fontsize=9,arrowprops={'arrowstyle':'-','color':'#888','lw':.6} if a.startswith('S2') else None)
     axes[0].set_xlabel('Head arrays incl. calibration (KiB)');axes[0].set_ylabel('Historical macro AP (%)');axes[0].set_title('Measured storage and accuracy, seed 42');axes[0].margins(x=.18,y=.15);axes[0].grid(alpha=.15)
-    for a in ['S0','S1','S3_K4','S3_K8','S5']:axes[1].plot([25,50,100],[row(a,f)['historical_macro_ap']*100 for f in [.25,.5,1.]],'-o',label=a)
-    axes[1].set_xticks([25,50,100]);axes[1].set_xlabel('FIT source videos used by head (%)');axes[1].set_ylabel('Historical macro AP (%)');axes[1].set_title('Fixed full-data tracker; head data efficiency');axes[1].legend(frameon=False,ncol=2);axes[1].grid(alpha=.15);fig.tight_layout();save(fig,'E12_subspaces');return text
+    for a in ['S0','S1','S3_K4','S3_K8','S5']:axes[1].plot([25,50,100],[row(a,f)['historical_macro_ap']*100 for f in [.25,.5,1.]],'-o',label=a,color=colors[arms.index(a)])
+    axes[1].set_xticks([25,50,100]);axes[1].set_xlabel('FIT source videos used by head (%)');axes[1].set_ylabel('Historical macro AP (%)');axes[1].set_title('Fixed full-data tracker; head data efficiency');axes[1].legend(frameon=False,ncol=3,loc='upper center',bbox_to_anchor=(.5,-.18));axes[1].grid(alpha=.15);fig.tight_layout();save(fig,'E12_subspaces');return text
 
 def root_links(text):return text.replace('](../results/','](results/').replace('](figures/','](docs/figures/').replace('](PAPER_STAGE1_PROTOCOL.md)','](docs/PAPER_STAGE1_PROTOCOL.md)')
 def main():
