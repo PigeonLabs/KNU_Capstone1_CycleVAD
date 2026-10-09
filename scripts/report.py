@@ -63,6 +63,11 @@ def main():
         paper=(ROOT/'docs/PAPER_STAGE1_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](../configs/', '](configs/').replace('](figures/', '](docs/figures/').replace('](PAPER_STAGE1_PROTOCOL.md)', '](docs/PAPER_STAGE1_PROTOCOL.md)')
         idx=next(i for i,v in enumerate(lines) if v.startswith('## 실험 상태'))
         lines.insert(idx,paper)
+    from report_fragments import diagnostics_fragment
+    diagnostic=diagnostics_fragment(ROOT)
+    if diagnostic:
+        idx=next(i for i,v in enumerate(lines) if v.startswith('## 실험 상태'))
+        lines.insert(idx,diagnostic)
     if (ROOT/'results/E0/data_audit.json').exists():
         a=read('results/E0/data_audit.json'); lines+=['## E0 — 데이터와 재현 기반\n',table(['장면','학습 영상','학습 프레임','테스트 영상','테스트 프레임','유효 평가','제외 프레임'],[[s]+[a['scenes'][s][k] for k in ['train_videos','train_frames','test_videos','test_frames','valid_frames','unknown_frames']] for s in SCENES])]
         lines+=['R02 테스트 12/13/14의 라벨 길이가 각각 1프레임씩 다릅니다. 원본을 수정하지 않고 세 영상 전체 1,912프레임을 평가에서 제외합니다. 모든 모델에 같은 `strict-v1` 마스크를 적용하며, 전체 공식 benchmark와 동일한 평가라고 주장하지 않습니다.\n', '[검사 결과](results/E0/data_audit.json) · [테스트 로그](results/E0/test_output.txt)\n']

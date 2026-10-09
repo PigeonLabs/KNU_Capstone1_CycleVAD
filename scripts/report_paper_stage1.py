@@ -1,5 +1,6 @@
 """Paper-stage results generated from checked numerical artifacts."""
 import argparse,json
+from report_fragments import diagnostics_fragment
 from pathlib import Path
 import numpy as np
 import matplotlib
@@ -90,7 +91,7 @@ def main():
     doc=text.replace('](docs/','](').replace('](results/','](../results/').replace('](configs/','](../configs/')
     (ROOT/'docs/PAPER_STAGE1_RESULTS.md').write_text(doc)
     path=ROOT/'README.md';old=path.read_text();end=old.index('## 실험 상태');start=old.find('## 논문 통합 실험 E11·E12·E14');start=end if start<0 else start
-    path.write_text(old[:start]+text+old[end:])
+    path.write_text(old[:start]+text+diagnostics_fragment(ROOT)+old[end:])
     status=read('results/followup_status.json')
     for stage in a.stages:status[stage]='boundary_analysis_complete_controls_pending' if stage=='E14' else 'complete'
     for stage in ['E11','E12','E13','E15']:status.setdefault(stage,'planned_not_run')

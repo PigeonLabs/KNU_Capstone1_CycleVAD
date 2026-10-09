@@ -199,7 +199,8 @@ def main():
         extra=(ROOT/'docs/PHASE_PROCESS_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](PHASE_PROCESS_EXPERIMENTS.md)', '](docs/PHASE_PROCESS_EXPERIMENTS.md)')
     if (ROOT/'docs/PAPER_STAGE1_RESULTS.md').exists():
         extra+=(ROOT/'docs/PAPER_STAGE1_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](../configs/', '](configs/').replace('](figures/', '](docs/figures/').replace('](PAPER_STAGE1_PROTOCOL.md)', '](docs/PAPER_STAGE1_PROTOCOL.md)')
-    path.write_text(old[:start]+text+extra+old[end:])
+    from report_fragments import diagnostics_fragment
+    path.write_text(old[:start]+text+extra+diagnostics_fragment(ROOT)+old[end:])
     prior_status=read('results/followup_status.json') if (ROOT/'results/followup_status.json').exists() else {}
     write_json(ROOT/'results/followup_status.json',{**prior_status,'E6':'complete','E7':'predictions_ready_independent_annotations_required',
         'E8':('complete' if robust else 'seed42_complete_robustness_pending') if args.complete_e8 else 'running',

@@ -12,9 +12,10 @@ SCENES=['R01','R02','R03','R04'];N=2000
 EDITS=['freeze','reverse','skip','swap_adjacent_blocks'];SEVERITIES=[.05,.1,.2]
 ARMS=['B0','B1','B2','B3','C','P']
 def read(p):return json.loads(Path(p).read_text())
-def e11_synthetic(seed,bootstrap=False):
+def e11_synthetic(seed,bootstrap=False,stage='E11',arms=None,contrasts=None):
+    arms=ARMS if arms is None else arms;n_arms=len(arms)
     stride=2
-    base=ROOT/'results/E11'/f'seed{seed}';runs=sorted(base.glob('R*/fold*/run.json'));assert len(runs)==20,(stride,seed,len(runs))
+    base=ROOT/'results'/stage/f'seed{seed}';runs=sorted(base.glob('R*/fold*/run.json'));assert len(runs)==20,(stride,seed,len(runs))
     cases=[];normal=[];stress=[];runmap={};normal_scores={}
     for p in runs:
         r=read(p);assert r['status']=='complete' and r['identity_max_error']<=1e-10
@@ -36,8 +37,8 @@ def e11_synthetic(seed,bootstrap=False):
         scene_curves=[];scene_frames=[]
         for edit in EDITS:
             for sev in SEVERITIES:
-                numer={k:np.zeros((6,nboot)) for k in ['ap','auroc','event','matched_far']};mass=np.zeros(nboot)
-                curve_num=np.zeros((2,5,6));frame_num=np.zeros((2,6));original_case_weight=[];group_cases=[]
+                numer={k:np.zeros((n_arms,nboot)) for k in ['ap','auroc','event','matched_far']};mass=np.zeros(nboot)
+                curve_num=np.zeros((2,5,n_arms));frame_num=np.zeros((2,n_arms));original_case_weight=[];group_cases=[]
                 for fold in range(5):
                     cs=[c for c in cases if c['scene']==scene and c['fold']==fold and c['edit']==edit and c['severity']==sev]
                     if not cs:continue
@@ -47,7 +48,7 @@ def e11_synthetic(seed,bootstrap=False):
                     r=runmap[(scene,fold)];thr=np.array(r['window_thresholds']);ft=np.array(r['frame_thresholds'])
                     ed=np.array([c['edited_max_D'] for c in cs]);orig=np.array([c['original_max_D'] for c in cs]);pos=np.array([c['edited_max_W'] for c in cs]);neg=np.array([c['original_max_W'] for c in cs])
                     y=np.r_[np.ones(len(cs)),np.zeros(len(cs))];owner=np.r_[own,own]
-                    for a in range(6):
+                    for a in range(n_arms):
                         ap,auc=weighted_metrics(y,np.r_[pos[:,a],neg[:,a]],owner,scaled)
                         if bootstrap:
                             np.testing.assert_allclose([ap[0],auc[0]],[average_precision_score(y,np.r_[pos[:,a],neg[:,a]],sample_weight=np.r_[weights,weights]),roc_auc_score(y,np.r_[pos[:,a],neg[:,a]],sample_weight=np.r_[weights,weights])],atol=1e-10)
@@ -65,7 +66,7 @@ def e11_synthetic(seed,bootstrap=False):
                 # Conditional source-balanced delay; missing detections stay misses.
                 weights=np.array(original_case_weight);delays=np.array([[np.nan if v is None else v for v in c['delay_primary']] for c in group_cases]);delaymean=[];delaymedian=[]
                 interior=np.array([c['interior_frames']>0 for c in group_cases]);ir=[]
-                for a in range(6):
+                for a in range(n_arms):
                     mask=np.isfinite(delays[:,a]);w=weights[mask];v=delays[mask,a]
                     delaymean.append(float(np.average(v,weights=w)) if len(v) else None)
                     if len(v):
@@ -80,19 +81,19 @@ def e11_synthetic(seed,bootstrap=False):
         scene_boot[scene]['grid_far']=grid_boot
         normal_result[scene]['operating_curves_event_matchedfar']=np.mean(scene_curves,axis=0).tolist();normal_result[scene]['frameq99_event_matchedfar']=np.mean(scene_frames,axis=0).tolist()
     macro={k:np.mean([scene_boot[s][k] for s in SCENES],axis=0) for k in scene_boot[SCENES[0]]}
-    summary={'stride':stride,'seed':seed,'cases':len(cases),'normal_sources':len(normal),'arms':ARMS,'weighted_prevalence':.5,
+    summary={'stride':stride,'seed':seed,'cases':len(cases),'normal_sources':len(normal),'arms':arms,'weighted_prevalence':.5,
         'macro':{k:v[:,0].tolist() for k,v in macro.items()},'by_scene':{s:{k:v[:,0].tolist() for k,v in vals.items()} for s,vals in scene_boot.items()},
         'normal':normal_result,'groups':result_groups}
     write_json(base/'synthetic_summary.json',summary)
     if bootstrap:
-        pairs=[(3,2),(3,1),(3,0)];contrasts=[]
+        pairs=contrasts if contrasts is not None else [(3,2),(3,1),(3,0)];contrasts=[]
         for a,b in pairs:
             for metric in macro:
-                contrasts.append({'contrast':f'{ARMS[a]}-{ARMS[b]}','metric':metric+'_gain_pp','macro':interval(100*(macro[metric][a]-macro[metric][b])),
+                contrasts.append({'contrast':f'{arms[a]}-{arms[b]}','metric':metric+'_gain_pp','macro':interval(100*(macro[metric][a]-macro[metric][b])),
                     'by_scene':{s:interval(100*(scene_boot[s][metric][a]-scene_boot[s][metric][b])) for s in SCENES}})
         write_json(base/'synthetic_bootstrap.json',{'resamples':N,'seed':20261009,'unit':'paired source-file bootstrap within scene; derivatives remain clustered; conditional on fitted models',
-            'contrasts':contrasts,'point_auc_ap_sklearn_checks':len(result_groups)*5*6*2})
-    print(f'E11 synthetic stride{stride} seed{seed}: {len(cases)} cases, {len(normal)} sources, bootstrap={bootstrap}',flush=True)
+            'contrasts':contrasts,'point_auc_ap_sklearn_checks':len(result_groups)*5*n_arms*2})
+    print(f'{stage} synthetic stride{stride} seed{seed}: {len(cases)} cases, {len(normal)} sources, bootstrap={bootstrap}',flush=True)
 
 def e11_historical(seed,bootstrap=False):
     base=ROOT/'results/E11'/f'seed{seed}';runs=sorted(base.glob('R*/fold*/run.json'));assert len(runs)==20
