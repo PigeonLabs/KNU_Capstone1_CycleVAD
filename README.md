@@ -4,6 +4,14 @@
 
 로컬 **NVIDIA RTX PRO 6000 Blackwell Max-Q 96GB**에서 특징을 추출하고 CPU에서 통계 모델을 학습합니다. 수치는 실제 결과 JSON에서 자동 생성합니다.
 
+## 주요 관찰
+
+- Seed 42, stride 2의 Full Macro AUROC는 **78.31%**, Appearance는 **76.05%**입니다.
+- 진행 점수의 추가 효과(A2−A0)는 Macro AUROC **+2.269 pp**입니다. 조건부 외형의 추가 효과는 현재 설정에서 거의 없습니다.
+- Confidence 가중치를 제거하면 Full 대비 Macro AUROC가 **+1.082 pp** 변합니다. 이는 신뢰도 가중 방식의 재검토 근거이며, 테스트 결과로 최적 모델을 확정한 것은 아닙니다.
+- R01 Full의 정상 프레임 오경보율은 **64.25%**입니다. 정상 holdout q99 임계값이 테스트 정상 프레임에 잘 일반화되지 않아, 높은 Recall을 단독으로 해석하면 안 됩니다.
+- R02에서 나타난 큰 향상이 R01·R04에서는 재현되지 않습니다. 장면별 결과와 음의 효과도 함께 공개합니다.
+
 ## 실험 상태
 
 | 단계 | 내용 | 상태 |
@@ -13,7 +21,7 @@
 | E2 | R01–R04 확장 | completed |
 | E3 | 핵심 2×2 ablation | completed |
 | E4 | 세부 제거·이산 phase 대조 | completed |
-| E5 | 3 seeds·stride·사례 분석 | pending |
+| E5 | 3 seeds·stride·사례 분석 | completed |
 
 
 ## 방법과 평가 규칙
@@ -136,6 +144,61 @@ A0: 외형, A1: 외형+조건부 외형, A2: 외형+진행, A3: 모두 결합. �
 | R04 | [16, 16, 16, 16] | 1007872 | 835840 |
 
 
+### 분기 활성화 진단
+
+| 장면 | 평균 confidence | 조건부 점수가 외형을 초과 (%) | 진행 점수가 A1을 초과 (%) |
+| --- | --- | --- | --- |
+| R01 | 0.085 | 0.00 | 5.77 |
+| R02 | 0.727 | 5.99 | 41.77 |
+| R03 | 0.562 | 0.00 | 8.57 |
+| R04 | 0.155 | 0.15 | 58.84 |
+
+
+각 테스트 영상의 sampled-frame 평균을 구한 뒤 영상 간 단순 평균했습니다. 라벨 불일치 영상도 이 라벨 비의존 진단에는 포함합니다. Confidence는 위치 정확도의 확률이 아닙니다.
+
+## E5 — 안정성·stride·사례 분석
+
+| 모델 | Macro AUROC 평균 ± SD | Macro AP 평균 ± SD |
+| --- | --- | --- |
+| Pooled PCA | 75.90 ± 0.12 | 66.98 ± 0.15 |
+| Appearance (A0) | 75.69 ± 0.31 | 66.70 ± 0.33 |
+| Cycle-conditioned (A1) | 75.69 ± 0.31 | 66.70 ± 0.33 |
+| Appearance + process (A2) | 78.09 ± 0.19 | 69.62 ± 0.16 |
+| Full (A3) | 78.09 ± 0.19 | 69.62 ± 0.16 |
+
+
+Seed 42/43/44의 모델 무작위성만 변경했습니다. 정상 데이터 분할과 encoder projection은 고정입니다. 표준편차는 신뢰구간이 아니며 데이터 분할 불확실성은 포함하지 않습니다.
+
+![Seed 안정성](docs/figures/E5_seeds.svg)
+
+| 모델 | Stride 2 Macro AUROC/AP | Stride 1 Macro AUROC/AP |
+| --- | --- | --- |
+| Pooled PCA | 76.04 / 67.15 | 76.11 / 67.51 |
+| Full (A3) | 78.31 / 69.79 | 76.83 / 68.44 |
+
+
+Stride 1은 descriptor 차분과 진행 점수의 **샘플 단위 lag를 그대로 유지**하므로 실제 원본 프레임 기준 시간 범위도 줄어듭니다. 순수한 샘플링 밀도 효과만 분리한 실험은 아닙니다.
+
+![탐지 타임라인](docs/figures/E5_timelines.svg)
+
+각 장면에서 이름순으로 처음 나타나는 유효 이상 영상을 표시했습니다. 성능이 좋은 사례를 골라내지 않았습니다. 각 패널은 장면별 보정 점수와 독립적인 y축 범위를 사용하므로 점수 크기를 장면 간 직접 비교하지 않습니다.
+
+### 오류 사례 점검
+
+| 장면 | 선정 기준 | 영상 | FPR | Recall | 탐지 이벤트 |
+| --- | --- | --- | --- | --- | --- |
+| R01 | highest FPR | R01/testing/01 | 100.00 | 100.00 | 1/1 |
+| R01 | lowest recall | R01/testing/01 | 100.00 | 100.00 | 1/1 |
+| R02 | highest FPR | R02/testing/15 | 4.34 | 0.00 | 0/2 |
+| R02 | lowest recall | R02/testing/08 | 0.34 | 0.00 | 0/4 |
+| R03 | highest FPR | R03/testing/17 | 40.81 | — | 0/0 |
+| R03 | lowest recall | R03/testing/08 | 1.38 | 0.00 | 0/1 |
+| R04 | highest FPR | R04/testing/08 | 13.24 | 10.43 | 1/3 |
+| R04 | lowest recall | R04/testing/02 | 3.57 | 0.00 | 0/1 |
+
+
+각 장면에서 Full의 FPR 최대 영상과 Recall 최소 이상 영상을 진단 목적으로 선정했습니다. 대표 표본이 아니며 이상 유형의 원인을 자동 확정하지 않습니다.
+
 ## 실행 비용
 
 | 단계 | 실측 wall time (초) |
@@ -145,9 +208,12 @@ A0: 외형, A1: 외형+조건부 외형, A2: 외형+진행, A3: 모두 결합. �
 | E2 | 191.4 |
 | E3 | 0.0 |
 | E4 | 24.9 |
+| E5 | 566.5 |
 
 
 E0 시간은 테스트 실행만 포함합니다. E1 이후 시간은 해당 단계의 특징 추출·학습·공유 점수 계산을 포함하며 업로드/환경 설치 시간은 제외합니다. 개별 ablation의 독립 추론 latency로 해석하지 않습니다.
+
+E5 PyTorch allocator peak: allocated 0.615 GiB, reserved 0.701 GiB. 드라이버와 다른 프로세스 메모리는 포함하지 않습니다.
 
 ## 재현
 
@@ -162,11 +228,11 @@ export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
 .venv/bin/python scripts/audit.py --data-root /path/to/IPAD_dataset
 .venv/bin/python -m pytest -q
 # E1 → E2 → E3 → E4 → E5 순서로 실행
-.venv/bin/python scripts/run_stage.py --stage E1 --data-root /path/to/IPAD_dataset
+.venv/bin/python scripts/run_stage.py --stage E1 --config configs/experiments/replay_pinned.json --data-root /path/to/IPAD_dataset
 .venv/bin/python scripts/report.py
 ```
 
-실제 실행 환경은 [lock 파일](results/E0/requirements-lock.txt)을 참고하세요. E0 완료 표시는 검사·테스트 통과 후 기록합니다. 원본 프레임, 특징 캐시, 모델 체크포인트는 Git에 포함하지 않습니다. 각 단계의 JSON/CSV, 설정, 코드 fingerprint와 그래프를 공개합니다.
+사전학습 checkpoint revision은 [고정 재현 설정](configs/experiments/replay_pinned.json)에 기록했습니다. 실제 실행 환경은 [lock 파일](results/E0/requirements-lock.txt)을 참고하세요. E0 완료 표시는 검사·테스트 통과 후 기록합니다. 원본 프레임, 특징 캐시, 모델 체크포인트는 Git에 포함하지 않습니다. 각 단계의 JSON/CSV, 설정, 코드 fingerprint와 그래프를 공개합니다. [최종 22개 테스트](results/final_tests.txt)와 [결과 정합성 검사](results/final_validation.txt)도 확인할 수 있습니다.
 
 ## 한계
 

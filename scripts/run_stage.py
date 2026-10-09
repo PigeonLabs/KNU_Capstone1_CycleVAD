@@ -27,8 +27,8 @@ def mark(stage,started):
 
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--stage',required=True,choices=['E1','E2','E3','E4','E5']); p.add_argument('--data-root',required=True,type=Path); p.add_argument('--threads',type=int,default=4)
-    args=p.parse_args(); start=time.perf_counter(); cfg=json.load(open('configs/experiments/main.json')); main_root=Path('runs/stride2_seed42'); dest=Path('results')/args.stage
+    p=argparse.ArgumentParser(); p.add_argument('--stage',required=True,choices=['E1','E2','E3','E4','E5']); p.add_argument('--data-root',required=True,type=Path); p.add_argument('--threads',type=int,default=4); p.add_argument('--config',type=Path,default=Path('configs/experiments/main.json'))
+    args=p.parse_args(); start=time.perf_counter(); cfg=json.loads(args.config.read_text()); main_root=Path('runs/stride2_seed42'); dest=Path('results')/args.stage
     dest.mkdir(parents=True,exist_ok=True)
     with threadpool_limits(limits=args.threads):
         if args.stage=='E1':

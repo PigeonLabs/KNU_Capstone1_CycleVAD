@@ -11,6 +11,8 @@ def main():
         m=json.loads(p.read_text()); protocols=p.parent/'protocol.json'
         protocol=json.loads(protocols.read_text())
         splits=protocol['splits']
+        fixed=json.loads((ROOT/'results/E0/splits.json').read_text())[p.parent.name]
+        assert splits==fixed,(p,'Normal split changed across variants/seeds')
         ids=[set(x) for x in splits.values()]
         assert all(not (a&b) for i,a in enumerate(ids) for b in ids[i+1:])
         assert all('/training/' in x for a in ids for x in a)

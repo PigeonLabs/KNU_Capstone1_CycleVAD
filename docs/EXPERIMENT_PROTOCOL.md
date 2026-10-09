@@ -37,3 +37,7 @@ Removal experiments hold fitted shared models fixed unless the removed mechanism
 E0: data audit, environment, tests and source recovery. E1: original R02 outputs compared to local rerun (different environment, no assumed bitwise equality). E2: all scenes, pooled/A0/A1/Full. E3: all four core factorial combinations. E4: all registered removal/phase variants. E5: three model seeds for core comparisons, stride sensitivity and qualitative score timelines.
 
 Each completed stage publishes scripts/configs, numeric JSON/CSV results and generated README figures to GitHub. Raw frames, weights, feature caches and large prediction maps stay local. Claims of improvement require measured results; negative results stay visible. Test-example timelines use the first lexically ordered valid video containing an anomaly in each scene, not the best-looking example.
+
+## Stride interpretation
+
+The registered stride-1 run preserves observation-count lags (tracker descriptor lag 2; progress lags 1/4/16). Its effective source-frame horizons are therefore shorter than stride 2. This is an end-to-end configuration sensitivity test, not an isolated test of sampling density with matched temporal horizons. No settings were tuned after seeing the test result.
