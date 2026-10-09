@@ -348,6 +348,39 @@ E9S 15,640개 편집 평가에서 최초 32프레임과 유효한 편집 내부�
 
 미완료 후속 항목: E7 실제 위치·유형 주석, E13 시간 모델·정지 보완, E15 보정 개선, 새로운 E14 대응 편집·회복 검증, 개선 후 최종 E11, 외부 baseline, E10 독립 촬영, end-to-end 온라인 지연. 이 단계의 historical/합성 결과는 탐색적 근거이며 이 항목들을 대신하지 않습니다.
 
+## 보정과 경보 결합 E15B0·E15B/C
+
+[사전 설계](docs/PAPER_NEXT_EXPERIMENTS_20261009.md) · [고정 설정](configs/experiments/followup/e15bc_v1.json) · [코드 검사](results/paper_calibration_tests.txt)
+
+### E15B0 경보 손실·보정 해상도 진단 완료
+
+고정 E11B 점수로 60개 단위를 검사했습니다. 아래는 seed 42, α=1%입니다. ORfree는 C/P 각자의 q99 임계값을 유지하는 진단이며 전체 1% 예산 방법이 아닙니다.
+
+| 정책 | 실제 이벤트 / 66 | C 대비 추가 | C 대비 손실 | 정상 OOF grid FAR % |
+| --- | --- | --- | --- | --- |
+| C | 33 | 0 | 0 | 9.65 |
+| MAX | 29 | 3 | 7 | 9.87 |
+| ORfree | 36 | 3 | 0 | 13.57 |
+
+| 장면 | C / CP / ORfree 탐지 | C grid FAR % | ORfree grid FAR % | P만 추가한 정상 창 % |
+| --- | --- | --- | --- | --- |
+| R01 | 8 / 8 / 8 | 9.24 | 10.50 | 1.26 |
+| R02 | 4 / 5 / 5 | 2.08 | 7.56 | 5.48 |
+| R03 | 7 / 4 / 8 | 15.26 | 20.94 | 5.68 |
+| R04 | 14 / 12 / 15 | 12.00 | 15.27 | 3.28 |
+
+원 임계값 OR는 C의 탐지를 보존하지만 추가 정상 경보를 발생시킵니다. 60개 단위 중 **37개**에서 C/P/CP 모두 q95=q99.5입니다. 임계값 보정 영상은 3–4개, 겹치는 창은 21–33개이므로 높은 분위수의 구분 능력이 제한됩니다. 창 수를 독립 표본 수로 해석하지 않습니다. 원본 하나 제외 임계값과 ECDF jump도 각 run에 공개했습니다.
+
+![경보와 정상 비용](docs/figures/E15B0_tradeoff.svg)
+
+![C가 탐지했으나 CP가 놓친 7개 이벤트](docs/figures/E15B0_lost_events.svg)
+
+회색 영역은 이벤트 onset부터 탐지 deadline까지입니다. 패널별 점수 범위는 다릅니다.
+
+[원본 수치](results/E15B0/summary.json) · [재현 검증](results/E15B0/validation.txt)
+
+E15B/C는 실행·검증 중입니다. 아직 결합 개선 결과를 확정하지 않았습니다.
+
 ## 최소 구성과 오경보 진단 E11B·E15A
 
 [후속 설계](docs/PAPER_STAGE2_DESIGN.md) · [고정 실행 설정](configs/experiments/followup/e11b_e15a_v1.json) · [코드 검사](results/paper_diagnostics_tests.txt)
