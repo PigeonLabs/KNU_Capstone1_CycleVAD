@@ -9,3 +9,7 @@ logs/
 IPAD_dataset/
 *.joblib
 *.tmp
+
+# Local raster previews and JUnit output; published figures are SVG.
+docs/figures/*.png
+results/E0/tests.xml
