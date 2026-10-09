@@ -97,7 +97,10 @@ def main():
     (ROOT/'docs/PHASE_PROCESS_RESULTS.md').write_text(text.replace('](docs/', '](').replace('](results/', '](../results/'))
     path=ROOT/'README.md';old=path.read_text();start=old.find('## 위치·진행 검증 E8B / E9S');end=old.index('## 실험 상태')
     if start<0:start=end
-    old=old[:start]+text+old[end:]
+    extra=''
+    if (ROOT/'docs/PAPER_STAGE1_RESULTS.md').exists():
+        extra=(ROOT/'docs/PAPER_STAGE1_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](../configs/', '](configs/').replace('](figures/', '](docs/figures/').replace('](PAPER_STAGE1_PROTOCOL.md)', '](docs/PAPER_STAGE1_PROTOCOL.md)')
+    old=old[:start]+text+extra+old[end:]
     old=old.replace('모델 실험은 아직 미실행입니다.','실행 결과는 아래 E8B / E9S 절에 정리했습니다.').replace('E9S: 합성 편집 검증은 E7 주석과 독립적으로 실행할 계획입니다.','E9S: 합성 편집 검증은 E7 주석과 독립적으로 진행하며 아래 실행 결과를 따릅니다.')
     old=old.replace('## 주요 관찰','## 초기 실험 E0–E5 관찰')
     path.write_text(old)

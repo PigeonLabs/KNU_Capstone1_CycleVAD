@@ -6,5 +6,10 @@
   "E9": "synthetic_complete_real_annotations_required",
   "E9S": "complete",
   "E9R": "independent_process_annotations_required",
-  "E10": "new_independent_recordings_required"
+  "E10": "new_independent_recordings_required",
+  "E14": "boundary_analysis_complete_controls_pending",
+  "E11": "complete",
+  "E12": "planned_not_run",
+  "E13": "planned_not_run",
+  "E15": "planned_not_run"
 }
