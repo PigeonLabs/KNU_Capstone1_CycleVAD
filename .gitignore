@@ -13,3 +13,7 @@ IPAD_dataset/
 # Local raster previews and JUnit output; published figures are SVG.
 docs/figures/*.png
 results/E0/tests.xml
+
+# Public numeric benchmark metadata, distinct from local feature/model caches.
+!results/E16/runs/
+!results/E16/runs/*.json

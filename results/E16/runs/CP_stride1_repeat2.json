@@ -1,0 +1,187 @@
+{
+  "id": "CP_stride1_repeat2",
+  "stride": 1,
+  "readout": "CP",
+  "repeat": 2,
+  "target_rate": null,
+  "input_frames": 2048,
+  "fresh_updates": 2048,
+  "wall_seconds": 24.13932931200543,
+  "input_fps": 84.8407995735594,
+  "fresh_updates_per_second": 84.8407995735594,
+  "all_service_ms": {
+    "n": 2048,
+    "mean": 11.764031671603448,
+    "p50": 11.529944000358228,
+    "p95": 13.452442450943636,
+    "p99": 15.819275164831195,
+    "max": 17.72098299989011
+  },
+  "fresh_service_ms": {
+    "n": 2048,
+    "mean": 11.764031671603448,
+    "p50": 11.529944000358228,
+    "p95": 13.452442450943636,
+    "p99": 15.819275164831195,
+    "max": 17.72098299989011
+  },
+  "held_service_ms": null,
+  "fresh_stage_ms": {
+    "decode": {
+      "n": 2048,
+      "mean": 0.49077464945668225,
+      "p50": 0.4816840009880252,
+      "p95": 0.6366301480738911,
+      "p99": 0.7179471348354127,
+      "max": 0.8515070076100528
+    },
+    "preprocess": {
+      "n": 2048,
+      "mean": 3.209636638722202,
+      "p50": 3.154131001792848,
+      "p95": 3.745968150178669,
+      "p99": 4.217883813253138,
+      "max": 4.710508001153357
+    },
+    "h2d": {
+      "n": 2048,
+      "mean": 0.18346811221192638,
+      "p50": 0.16468600369989872,
+      "p95": 0.27462999714771286,
+      "p99": 0.31441582061233925,
+      "max": 0.6450470100389794
+    },
+    "gpu_features": {
+      "n": 2048,
+      "mean": 6.528087052473097,
+      "p50": 6.394164003722835,
+      "p95": 7.246098405448716,
+      "p99": 8.999509097629925,
+      "max": 11.208887997781858
+    },
+    "d2h": {
+      "n": 2048,
+      "mean": 0.068342002371935,
+      "p50": 0.0640359940007329,
+      "p95": 0.09647750266594811,
+      "p99": 0.11268896982073784,
+      "max": 0.1576779905008152
+    },
+    "detector": {
+      "n": 2048,
+      "mean": 1.2662139991590493,
+      "p50": 1.233727001817897,
+      "p95": 1.6479473517392762,
+      "p99": 1.8292335158912463,
+      "max": 2.3435519979102537
+    }
+  },
+  "gpu_peak_allocated_MiB": 382.96435546875,
+  "gpu_peak_reserved_MiB": 406.0,
+  "process_peak_rss_MiB": 1601.7578125,
+  "source_dimensions": [
+    [
+      256,
+      256
+    ]
+  ],
+  "files": [
+    {
+      "source_id": "R01/training/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4193282679916592
+    },
+    {
+      "source_id": "R01/training/04",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.3852649990003556
+    },
+    {
+      "source_id": "R01/testing/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.460929420994944
+    },
+    {
+      "source_id": "R01/testing/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4934706230123993
+    },
+    {
+      "source_id": "R02/training/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.5333918190008262
+    },
+    {
+      "source_id": "R02/training/11",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.531027543998789
+    },
+    {
+      "source_id": "R02/testing/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4937996230000863
+    },
+    {
+      "source_id": "R02/testing/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4649549690075219
+    },
+    {
+      "source_id": "R03/training/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4706263659900287
+    },
+    {
+      "source_id": "R03/training/04",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.5125512820086442
+    },
+    {
+      "source_id": "R03/testing/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.5251942510076333
+    },
+    {
+      "source_id": "R03/testing/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.5130295569979353
+    },
+    {
+      "source_id": "R04/training/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.6488818420039024
+    },
+    {
+      "source_id": "R04/training/05",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.6692719769926043
+    },
+    {
+      "source_id": "R04/testing/01",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.5458176660031313
+    },
+    {
+      "source_id": "R04/testing/02",
+      "frames": 128,
+      "fresh_updates": 128,
+      "wall_seconds": 1.4694026940123877
+    }
+  ],
+  "validation": []
+}

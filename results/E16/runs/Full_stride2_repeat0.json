@@ -1,0 +1,194 @@
+{
+  "id": "Full_stride2_repeat0",
+  "stride": 2,
+  "readout": "Full",
+  "repeat": 0,
+  "target_rate": null,
+  "input_frames": 2048,
+  "fresh_updates": 1024,
+  "wall_seconds": 12.534145730998716,
+  "input_fps": 163.39366431132248,
+  "fresh_updates_per_second": 81.69683215566124,
+  "all_service_ms": {
+    "n": 2048,
+    "mean": 6.102423384326983,
+    "p50": 5.988470496959053,
+    "p95": 12.273774606001098,
+    "p99": 13.040335917612536,
+    "max": 16.711003001546487
+  },
+  "fresh_service_ms": {
+    "n": 1024,
+    "mean": 11.757410161123971,
+    "p50": 11.584979998588096,
+    "p95": 12.536393740447238,
+    "p99": 13.873710664047394,
+    "max": 16.711003001546487
+  },
+  "held_service_ms": {
+    "n": 1024,
+    "mean": 0.44743660752999403,
+    "p50": 0.4378669982543215,
+    "p95": 0.5583167519944252,
+    "p99": 0.6204114365391432,
+    "max": 0.7185959984781221
+  },
+  "fresh_stage_ms": {
+    "decode": {
+      "n": 1024,
+      "mean": 0.401964133857291,
+      "p50": 0.40263449773192406,
+      "p95": 0.4914195080345962,
+      "p99": 0.5405128787970169,
+      "max": 0.6129060056991875
+    },
+    "preprocess": {
+      "n": 1024,
+      "mean": 2.959173860261899,
+      "p50": 2.9067855066386983,
+      "p95": 3.270420054468559,
+      "p99": 3.5906369829899627,
+      "max": 4.173965993686579
+    },
+    "h2d": {
+      "n": 1024,
+      "mean": 0.15615353991904612,
+      "p50": 0.14971299970056862,
+      "p95": 0.187502854532795,
+      "p99": 0.24602938137832095,
+      "max": 0.29827300750184804
+    },
+    "gpu_features": {
+      "n": 1024,
+      "mean": 6.375027655522558,
+      "p50": 6.324638990918174,
+      "p95": 6.481118358351523,
+      "p99": 7.429192631825572,
+      "max": 9.553416995913722
+    },
+    "d2h": {
+      "n": 1024,
+      "mean": 0.057449107345064476,
+      "p50": 0.05519900150829926,
+      "p95": 0.07147750293370336,
+      "p99": 0.08388429880142212,
+      "max": 0.11279300088062882
+    },
+    "detector": {
+      "n": 1024,
+      "mean": 1.7935739011676333,
+      "p50": 1.7474124979344197,
+      "p95": 2.094759445026283,
+      "p99": 2.3505183956876863,
+      "max": 3.027573009603657
+    }
+  },
+  "gpu_peak_allocated_MiB": 382.96435546875,
+  "gpu_peak_reserved_MiB": 406.0,
+  "process_peak_rss_MiB": 1601.5078125,
+  "source_dimensions": [
+    [
+      256,
+      256
+    ]
+  ],
+  "files": [
+    {
+      "source_id": "R01/training/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7632886070059612
+    },
+    {
+      "source_id": "R01/training/04",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7785372200014535
+    },
+    {
+      "source_id": "R01/testing/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7584763139893766
+    },
+    {
+      "source_id": "R01/testing/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.8095170260057785
+    },
+    {
+      "source_id": "R02/training/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.8093696360010654
+    },
+    {
+      "source_id": "R02/training/11",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.780543619999662
+    },
+    {
+      "source_id": "R02/testing/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.759360297000967
+    },
+    {
+      "source_id": "R02/testing/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7610620069899596
+    },
+    {
+      "source_id": "R03/training/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7681164569949033
+    },
+    {
+      "source_id": "R03/training/04",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7949208159989212
+    },
+    {
+      "source_id": "R03/testing/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.8097243569936836
+    },
+    {
+      "source_id": "R03/testing/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7975641600060044
+    },
+    {
+      "source_id": "R04/training/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7737396629963769
+    },
+    {
+      "source_id": "R04/training/05",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.8040835599967977
+    },
+    {
+      "source_id": "R04/testing/01",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7887444639927708
+    },
+    {
+      "source_id": "R04/testing/02",
+      "frames": 128,
+      "fresh_updates": 64,
+      "wall_seconds": 0.7752870300028007
+    }
+  ],
+  "validation": []
+}
