@@ -48,13 +48,17 @@ def main():
     '- DINOv2-base / 336px letterbox / layer -1,-3 / 6×6 patches / FP16 / primary stride 2.\n- Fit, validation, reference, threshold 영상을 분리합니다. 테스트 라벨로 설정·임계값을 고르지 않습니다.\n- 실제 cycle 경계가 없는 `weak_recording_alignment`입니다. Cycle 위치 정확도는 미측정입니다.\n- 원본 recording group 정보가 없어 파일 간 그룹 독립성은 입증하지 못했습니다.\n- 주지표: frame AUROC/AP. 표의 값은 %이며, `AUROC / AP` 순서입니다. Macro는 네 장면의 단순 평균입니다.\n- FPR/Recall/Event coverage는 정상 holdout q99 임계값 기준입니다. 지연은 탐지된 이벤트에 한정한 원본 프레임 수입니다.\n',
     '[구현 방법](docs/METHOD.md) · [전체 사전 실험 규칙](docs/EXPERIMENT_PROTOCOL.md) · [환경 및 패키지 버전](results/E0/environment.json) · [고정 데이터 분할](results/E0/splits.json)\n']
     if (ROOT/'docs/FOLLOWUP_RESULTS.md').exists():
-        followup=(ROOT/'docs/FOLLOWUP_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](FOLLOWUP_EXPERIMENTS.md)', '](docs/FOLLOWUP_EXPERIMENTS.md)').replace('](ANNOTATION_GUIDE.md)', '](docs/ANNOTATION_GUIDE.md)').replace('](PHASE_PROCESS_EXPERIMENTS.md)', '](docs/PHASE_PROCESS_EXPERIMENTS.md)')
+        followup=(ROOT/'docs/FOLLOWUP_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](FOLLOWUP_EXPERIMENTS.md)', '](docs/FOLLOWUP_EXPERIMENTS.md)').replace('](ANNOTATION_GUIDE.md)', '](docs/ANNOTATION_GUIDE.md)').replace('](PHASE_PROCESS_EXPERIMENTS.md)', '](docs/PHASE_PROCESS_EXPERIMENTS.md)').replace('](PHASE_PROCESS_RESULTS.md)', '](docs/PHASE_PROCESS_RESULTS.md)')
         lines.insert(3,followup)
     elif (ROOT/'docs/FOLLOWUP_EXPERIMENTS.md').exists():
         lines.insert(3,'## 후속 실험 계획 — 아직 미실행\n\n[구체적인 E6–E10 실험 명세](docs/FOLLOWUP_EXPERIMENTS.md): 위치 추적 대조군 3개, Confidence 학습·추론 3×3 조합, 진행 이상 대조군 6개를 정의했습니다. 정상 5-fold 분할과 40개 영상의 주석 대상 목록을 고정했으며, 실제 주석과 후속 실험 결과는 아직 없습니다.\n')
     if 'E4' in status:
         m=metrics('E2'); ab=metrics('E4')
         lines.insert(3,'## 주요 관찰\n\n'+f'- Seed 42, stride 2의 Full Macro AUROC는 **{fmt(macro(m,"full","auroc"))}%**, Appearance는 **{fmt(macro(m,"appearance","auroc"))}%**입니다.\n'+f'- 진행 점수의 추가 효과(A2−A0)는 Macro AUROC **{(macro(m,"appearance_process","auroc")-macro(m,"appearance","auroc"))*100:+.3f} pp**입니다. 조건부 외형의 추가 효과는 현재 설정에서 거의 없습니다.\n'+f'- Confidence 가중치를 제거하면 Full 대비 Macro AUROC가 **{(macro(ab,"no_confidence","auroc")-macro(ab,"full","auroc"))*100:+.3f} pp** 변합니다. 이는 신뢰도 가중 방식의 재검토 근거이며, 테스트 결과로 최적 모델을 확정한 것은 아닙니다.\n'+f'- R01 Full의 정상 프레임 오경보율은 **{fmt(m["R01"]["full"]["fpr"])}%**입니다. 정상 holdout q99 임계값이 테스트 정상 프레임에 잘 일반화되지 않아, 높은 Recall을 단독으로 해석하면 안 됩니다.\n'+'- R02에서 나타난 큰 향상이 R01·R04에서는 재현되지 않습니다. 장면별 결과와 음의 효과도 함께 공개합니다.\n')
+    if (ROOT/'docs/PHASE_PROCESS_RESULTS.md').exists():
+        phase=(ROOT/'docs/PHASE_PROCESS_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](PHASE_PROCESS_EXPERIMENTS.md)', '](docs/PHASE_PROCESS_EXPERIMENTS.md)').replace('](PHASE_PROCESS_RESULTS.md)', '](docs/PHASE_PROCESS_RESULTS.md)')
+        idx=next(i for i,v in enumerate(lines) if v.startswith('## 실험 상태'))
+        lines.insert(idx,phase)
     if (ROOT/'results/E0/data_audit.json').exists():
         a=read('results/E0/data_audit.json'); lines+=['## E0 — 데이터와 재현 기반\n',table(['장면','학습 영상','학습 프레임','테스트 영상','테스트 프레임','유효 평가','제외 프레임'],[[s]+[a['scenes'][s][k] for k in ['train_videos','train_frames','test_videos','test_frames','valid_frames','unknown_frames']] for s in SCENES])]
         lines+=['R02 테스트 12/13/14의 라벨 길이가 각각 1프레임씩 다릅니다. 원본을 수정하지 않고 세 영상 전체 1,912프레임을 평가에서 제외합니다. 모든 모델에 같은 `strict-v1` 마스크를 적용하며, 전체 공식 benchmark와 동일한 평가라고 주장하지 않습니다.\n', '[검사 결과](results/E0/data_audit.json) · [테스트 로그](results/E0/test_output.txt)\n']

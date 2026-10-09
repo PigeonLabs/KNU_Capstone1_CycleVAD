@@ -2,9 +2,9 @@
   "E6": "complete",
   "E7": "predictions_ready_independent_annotations_required",
   "E8": "complete",
-  "E8B": "planned_not_run",
-  "E9": "synthetic_stage_planned_not_run",
-  "E9S": "planned_not_run",
+  "E8B": "complete",
+  "E9": "synthetic_running",
+  "E9S": "running",
   "E9R": "independent_process_annotations_required",
   "E10": "new_independent_recordings_required"
 }

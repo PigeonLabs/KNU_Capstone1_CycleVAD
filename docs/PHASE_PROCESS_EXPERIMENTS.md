@@ -2,7 +2,7 @@
 
 다음 순서는 **E8B 위치 조건의 기여 분리 → E9S 합성 진행 이상 비교**로 정한다. 실제 anchor 주석을 사용하는 E7은 병행한다. 합성 편집의 종류와 시점은 생성기로 알 수 있으므로 E9S를 E7 완료까지 미루지 않는다. 실제 위치 정확도와 실제 공정 이상 유형별 성능은 E7 및 주석 기반 E9R에서 검증한다.
 
-2026-10-09 기준 **설계 및 편집 가능 여부 검사 완료, 모델 실험 미실행**이다. [설정](../configs/experiments/followup/phase_process_v2.json), [편집 사례 목록](../configs/experiments/followup/e9_cases_v2.json), [실행 전 검사](../configs/experiments/followup/phase_process_v2_preflight.json)를 고정한다. 이 계획은 이전 E9의 E7 의존성, 편집 시작점, 주 운영점의 보정 방식을 개정한다. E0–E8의 설정과 결과는 유지한다.
+아래 내용은 **실행 전 고정한 설계 스냅샷**이다. 현재 실행 상태와 수치는 [E8B / E9S 결과](PHASE_PROCESS_RESULTS.md)를 따른다. 설정의 `planned_not_run`은 고정 당시 상태이며 사후에 변경하지 않는다. [설정](../configs/experiments/followup/phase_process_v2.json), [편집 사례 목록](../configs/experiments/followup/e9_cases_v2.json), [실행 전 검사](../configs/experiments/followup/phase_process_v2_preflight.json)를 고정한다. 이 계획은 이전 E9의 E7 의존성, 편집 시작점, 주 운영점의 보정 방식을 개정한다. E0–E8의 설정과 결과는 유지한다.
 
 ## 출발점과 검증 질문
 
