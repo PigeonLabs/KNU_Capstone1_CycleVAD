@@ -121,7 +121,8 @@ class CycleTracker:
         if len(ids) != len(x) or np.any(np.diff(ids) <= 0):
             raise ValueError("Cycle tracker needs increasing source-frame indices")
         n, g = len(x), self.grid_size
-        out = {key: np.zeros(n) for key in ("angle", "confidence", "alignment", "innovation", "progress")}
+        out = {key: np.zeros(n) for key in ("angle", "confidence", "alignment", "innovation", "progress",
+                                           "location_confidence", "template_agreement", "observation_angle")}
         posterior = np.full(g, 1/g)
         offsets = np.arange(-g//4, g//4+1)
         for t, observation in enumerate(x):
@@ -144,6 +145,9 @@ class CycleTracker:
             angle = (np.angle(unit)/(2*np.pi)) % 1
             out["angle"][t] = angle
             out["confidence"][t] = abs(observed)*np.exp(-distance.min()/(4*self.temperature))
+            out["location_confidence"][t] = abs(observed)
+            out["template_agreement"][t] = np.exp(-distance.min()/(4*self.temperature))
+            out["observation_angle"][t] = (np.angle(observed)/(2*np.pi)) % 1
             out["alignment"][t] = distance.min()
             if t:
                 # Surprise before updating posterior: temporal smoothing cannot
