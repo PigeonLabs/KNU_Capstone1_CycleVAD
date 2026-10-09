@@ -94,5 +94,5 @@ Phase는 모델의 추정 좌표이며 실제 단계 정답이 아닙니다. 빈
 
 [검증 로그](../results/E15A/validation.txt) · [원본별 집계와 전체 strata](../results/E15A/summary.json) · [raw/calibrated 분위수](../results/E15A/distributions.json)
 
-로컬 RTX PRO 6000의 고정 CUDA 특징을 재사용했고 통계 점수 재계산은 CPU에서 수행했습니다. 새 학습·보정 변경은 없습니다. E15B/C, E13B, E14B, E12B, E7B 독립 주석, 외부 baseline, end-to-end streaming 및 독립 촬영 검증은 미완료입니다.
+로컬 RTX PRO 6000의 고정 CUDA 특징을 재사용했고 통계 점수 재계산은 CPU에서 수행했습니다. 이 단계에는 학습·보정 변경이 없습니다. E15B/C의 후속 결과는 [최신 보정 실험](PAPER_CALIBRATION_RESULTS.md)을 참고하세요. E13B, E14B, E12B, E7B 독립 주석, 외부 baseline, end-to-end streaming 및 독립 촬영 검증은 미완료입니다.
 
