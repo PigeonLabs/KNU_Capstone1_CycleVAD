@@ -188,13 +188,16 @@ def main():
         text=text.replace('seed 43/44 재검증은 아직 실행하지 않았습니다.', 'seed 43/44 재검증 결과는 아래에 정리했습니다.')
         text+=robust
     text+='재실행: `PYTHONPATH=src python scripts/run_followup.py --data-root /path/to/IPAD_dataset` 후 `--seed 43`, `--seed 44`로 반복합니다. `scripts/prepare_annotation_packet.py`는 로컬 원본 경로에서 주석 뷰어를 생성합니다. `scripts/bootstrap_followup.py`와 `--candidate C-22`로 paired CI를 계산하고, `scripts/check_followup.py`로 저장된 점수와 수치를 검증합니다. [정합성 검사](results/followup_validation.txt)\n\n'
-    text+='E7: T0/T1/T2 인과적 예측을 로컬에 저장했으며 [독립적인 실제 cycle/anchor 주석](docs/ANNOTATION_GUIDE.md)이 필요합니다. E9: 사전 계획에 따라 E7 진단 후 진행합니다. E10: 신규 독립 촬영 자료가 필요합니다. 미실행 항목을 완료로 표시하지 않습니다.\n\n'
+    text+='E7: T0/T1/T2 인과적 예측을 로컬에 저장했으며 [독립적인 실제 cycle/anchor 주석](docs/ANNOTATION_GUIDE.md)이 필요합니다. E9S: 합성 편집 검증은 E7 주석과 독립적으로 실행할 계획입니다. 실제 유형별 E9R은 주석이 필요합니다. E10: 신규 독립 촬영 자료가 필요합니다. 미실행 항목을 완료로 표시하지 않습니다.\n\n'
+    if (ROOT/'docs/PHASE_PROCESS_EXPERIMENTS.md').exists():
+        text+='### 다음 실험 계획\n\n[위치별 정상 기준과 진행 이상 검증 계획](docs/PHASE_PROCESS_EXPERIMENTS.md)을 고정했습니다. E8B는 위치 조건 5개 비교군, E9S는 진행 점수 10개 비교군을 사용합니다. 편집 후보 3,996개 중 3,910개가 길이 검사를 통과했습니다. 모델 실험은 아직 미실행입니다.\n\n'
     (ROOT/'docs/FOLLOWUP_RESULTS.md').write_text(text.replace('](docs/', '](').replace('](results/', '](../results/'))
     path=ROOT/'README.md';old=path.read_text()
     start=old.index('## 후속 실험');end=old.index('## 실험 상태',start)
     path.write_text(old[:start]+text+old[end:])
     write_json(ROOT/'results/followup_status.json',{'E6':'complete','E7':'predictions_ready_independent_annotations_required',
         'E8':('complete' if robust else 'seed42_complete_robustness_pending') if args.complete_e8 else 'running',
-        'E9':'pending_E7_diagnosis','E10':'new_independent_recordings_required'})
+        'E8B':'planned_not_run','E9':'synthetic_stage_planned_not_run','E9S':'planned_not_run',
+        'E9R':'independent_process_annotations_required','E10':'new_independent_recordings_required'})
 
 if __name__=='__main__':main()
