@@ -18,6 +18,7 @@
   "label_policy": "strict-v1: exclude complete mismatched-label videos, never trim or pad.",
   "timing": {
     "descriptor_lag_source_frames": 4,
+    "AR1_lag_source_frames": 2,
     "progress_lags_source_frames": [
       2,
       8,
@@ -129,7 +130,8 @@
       "T2_causal_filter"
     ],
     "template_and_initial_observation_shared": true,
-    "phase_origin": "Fixed from FIT anchors only; no test-time offset optimization.",
+    "phase_origin": "Anchor coordinates and origin fixed by mapping manual FIT anchors to the shared training template; no equally spaced k/K assumption or test-time warping.",
+    "T1_control": "Same causal descriptor including the lag difference as T2; no recursive prior. This isolates filtering, not the existence of all temporal information.",
     "primary_metrics": [
       "anchor_circular_MAE_cycles",
       "annotated_stage_interval_accuracy",
@@ -179,7 +181,7 @@
     "detection_deadline_training_period_fraction": 0.2,
     "state_warmup": "Run causally from sequence start; no reset at edit/window onset.",
     "source_mapping_hidden_from_model": true,
-    "AR1": "Ridge next-step predictor on same normal FIT PCA features; ridge from [0.01,0.1,1] using normal validation error.",
+    "AR1": "Ridge predictor across two source frames on same normal FIT PCA features; ridge from [0.01,0.1,1] using normal validation error.",
     "exclusions": "Insufficient prefix/context/window is excluded for every arm; publish counts and reasons.",
     "primary_metrics": [
       "paired_fixed_window_AUROC",

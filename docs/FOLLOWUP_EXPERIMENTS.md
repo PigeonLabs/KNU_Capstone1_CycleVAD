@@ -54,14 +54,14 @@ FIT 영상에서 장면별로 식별 가능한 반복 사건 3–6개를 정의�
 | ID | 방법 | 목적 |
 |---|---|---|
 | T0 | 첫 관측으로 초기화한 위치 + 정상 FIT 중앙 주기의 시계 | 단순 시간 경과 기준선 |
-| T1 | 매 프레임 template likelihood의 원형 평균; 과거 정보 없음 | 시간적 필터링이 필요한가 |
+| T1 | 같은 causal descriptor의 template likelihood 원형 평균; 재귀 prior 없음 | Bayesian 누적 필터링이 필요한가 |
 | T2 | 현재 causal Bayesian filter | 제안된 추적 방식 |
 
-원점 offset은 FIT 주석으로만 고정한다. 시험 영상마다 최적 offset/DTW로 예측을 정답에 사후 정렬하지 않는다. 상태는 영상 시작에서 초기화하고 모든 arm의 초기 구간도 보고한다.
+T1과 T2 모두 현재 구현의 과거 차분 특징을 사용한다. T1은 모든 시간 정보를 제거한 모델이 아니라 재귀적인 위치 분포 누적만 제거한 대조군이다. 원점과 사건별 목표 좌표는 FIT 주석의 사건을 학습 template에 대응시켜 모든 arm에 공통으로 고정한다. 시험 영상마다 최적 offset/DTW로 예측을 정답에 사후 정렬하지 않는다. 상태는 영상 시작에서 초기화하고 모든 arm의 초기 구간도 보고한다.
 
 ### 주지표와 정답의 범위
 
-- 실제 사건 anchor에서 circular absolute error: `min(|pred−target|, 1−|pred−target|)`. anchor k의 좌표는 장면 내 사건 순서 k/K로 정의한다.
+- 실제 사건 anchor에서 circular absolute error: `min(|pred−target|, 1−|pred−target|)`. 각 anchor의 목표 좌표는 FIT template에서 고정한 해당 사건 위치다. 사건을 임의의 등간격 k/K에 배치하지 않는다.
 - anchor 사이에는 정확한 연속 위치를 추측하지 않고, 해당 **단계 구간에 예측이 들어가는 비율**을 보고한다.
 - causal 예측이 해당 anchor를 전진 방향으로 처음 통과한 프레임과 실제 사건 프레임의 차이. 매칭은 사건 순서대로 일대일 수행하고 누락은 별도 보고한다.
 - Confidence 순서로 남긴 25/50/75/100% anchor의 위치 오차(risk–coverage). Confidence를 확률이라고 부르거나 보정 전 ECE를 보고하지 않는다.
@@ -138,7 +138,7 @@ Fold 0은 **12개 학습 모델(3×4장면)**로 36개 조합과 108개 readout 
 | P4 | Appearance + 세 process 점수 | 중심 후보 |
 | P5 | Appearance + AR(1) 특징 전이 오차 | 일반적인 시간 정보보다 cycle 모델이 필요한가 |
 
-AR(1)은 같은 FIT PCA 특징에서 ridge next-step predictor를 학습한다. Ridge 후보는 0.01/0.1/1이고 정상 validation 오차로 고른다. AR(1)도 reference 보정과 별도 정상 threshold를 사용한다.
+AR(1)은 같은 FIT PCA 특징에서 원본 2프레임 간격의 ridge 특징 예측기를 학습한다. Ridge 후보는 0.01/0.1/1이고 정상 validation 오차로 고른다. AR(1)도 reference 보정과 별도 정상 threshold를 사용한다.
 
 ②가 개선되더라도 E9의 주 비교는 **P4 vs P0/P5**로 고정해 ③의 효과를 분리한다. 조건부 외형을 추가한 모델은 보조 비교다. 알려진 정지·역행·생략 유형은 실제 영상 주석에 기반해 따로 평가하며, 편집 실험 성능으로 실제 이상 유형별 성능을 대신하지 않는다.
 
@@ -148,7 +148,7 @@ AR(1)은 같은 FIT PCA 특징에서 ridge next-step predictor를 학습한다. 
 
 ### E9-C: stride의 시간 범위 일치
 
-stride 2/1에서 descriptor lag를 원본 4프레임, progress lag를 원본 [2,8,32]프레임으로 맞춘다. 후보 C-21과 P4/P0/P5 설정을 test 결과에 맞춰 재선택하지 않는다. Backbone cache는 해당 stride에 맞게 검증한다. 표본 밀도에 따른 fitting/calibration 차이는 남으므로 완전히 동일한 모델의 순수 추론 샘플링 효과라고 주장하지 않는다.
+stride 2/1에서 descriptor lag를 원본 4프레임, progress lag를 원본 [2,8,32]프레임, AR(1) 예측 간격을 원본 2프레임으로 맞춘다. 후보 C-21과 P4/P0/P5 설정을 test 결과에 맞춰 재선택하지 않는다. Backbone cache는 해당 stride에 맞게 검증한다. 표본 밀도에 따른 fitting/calibration 차이는 남으므로 완전히 동일한 모델의 순수 추론 샘플링 효과라고 주장하지 않는다.
 
 그림: 유형×강도 heatmap, P4/P5 paired improvement, 속도 stress 경보율, source-frame-matched stride 비교.
 
