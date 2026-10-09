@@ -48,7 +48,7 @@ def main():
     '- DINOv2-base / 336px letterbox / layer -1,-3 / 6×6 patches / FP16 / primary stride 2.\n- Fit, validation, reference, threshold 영상을 분리합니다. 테스트 라벨로 설정·임계값을 고르지 않습니다.\n- 실제 cycle 경계가 없는 `weak_recording_alignment`입니다. Cycle 위치 정확도는 미측정입니다.\n- 원본 recording group 정보가 없어 파일 간 그룹 독립성은 입증하지 못했습니다.\n- 주지표: frame AUROC/AP. 표의 값은 %이며, `AUROC / AP` 순서입니다. Macro는 네 장면의 단순 평균입니다.\n- FPR/Recall/Event coverage는 정상 holdout q99 임계값 기준입니다. 지연은 탐지된 이벤트에 한정한 원본 프레임 수입니다.\n',
     '[구현 방법](docs/METHOD.md) · [전체 사전 실험 규칙](docs/EXPERIMENT_PROTOCOL.md) · [환경 및 패키지 버전](results/E0/environment.json) · [고정 데이터 분할](results/E0/splits.json)\n']
     if (ROOT/'docs/FOLLOWUP_RESULTS.md').exists():
-        followup=(ROOT/'docs/FOLLOWUP_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](FOLLOWUP_EXPERIMENTS.md)', '](docs/FOLLOWUP_EXPERIMENTS.md)')
+        followup=(ROOT/'docs/FOLLOWUP_RESULTS.md').read_text().replace('](../results/', '](results/').replace('](figures/', '](docs/figures/').replace('](FOLLOWUP_EXPERIMENTS.md)', '](docs/FOLLOWUP_EXPERIMENTS.md)').replace('](ANNOTATION_GUIDE.md)', '](docs/ANNOTATION_GUIDE.md)')
         lines.insert(3,followup)
     elif (ROOT/'docs/FOLLOWUP_EXPERIMENTS.md').exists():
         lines.insert(3,'## 후속 실험 계획 — 아직 미실행\n\n[구체적인 E6–E10 실험 명세](docs/FOLLOWUP_EXPERIMENTS.md): 위치 추적 대조군 3개, Confidence 학습·추론 3×3 조합, 진행 이상 대조군 6개를 정의했습니다. 정상 5-fold 분할과 40개 영상의 주석 대상 목록을 고정했으며, 실제 주석과 후속 실험 결과는 아직 없습니다.\n')
