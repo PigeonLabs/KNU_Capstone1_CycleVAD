@@ -110,11 +110,13 @@ def publish(text):
     header='[사전 설계](docs/PAPER_NEXT_EXPERIMENTS_20261009.md) · [고정 설정](configs/experiments/followup/e15bc_v1.json) · [코드 검사](results/paper_calibration_tests.txt)\n\n'
     block=title+header+text
     (ROOT/'docs/PAPER_CALIBRATION_RESULTS.md').write_text(block.replace('](docs/','](').replace('](results/','](../results/').replace('](configs/','](../configs/'))
-    p=ROOT/'README.md';old=p.read_text();start=old.find(title)
+    p=ROOT/'EXPERIMENTS.md';old=p.read_text();start=old.find(title)
     if start>=0:
         end=old.find('\n## ',start+len(title));end=len(old) if end<0 else end
         old=old[:start]+old[end+1:]
     position=old.index('## 최소 구성과 오경보 진단');p.write_text(old[:position]+block+old[position:])
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--include-bc',action='store_true');a=p.parse_args();text=b0()

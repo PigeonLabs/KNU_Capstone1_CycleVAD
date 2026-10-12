@@ -95,7 +95,7 @@ def main():
     else:text+='E9S는 전체 seed·stride 실행과 결과 검증을 진행 중입니다. 완료 수치와 오경보 분석은 다음 단계 커밋으로 공개합니다.\n\n'
     text+='재실행: `PYTHONPATH=src python scripts/run_phase_process.py --stage E8B --resume`, `--stage E9S --resume`, `--stage E9S --stride 1 --seeds 42 --resume`. 이어 `scripts/summarize_phase_process.py --stage E8B` 및 E9S의 각 `--seed`/`--stride`를 실행합니다. 주 E9S는 `--bootstrap`을 붙입니다. `scripts/check_phase_process.py --stage E8B`/`E9S`로 검증하고 `scripts/report_phase_process.py --include-e9`로 문서를 재생성합니다. 특징 추출은 로컬 RTX PRO 6000의 고정 캐시를 재사용했고 새 통계 모델은 CPU에서 학습했습니다.\n\n'
     (ROOT/'docs/PHASE_PROCESS_RESULTS.md').write_text(text.replace('](docs/', '](').replace('](results/', '](../results/'))
-    path=ROOT/'README.md';old=path.read_text();start=old.find('## 위치·진행 검증 E8B / E9S');end=old.index('## 실험 상태')
+    path=ROOT/'EXPERIMENTS.md';old=path.read_text();start=old.find('## 위치·진행 검증 E8B / E9S');end=old.index('## 실험 상태')
     if start<0:start=end
     extra=''
     if (ROOT/'docs/PAPER_STAGE1_RESULTS.md').exists():
@@ -107,4 +107,7 @@ def main():
     path.write_text(old)
     status=read('results/followup_status.json');status.update(E8B='complete',E9S='complete' if a.include_e9 else 'running',E9='synthetic_complete_real_annotations_required' if a.include_e9 else 'synthetic_running');(ROOT/'results/followup_status.json').write_text(json.dumps(status,indent=2)+'\n')
     print('Reports and figures generated:', 'E8B + E9S' if a.include_e9 else 'E8B')
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
+
 if __name__=='__main__':main()

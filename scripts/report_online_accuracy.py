@@ -91,15 +91,18 @@ def main():
             'MPLCONFIGDIR=/tmp/cyclevad-mpl PYTHONPATH=src python scripts/report_online_accuracy.py','```','']
     doc='\n'.join(lines)+'\n';(ROOT/'docs/ONLINE_ACCURACY_RESULTS.md').write_text(doc)
     fragment=doc.replace('](../results/','](results/').replace('](../configs/','](configs/').replace('](../scripts/','](scripts/').replace('](figures/','](docs/figures/')
-    path=ROOT/'README.md';text=path.read_text();start=text.find('## 온라인 탐지 정확도 — E17 완료');anchor='## 온라인 스트리밍'
+    path=ROOT/'EXPERIMENTS.md';text=path.read_text();start=text.find('## 온라인 탐지 정확도 — E17 완료');anchor='## 온라인 스트리밍'
     # Locate E16 by its actual heading; insert immediately before it.
     heading=next(x for x in text.splitlines() if x.startswith('## ') and 'E16' in x)
     if start>=0:text=text[:start]+text[text.index(heading,start):]
     text=text.replace(heading,fragment+'\n'+heading,1);path.write_text(text)
-    for path in [ROOT/'docs/STREAMING_RESULTS.md',ROOT/'README.md']:
+    for path in [ROOT/'docs/STREAMING_RESULTS.md',ROOT/'EXPERIMENTS.md']:
         text=path.read_text().replace('Stride 1의 이상 탐지 정확도·임계값 보정은 재검증하지 않았습니다.', 'E16에서는 Stride 1 정확도를 미평가했으며, 후속 E17에서 전체 영상의 온라인 AUROC/AP를 평가했습니다. 임계값 재보정은 하지 않았습니다.')
         path.write_text(text)
     path=ROOT/'results/followup_status.json';status=read(path);status['E17']='complete_full_historical_causal_accuracy_frozen_seed42';write_json(path,status)
     print(json.dumps({'macro':macro,'CP_contrasts':{k:v['CP'] for k,v in bootstrap.items()},'parity':summary['parity']},indent=2))
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
+
 if __name__=='__main__':
     with threadpool_limits(limits=4):main()

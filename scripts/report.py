@@ -1,4 +1,4 @@
-"""Rebuild README and static research figures from completed-stage evidence."""
+"""Rebuild the detailed experiment log and static research figures from completed-stage evidence."""
 import json
 from pathlib import Path
 import numpy as np
@@ -136,7 +136,9 @@ def main():
         env=read('results/E5/environment.json')
         lines+=[f"E5 PyTorch allocator peak: allocated {env['peak_allocated_bytes']/2**30:.3f} GiB, reserved {env['peak_reserved_bytes']/2**30:.3f} GiB. 드라이버와 다른 프로세스 메모리는 포함하지 않습니다.\n"]
     lines+=['## 재현\n','```bash\npython3 -m venv .venv\n.venv/bin/pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128\n.venv/bin/pip install -r requirements-local.txt\nexport PYTHONPATH=src\nexport HF_HOME="$PWD/.cache/huggingface"\nexport MPLCONFIGDIR="$PWD/.cache/matplotlib"\nexport OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4\n.venv/bin/python scripts/audit.py --data-root /path/to/IPAD_dataset\n.venv/bin/python -m pytest -q\n# E1 → E2 → E3 → E4 → E5 순서로 실행\n.venv/bin/python scripts/run_stage.py --stage E1 --config configs/experiments/replay_pinned.json --data-root /path/to/IPAD_dataset\n.venv/bin/python scripts/report.py\n```\n','사전학습 checkpoint revision은 [고정 재현 설정](configs/experiments/replay_pinned.json)에 기록했습니다. 실제 실행 환경은 [lock 파일](results/E0/requirements-lock.txt)을 참고하세요. E0 완료 표시는 검사·테스트 통과 후 기록합니다. 원본 프레임, 특징 캐시, 모델 체크포인트는 Git에 포함하지 않습니다. 각 단계의 JSON/CSV, 설정, 코드 fingerprint와 그래프를 공개합니다. [최종 22개 테스트](results/final_tests.txt)와 [결과 정합성 검사](results/final_validation.txt)도 확인할 수 있습니다.\n','## 한계\n','실제 cycle 경계, 원본 recording 그룹, pixel localization GT가 없는 상태입니다. R02 라벨 불일치 영상은 제외했고 알려진 이상 유형별 주석이 없어 정지/역행/생략별 실데이터 탐지 성능을 별도로 주장하지 않습니다. 테스트 비교 결과로 최적 모델을 자동 선택하지 않습니다.\n']
-    (ROOT/'README.md').write_text('\n'.join(lines),encoding='utf-8')
-    print('README and figures regenerated for:',', '.join(status))
+    (ROOT/'EXPERIMENTS.md').write_text('\n'.join(lines),encoding='utf-8')
+    print('EXPERIMENTS.md and figures regenerated for:',', '.join(status))
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
 
 if __name__=='__main__': main()

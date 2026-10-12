@@ -89,10 +89,13 @@ def main():
     if (ROOT/'results/E17/summary.json').exists():
         text=text.replace('Stride 1의 이상 탐지 정확도·임계값 보정은 재검증하지 않았습니다.', 'E16에서는 Stride 1 정확도를 미평가했으며, 후속 E17에서 전체 영상의 온라인 AUROC/AP를 평가했습니다. 임계값 재보정은 하지 않았습니다.')
     (ROOT/'docs/STREAMING_RESULTS.md').write_text(text.replace('](docs/','](').replace('](configs/','](../configs/').replace('](results/','](../results/'))
-    p=ROOT/'README.md';old=p.read_text();title='## 실제 입력 스트리밍 성능 E16';start=old.find(title)
+    p=ROOT/'EXPERIMENTS.md';old=p.read_text();title='## 실제 입력 스트리밍 성능 E16';start=old.find(title)
     if start>=0:
         end=old.index('## 보정과 경보 결합',start);old=old[:start]+old[end:]
     position=old.index('## 보정과 경보 결합');p.write_text(old[:position]+text+old[position:])
     status=read(ROOT/'results/followup_status.json');status['E16']='jpeg_streaming_complete_camera_codec_pipeline_not_measured';write_json(ROOT/'results/followup_status.json',status)
     print(json.dumps(rows,indent=2));print('Validated E16: 12 throughput + 4 paced + 2 actual-feature parity runs.')
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
+
 if __name__=='__main__':main()

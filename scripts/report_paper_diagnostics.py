@@ -94,7 +94,10 @@ def main():
     else:text+='E15A는 결과 검증·집계 중입니다.\n\n'
     text+='로컬 RTX PRO 6000의 고정 CUDA 특징을 재사용했고 통계 점수 재계산은 CPU에서 수행했습니다. 이 단계에는 학습·보정 변경이 없습니다. E15B/C의 후속 결과는 [최신 보정 실험](docs/PAPER_CALIBRATION_RESULTS.md)을 참고하세요. E13B, E14B, E12B, E7B 독립 주석, 외부 baseline, 카메라·코덱까지 포함한 streaming 및 독립 촬영 검증은 미완료입니다.\n\n'
     doc=text.replace('](docs/','](').replace('](results/','](../results/').replace('](configs/','](../configs/');(ROOT/'docs/PAPER_DIAGNOSTICS_RESULTS.md').write_text(doc)
-    p=ROOT/'README.md';old=p.read_text();end=old.index('## 실험 상태');start=old.find('## 최소 구성과 오경보 진단 E11B·E15A');start=end if start<0 else start;p.write_text(old[:start]+text+old[end:])
+    p=ROOT/'EXPERIMENTS.md';old=p.read_text();end=old.index('## 실험 상태');start=old.find('## 최소 구성과 오경보 진단 E11B·E15A');start=end if start<0 else start;p.write_text(old[:start]+text+old[end:])
     status=read('results/followup_status.json');status['E11B']='complete';status['E15A']='complete' if a.include_e15a else 'analysis_in_progress';status['E15']=status.get('E15') if (ROOT/'results/E15BC/validation.txt').exists() else ('diagnosis_complete_calibration_pending' if a.include_e15a else 'diagnosis_in_progress');(ROOT/'results/followup_status.json').write_text(json.dumps(status,indent=2)+'\n')
     print('Reported E11B'+(' + E15A' if a.include_e15a else ''))
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
+
 if __name__=='__main__':main()

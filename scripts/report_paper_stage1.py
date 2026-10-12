@@ -90,11 +90,14 @@ def main():
     text+='미완료 후속 항목: E7 실제 위치·유형 주석, E13 시간 모델·정지 보완, E15 보정 개선, 새로운 E14 대응 편집·회복 검증, 개선 후 최종 E11, 외부 baseline, E10 독립 촬영, end-to-end 온라인 지연. 이 단계의 historical/합성 결과는 탐색적 근거이며 이 항목들을 대신하지 않습니다.\n\n'
     doc=text.replace('](docs/','](').replace('](results/','](../results/').replace('](configs/','](../configs/')
     (ROOT/'docs/PAPER_STAGE1_RESULTS.md').write_text(doc)
-    path=ROOT/'README.md';old=path.read_text();end=old.index('## 실험 상태');start=old.find('## 논문 통합 실험 E11·E12·E14');start=end if start<0 else start
+    path=ROOT/'EXPERIMENTS.md';old=path.read_text();end=old.index('## 실험 상태');start=old.find('## 논문 통합 실험 E11·E12·E14');start=end if start<0 else start
     path.write_text(old[:start]+text+diagnostics_fragment(ROOT)+old[end:])
     status=read('results/followup_status.json')
     for stage in a.stages:status[stage]='boundary_analysis_complete_controls_pending' if stage=='E14' else 'complete'
     for stage in ['E11','E12','E13','E15']:status.setdefault(stage,'planned_not_run')
     (ROOT/'results/followup_status.json').write_text(json.dumps(status,indent=2)+'\n')
     print('Published report sections:',a.stages)
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
+
 if __name__=='__main__':main()

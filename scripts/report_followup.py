@@ -1,4 +1,4 @@
-"""Evidence-driven follow-up README section and static research plots."""
+"""Evidence-driven follow-up experiment-log section and static research plots."""
 import argparse
 import json
 from pathlib import Path
@@ -192,7 +192,7 @@ def main():
     if (ROOT/'docs/PHASE_PROCESS_EXPERIMENTS.md').exists():
         text+='### 다음 실험 계획\n\n[위치별 정상 기준과 진행 이상 검증 계획](docs/PHASE_PROCESS_EXPERIMENTS.md)을 고정했습니다. E8B는 위치 조건 5개 비교군, E9S는 진행 점수 10개 비교군을 사용합니다. 편집 후보 3,996개 중 3,910개가 길이 검사를 통과했습니다. 실행 상태와 완료 수치는 아래 E8B / E9S 절을 따릅니다.\n\n'
     (ROOT/'docs/FOLLOWUP_RESULTS.md').write_text(text.replace('](docs/', '](').replace('](results/', '](../results/'))
-    path=ROOT/'README.md';old=path.read_text()
+    path=ROOT/'EXPERIMENTS.md';old=path.read_text()
     start=old.index('## 후속 실험');end=old.index('## 실험 상태',start)
     extra=''
     if (ROOT/'docs/PHASE_PROCESS_RESULTS.md').exists():
@@ -206,5 +206,7 @@ def main():
         'E8':('complete' if robust else 'seed42_complete_robustness_pending') if args.complete_e8 else 'running',
         'E8B':prior_status.get('E8B','planned_not_run'),'E9':prior_status.get('E9','synthetic_stage_planned_not_run'),'E9S':prior_status.get('E9S','planned_not_run'),
         'E9R':'independent_process_annotations_required','E10':'new_independent_recordings_required'})
+    from report_fragments import sync_readme_results
+    sync_readme_results(ROOT)
 
 if __name__=='__main__':main()
