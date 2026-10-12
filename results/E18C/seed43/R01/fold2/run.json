@@ -1,0 +1,184 @@
+{
+  "status": "complete",
+  "seed": 43,
+  "scene": "R01",
+  "fold": 2,
+  "T": 230.0,
+  "D": 46,
+  "W": 92,
+  "splits": {
+    "validation": [
+      "R01/training/11",
+      "R01/training/06",
+      "R01/training/04",
+      "R01/training/09"
+    ],
+    "reference": [
+      "R01/training/02",
+      "R01/training/30",
+      "R01/training/27",
+      "R01/training/12"
+    ],
+    "threshold": [
+      "R01/training/18",
+      "R01/training/07",
+      "R01/training/23",
+      "R01/training/13"
+    ],
+    "fit": [
+      "R01/training/20",
+      "R01/training/26",
+      "R01/training/16",
+      "R01/training/28",
+      "R01/training/21",
+      "R01/training/15",
+      "R01/training/33",
+      "R01/training/32",
+      "R01/training/14",
+      "R01/training/19",
+      "R01/training/05",
+      "R01/training/17",
+      "R01/training/01",
+      "R01/training/34",
+      "R01/training/08"
+    ],
+    "normal_evaluation": [
+      "R01/training/29",
+      "R01/training/10",
+      "R01/training/25",
+      "R01/training/22",
+      "R01/training/31",
+      "R01/training/24",
+      "R01/training/03"
+    ]
+  },
+  "config_sha256": "27253c111f9ecdce9006eba0e6d024b01b82821c1366e3b6f7f8fe48b73c4f88",
+  "stall_sha256": "0d10dbb6268fcd14fd6549f9255f2afde742e33de3d3e5285b7763bb4e7711ed",
+  "baseline_sha256": "3c48ea25dc76ef0faa1d07d5df538e89426c1445ffe8839e713441cf60a3073c",
+  "coverage": {
+    "S2": [
+      {
+        "bin": 0,
+        "sources": 15,
+        "observations": 376,
+        "local_used": true
+      },
+      {
+        "bin": 1,
+        "sources": 15,
+        "observations": 431,
+        "local_used": true
+      },
+      {
+        "bin": 2,
+        "sources": 15,
+        "observations": 436,
+        "local_used": true
+      },
+      {
+        "bin": 3,
+        "sources": 15,
+        "observations": 425,
+        "local_used": true
+      }
+    ],
+    "S3": [
+      {
+        "bin": 0,
+        "sources": 15,
+        "observations": 376,
+        "local_used": true
+      },
+      {
+        "bin": 1,
+        "sources": 15,
+        "observations": 431,
+        "local_used": true
+      },
+      {
+        "bin": 2,
+        "sources": 15,
+        "observations": 436,
+        "local_used": true
+      },
+      {
+        "bin": 3,
+        "sources": 15,
+        "observations": 425,
+        "local_used": true
+      }
+    ]
+  },
+  "gate": 0.0030934578053659623,
+  "k": {
+    "S0": 0.0,
+    "S1": 1.0835801298035324,
+    "S2": 1.0442043953615916,
+    "S3": 1.0442043953615916
+  },
+  "wall_seconds": 0.43163041200023144,
+  "arms": [
+    "C0",
+    "C1",
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "B0_T110",
+    "B0_T130",
+    "B1_T110",
+    "B1_T130",
+    "Full",
+    "P"
+  ],
+  "thresholds": [
+    [
+      4.174387269895637,
+      6.355359955601972,
+      5.021685130282841,
+      6.355359955601972,
+      8.898437868318581,
+      3.63539076916295
+    ],
+    [
+      5.021685130282841,
+      6.355359955601972,
+      5.021685130282841,
+      7.3414980642906595,
+      8.898437868318581,
+      3.923072841614731
+    ],
+    [
+      5.021685130282841,
+      7.3414980642906595,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748
+    ],
+    [
+      5.021685130282841,
+      7.3414980642906595,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748
+    ],
+    [
+      5.021685130282841,
+      7.3414980642906595,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748,
+      9.488489586142748
+    ]
+  ],
+  "reference_low": [
+    0.3827180717859079,
+    0.6377620414088614,
+    0.7976474742247732,
+    0.829521008615403,
+    0.8207284951063545,
+    0.6759041743944436
+  ]
+}

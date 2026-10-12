@@ -21,7 +21,7 @@
   "E16": "jpeg_streaming_complete_camera_codec_pipeline_not_measured",
   "E17": "complete_full_historical_causal_accuracy_frozen_seed42",
   "E18A": "complete",
-  "E18B": "in_progress",
-  "E18C": "in_progress",
+  "E18B": "complete_mixed_actual_test_effect",
+  "E18C": "complete_false_alarm_recall_tradeoff",
   "E18D": "pending"
 }

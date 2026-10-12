@@ -1,0 +1,175 @@
+{
+  "status": "complete",
+  "seed": 43,
+  "scene": "R04",
+  "fold": 3,
+  "T": 408.0,
+  "D": 82,
+  "W": 163,
+  "splits": {
+    "validation": [
+      "R04/training/07",
+      "R04/training/03",
+      "R04/training/17"
+    ],
+    "reference": [
+      "R04/training/24",
+      "R04/training/13",
+      "R04/training/20"
+    ],
+    "threshold": [
+      "R04/training/06",
+      "R04/training/11",
+      "R04/training/16"
+    ],
+    "fit": [
+      "R04/training/19",
+      "R04/training/04",
+      "R04/training/15",
+      "R04/training/09",
+      "R04/training/18",
+      "R04/training/02",
+      "R04/training/25",
+      "R04/training/01",
+      "R04/training/05",
+      "R04/training/08",
+      "R04/training/14"
+    ],
+    "normal_evaluation": [
+      "R04/training/22",
+      "R04/training/12",
+      "R04/training/21",
+      "R04/training/23",
+      "R04/training/10"
+    ]
+  },
+  "config_sha256": "27253c111f9ecdce9006eba0e6d024b01b82821c1366e3b6f7f8fe48b73c4f88",
+  "stall_sha256": "51143b8a9c147ced25a45e764e231fbc633b77d4ce9bac04d7d950fdd43096fe",
+  "baseline_sha256": "8ecd93f5890fedab91966306d7503f3ee21842537aede1839123076458832e55",
+  "coverage": {
+    "S2": [
+      {
+        "bin": 0,
+        "sources": 11,
+        "observations": 504,
+        "local_used": true
+      },
+      {
+        "bin": 1,
+        "sources": 11,
+        "observations": 534,
+        "local_used": true
+      },
+      {
+        "bin": 2,
+        "sources": 11,
+        "observations": 464,
+        "local_used": true
+      },
+      {
+        "bin": 3,
+        "sources": 11,
+        "observations": 591,
+        "local_used": true
+      }
+    ],
+    "S3": [
+      {
+        "bin": 0,
+        "sources": 11,
+        "observations": 504,
+        "local_used": true
+      },
+      {
+        "bin": 1,
+        "sources": 11,
+        "observations": 538,
+        "local_used": true
+      },
+      {
+        "bin": 2,
+        "sources": 11,
+        "observations": 464,
+        "local_used": true
+      },
+      {
+        "bin": 3,
+        "sources": 11,
+        "observations": 587,
+        "local_used": true
+      }
+    ]
+  },
+  "gate": 0.0027548801831025482,
+  "k": {
+    "S0": 0.0,
+    "S1": 1.6118676549831323,
+    "S2": 1.6009319810318945,
+    "S3": 1.6162319202961233
+  },
+  "wall_seconds": 0.45530638901982456,
+  "arms": [
+    "C0",
+    "C1",
+    "B0",
+    "B1",
+    "B2",
+    "B3",
+    "B0_T110",
+    "B0_T130",
+    "B1_T110",
+    "B1_T130",
+    "Full",
+    "P"
+  ],
+  "thresholds": [
+    [
+      5.260961580004268,
+      5.260961580004268,
+      8.948652535199434,
+      8.948652535199434,
+      8.948652535199434,
+      8.948652535199434
+    ],
+    [
+      5.260961580004268,
+      5.260961580004268,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363
+    ],
+    [
+      5.260961580004268,
+      5.260961580004268,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363
+    ],
+    [
+      5.260961580004268,
+      5.260961580004268,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363
+    ],
+    [
+      5.260961580004268,
+      5.260961580004268,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363,
+      9.319828304254363
+    ]
+  ],
+  "reference_low": [
+    0.05787106339925199,
+    0.21003776699390053,
+    0.5619975147298155,
+    0.6036359860785322,
+    0.7265715760772236,
+    0.5619975147298155
+  ]
+}
