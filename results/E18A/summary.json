@@ -1,0 +1,4842 @@
+{
+  "status": "complete",
+  "config_sha256": "27253c111f9ecdce9006eba0e6d024b01b82821c1366e3b6f7f8fe48b73c4f88",
+  "units": [
+    {
+      "seed": 42,
+      "scene": "R01",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/19": 7,
+        "R01/training/22": 7,
+        "R01/training/03": 6,
+        "R01/training/30": 7
+      },
+      "checkpoint_sha256": "f24d8bbb99ef99f6a305b91fe038ba2ff7a144e797684b0158cda95682f11135",
+      "baseline_sha256": "abd8f829e0d34fda0be2fdc1ef72172b68430db9ac4e346c4996c83af0177ddc"
+    },
+    {
+      "seed": 42,
+      "scene": "R01",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/22": 7,
+        "R01/training/08": 7,
+        "R01/training/06": 7,
+        "R01/training/24": 7
+      },
+      "checkpoint_sha256": "2187983443d1bef9dd7b80a8e8ceb0f7ee985f9b112b59e0ccf56541b6c902d1",
+      "baseline_sha256": "8e02d8d8aa0e44fdee25937430053a95208207d564e61ad8af15a43ce33b7a48"
+    },
+    {
+      "seed": 42,
+      "scene": "R01",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/18": 7,
+        "R01/training/07": 7,
+        "R01/training/23": 7,
+        "R01/training/13": 7
+      },
+      "checkpoint_sha256": "c0715c53dc20c29712a14d860dca71267525d1d6a8a72e606e0ab1b86d61b4db",
+      "baseline_sha256": "5835c466fcb7da43e4d5597a536dde7b6efd97d2e737d9718e0a160431f94f82"
+    },
+    {
+      "seed": 42,
+      "scene": "R01",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/25": 7,
+        "R01/training/15": 7,
+        "R01/training/18": 7,
+        "R01/training/08": 7
+      },
+      "checkpoint_sha256": "0b415c1e7466da4e2ad95daf7b3ba04ed698316d5da7af6d79825a5bdbc97e1e",
+      "baseline_sha256": "78f12a984070b99bbbac3b80fb6ad513e8817306d7eb10deb2b66c649e3efbc0"
+    },
+    {
+      "seed": 42,
+      "scene": "R01",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/29": 7,
+        "R01/training/06": 7,
+        "R01/training/28": 7,
+        "R01/training/23": 7
+      },
+      "checkpoint_sha256": "5e44f3b8e106d04713233a038f2c5c1b83ed6cdcdd139b7a8570eb822fa9b60d",
+      "baseline_sha256": "560247997bace5108a18979172fca9079fa0204d3157326d903ad0bc77be62f5"
+    },
+    {
+      "seed": 42,
+      "scene": "R02",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/18": 8,
+        "R02/training/25": 8,
+        "R02/training/10": 8,
+        "R02/training/28": 8
+      },
+      "checkpoint_sha256": "95d3253ebf96520cff7cbac850adb6167a77b761679b2725c4e35cf23e1dabea",
+      "baseline_sha256": "74671373992fe6141a47d709ceb67899d9c154a742cf37b8546d9f3edb840ede"
+    },
+    {
+      "seed": 42,
+      "scene": "R02",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/19": 8,
+        "R02/training/10": 8,
+        "R02/training/02": 8,
+        "R02/training/24": 8
+      },
+      "checkpoint_sha256": "07971424a60e4d36fd5a73c7e1065957f5ef49990ff227a41787b7f52fca9952",
+      "baseline_sha256": "cb207e69ab2dc0f3c8a4fcbe414eccef9e1886743f7cbe316072925735814822"
+    },
+    {
+      "seed": 42,
+      "scene": "R02",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/06": 8,
+        "R02/training/01": 9,
+        "R02/training/26": 8,
+        "R02/training/04": 8
+      },
+      "checkpoint_sha256": "d4355a869bdb85d675dcdfaf85bf853a1849c17aa3726b9c38d05938ffa0db97",
+      "baseline_sha256": "869b1e3fbc43326bd8c16c0bc239ec6c5b182314c97c833369aca0b79b699d7f"
+    },
+    {
+      "seed": 42,
+      "scene": "R02",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/23": 8,
+        "R02/training/02": 8,
+        "R02/training/22": 8,
+        "R02/training/10": 8
+      },
+      "checkpoint_sha256": "ccd92f78293ff7c31ef0a94aadc05ab59fddc7116b9bd1b3696a5eb6ef30e232",
+      "baseline_sha256": "ff8df82f1be0d46665d25d5a786ece110d1723185615c42c6eee42df31a18a72"
+    },
+    {
+      "seed": 42,
+      "scene": "R02",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/01": 9,
+        "R02/training/17": 8,
+        "R02/training/02": 8,
+        "R02/training/14": 8
+      },
+      "checkpoint_sha256": "58ab66ad18453affebd1fe6baec2160fafb7172e2f07118a71b4bcc8fe8e2aa7",
+      "baseline_sha256": "263d8b6a11b20499add85ca90358f077b8fab2d5983917741b5502fe33df3ad8"
+    },
+    {
+      "seed": 42,
+      "scene": "R03",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/12": 9,
+        "R03/training/11": 8,
+        "R03/training/20": 8
+      },
+      "checkpoint_sha256": "f5a8da38a5f041de390ecc762093c908ca77e802eb4f414353bfa139e2882c7b",
+      "baseline_sha256": "db31dff796649bbbe011c340fcfb33756e469e7c25b2107397fddc4b80669c0b"
+    },
+    {
+      "seed": 42,
+      "scene": "R03",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/05": 8,
+        "R03/training/06": 8,
+        "R03/training/15": 8
+      },
+      "checkpoint_sha256": "77bf1214bfc15e5ccb3087d8c2ff5372ca3cc5e8f140e4d3e24f57c5b216c5d7",
+      "baseline_sha256": "885283664f6d334f794f5d230017b9981938b89ec2497242eedd8681b4c2038e"
+    },
+    {
+      "seed": 42,
+      "scene": "R03",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/09": 9,
+        "R03/training/11": 8,
+        "R03/training/07": 8
+      },
+      "checkpoint_sha256": "f9ec55cb77a482e0ab26c8ca27feb085475448c6bca6f2cb6455e72d02ba3a2c",
+      "baseline_sha256": "c9c5e8d75d5047f70b11732db36cb30d368997d49dfa916c001537500450e928"
+    },
+    {
+      "seed": 42,
+      "scene": "R03",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/17": 8,
+        "R03/training/18": 8,
+        "R03/training/09": 9
+      },
+      "checkpoint_sha256": "6c7e45703ecc63a5640b76f2ad82570d711c7a9b7067c2cc1b469f4e9b661fd7",
+      "baseline_sha256": "9d5380fe7dd37744bf8a65144bea602edeccc2e95315123b85ed0268db7650cf"
+    },
+    {
+      "seed": 42,
+      "scene": "R03",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/20": 8,
+        "R03/training/09": 9,
+        "R03/training/11": 8
+      },
+      "checkpoint_sha256": "721fe87096dbcf263704a5d25bdc22fe0c38a8f330dc82cdde17f5e39aea8ab4",
+      "baseline_sha256": "2feda7f858c9c89ba97960a27f9f306e163523ced290989a87aedb21d9304de4"
+    },
+    {
+      "seed": 42,
+      "scene": "R04",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/16": 7,
+        "R04/training/10": 7,
+        "R04/training/24": 7
+      },
+      "checkpoint_sha256": "41f909353f17334963006478cf9b92f5be4aeb58f68de13ad7172122468ab819",
+      "baseline_sha256": "f8760121fafed51d4994158b02806c16368c55bc07851b57e12a8ca03137a0da"
+    },
+    {
+      "seed": 42,
+      "scene": "R04",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/12": 7,
+        "R04/training/17": 7,
+        "R04/training/02": 8
+      },
+      "checkpoint_sha256": "fcfb0d7406ee8c74e9a2fc2847629c6909bfeb288cc2801657f530cd97a639f5",
+      "baseline_sha256": "9db71e7bfc5ab14c21df6b2a15541d589917c88b8e109185555199d9eae4668d"
+    },
+    {
+      "seed": 42,
+      "scene": "R04",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/24": 7,
+        "R04/training/22": 8
+      },
+      "checkpoint_sha256": "5c9d007d431b5558cad5c3d855239ac958b337210f21ff722a9d4cdc381578b1",
+      "baseline_sha256": "31acf8cbbdec8579da9d091d61082028f2ced1061139b76e0567f5548ec5dc08"
+    },
+    {
+      "seed": 42,
+      "scene": "R04",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/11": 6,
+        "R04/training/16": 7
+      },
+      "checkpoint_sha256": "c23cb2c3a75c5c9caad7de9fbff00ddde1328e9fc446618d697debe72418f0c8",
+      "baseline_sha256": "331571f3cfa4105e1ba28f2c4fd4b9117ed56aee69209e8e232c075a90ced441"
+    },
+    {
+      "seed": 42,
+      "scene": "R04",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/19": 7,
+        "R04/training/13": 7,
+        "R04/training/20": 8
+      },
+      "checkpoint_sha256": "3c3bb9fdfdf60b8bf4a64b7f47c06e83943848e28298bb349a9bd1d9dafb14a5",
+      "baseline_sha256": "2cce6b1087601243425ef19eb3b56ff86ee9ed06382a6b1fe50c59f5ce989b06"
+    },
+    {
+      "seed": 43,
+      "scene": "R01",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/19": 7,
+        "R01/training/22": 7,
+        "R01/training/03": 6,
+        "R01/training/30": 7
+      },
+      "checkpoint_sha256": "871a5b7f4b3e1a14577344473b7ebf03d29716243597aa6d43dc35f00dd4cc57",
+      "baseline_sha256": "4da9657908947ba8370e8c1fe56532ccc5c3d1e0eda68fefafb7b1011c582ad8"
+    },
+    {
+      "seed": 43,
+      "scene": "R01",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/22": 7,
+        "R01/training/08": 7,
+        "R01/training/06": 7,
+        "R01/training/24": 7
+      },
+      "checkpoint_sha256": "491c8c15bddb8cf4f5cfe178a0b3477df86af8faddeaecde3b680f0888e125f1",
+      "baseline_sha256": "9d1e04156d0b929b7ec760e2a71c8e4958eacee754a80028b226534bfa420aa7"
+    },
+    {
+      "seed": 43,
+      "scene": "R01",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/18": 7,
+        "R01/training/07": 7,
+        "R01/training/23": 7,
+        "R01/training/13": 7
+      },
+      "checkpoint_sha256": "88e52f1c558fc3e3e081d5de0b8693e6ebc38bd334e99f3713ee84e9f8935aa0",
+      "baseline_sha256": "3c48ea25dc76ef0faa1d07d5df538e89426c1445ffe8839e713441cf60a3073c"
+    },
+    {
+      "seed": 43,
+      "scene": "R01",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/25": 7,
+        "R01/training/15": 7,
+        "R01/training/18": 7,
+        "R01/training/08": 7
+      },
+      "checkpoint_sha256": "f9b7821f737914fd4067512b0c58c466d379de7cea0185598222b978d6b8bc38",
+      "baseline_sha256": "d2422d85ed6dfc451804112c8e525584d22c605b50c982f103f5557a50358064"
+    },
+    {
+      "seed": 43,
+      "scene": "R01",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/29": 7,
+        "R01/training/06": 7,
+        "R01/training/28": 7,
+        "R01/training/23": 7
+      },
+      "checkpoint_sha256": "7c7bfe3b95b16a3932ff507e2643e23a7b18a329380330147f42c151f6ffe005",
+      "baseline_sha256": "4f308bfc02102bf624bcf740395094525e094231170e03c2da595d905f124038"
+    },
+    {
+      "seed": 43,
+      "scene": "R02",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/18": 8,
+        "R02/training/25": 8,
+        "R02/training/10": 8,
+        "R02/training/28": 8
+      },
+      "checkpoint_sha256": "c0df7ad67c0528ade0a1079b210832d45b95716a77139c0070ffece67a92f136",
+      "baseline_sha256": "da871479a313d4563be4f35a989340961477e1040095b8212120b56f44bc06a7"
+    },
+    {
+      "seed": 43,
+      "scene": "R02",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/19": 8,
+        "R02/training/10": 8,
+        "R02/training/02": 8,
+        "R02/training/24": 8
+      },
+      "checkpoint_sha256": "bd2ffffb8713c28cad6f6ba3dfbf17ba3b22001f59285fd9a6b0fb59ffa83746",
+      "baseline_sha256": "b14a8b37fd418945a3da7e75ad15c092eb08ed8f33c7b1934a9ea60173e64639"
+    },
+    {
+      "seed": 43,
+      "scene": "R02",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/06": 8,
+        "R02/training/01": 9,
+        "R02/training/26": 8,
+        "R02/training/04": 8
+      },
+      "checkpoint_sha256": "fdb4384f04f060ef6c70ce70b9bbfc15a35779c7e818cae63d29342d377e6adf",
+      "baseline_sha256": "1c5debb8b6fb64f7b3e6c28aa4f1754d736334f90dc7fc2d7af070cc1a90ff3f"
+    },
+    {
+      "seed": 43,
+      "scene": "R02",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/23": 8,
+        "R02/training/02": 8,
+        "R02/training/22": 8,
+        "R02/training/10": 8
+      },
+      "checkpoint_sha256": "c8b593ca8c7f95485a32a8c1ac7662d8f4a29e0ae39da9b003f23ec0a6e9ec8c",
+      "baseline_sha256": "d6bec5bdb2924e92a1f84a784415fb2204a191e59b9d17a6000dfdc9c252816b"
+    },
+    {
+      "seed": 43,
+      "scene": "R02",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/01": 9,
+        "R02/training/17": 8,
+        "R02/training/02": 8,
+        "R02/training/14": 8
+      },
+      "checkpoint_sha256": "1c81e4141f948c543ba996be1c287d25fb1dcb066e811f0d02eaaef9ffad3d77",
+      "baseline_sha256": "c1106c3ca38649ecef33c0f2d766fdcb5d450e0359d3f353efd22d62c5898161"
+    },
+    {
+      "seed": 43,
+      "scene": "R03",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/12": 9,
+        "R03/training/11": 8,
+        "R03/training/20": 8
+      },
+      "checkpoint_sha256": "3b978928e9a73f9bae21b74e7c110b3c43a4277a8f43a2578367cd7c2c2779bc",
+      "baseline_sha256": "4de7a257c4b383828af6cab20db867eaab63870410c6ad4da5a5b7f1ee19b91d"
+    },
+    {
+      "seed": 43,
+      "scene": "R03",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/05": 8,
+        "R03/training/06": 8,
+        "R03/training/15": 8
+      },
+      "checkpoint_sha256": "e18d3fa3db724c1b5a6d09c938fb10a251701896e04271f247b1a9fd77e8def4",
+      "baseline_sha256": "7ecef54dd77b60cd22d842f157e0993a4b323727f693b2778171266f10d1e1ff"
+    },
+    {
+      "seed": 43,
+      "scene": "R03",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/09": 9,
+        "R03/training/11": 8,
+        "R03/training/07": 8
+      },
+      "checkpoint_sha256": "87d2c7e6c24f5068a7b95f05788d974d6dc3553cf1315372f86df8cd9166fd32",
+      "baseline_sha256": "d63609ad156c7599c008b57754a1181f434fac8627d65046080391fb8cc5200f"
+    },
+    {
+      "seed": 43,
+      "scene": "R03",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/17": 8,
+        "R03/training/18": 8,
+        "R03/training/09": 9
+      },
+      "checkpoint_sha256": "44a2380cadb7132fa5326d0092ed2d233b4e61462349496be7f4ed138b82d8d1",
+      "baseline_sha256": "2fd81913d7467b61bbd1530a144de39cb4c5118fd6cca947bd7dcaed873eb18d"
+    },
+    {
+      "seed": 43,
+      "scene": "R03",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/20": 8,
+        "R03/training/09": 9,
+        "R03/training/11": 8
+      },
+      "checkpoint_sha256": "0e1addf47530fc1c9fbe509959db9a1fbbafdf1801043dec51545b3bee223637",
+      "baseline_sha256": "e39f4b356aa2868d3e73d87d21592f921529d2c2e02e095ca8d42e90d53bc749"
+    },
+    {
+      "seed": 43,
+      "scene": "R04",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/16": 7,
+        "R04/training/10": 7,
+        "R04/training/24": 7
+      },
+      "checkpoint_sha256": "123e3e36ef412aea8e814bf09b42616acf56fbcfa872acfeddd487f8582f39a0",
+      "baseline_sha256": "54c981c0744d9d4ececf510aa990ebebe4cf1ea06d0e67db01b8796a34371d81"
+    },
+    {
+      "seed": 43,
+      "scene": "R04",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/12": 7,
+        "R04/training/17": 7,
+        "R04/training/02": 8
+      },
+      "checkpoint_sha256": "d4775a3d7c232cb08ce1f3e3de23a7ab4bae4d18ecb0e9764762ab9d19b01fcd",
+      "baseline_sha256": "382e0edeae2e767a07eb0e3871acc440d653204c59093041ed02b6f466dc5ea2"
+    },
+    {
+      "seed": 43,
+      "scene": "R04",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/24": 7,
+        "R04/training/22": 8
+      },
+      "checkpoint_sha256": "5f199b4536b4a5603067af0d269a3a8e34cb99f20059642c500963434c3ed4cf",
+      "baseline_sha256": "0cbbe28021a850fd1b7d4bdbae57eb2c4945d3cf26ec411371369995c8a5b446"
+    },
+    {
+      "seed": 43,
+      "scene": "R04",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/11": 6,
+        "R04/training/16": 7
+      },
+      "checkpoint_sha256": "af7ed3157a9af3fa65aed36e853d62a5063e436b06e92c241eb5f52725de6406",
+      "baseline_sha256": "8ecd93f5890fedab91966306d7503f3ee21842537aede1839123076458832e55"
+    },
+    {
+      "seed": 43,
+      "scene": "R04",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/19": 7,
+        "R04/training/13": 7,
+        "R04/training/20": 8
+      },
+      "checkpoint_sha256": "2065b412f3d23a0d917c27099192b2cf00a9bdcb2b76e18f36771684edd4f392",
+      "baseline_sha256": "244fad69f19d388284c9cf80b2df4ca5c1a4962a46d0cfd6afa866fd10eb205b"
+    },
+    {
+      "seed": 44,
+      "scene": "R01",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/19": 7,
+        "R01/training/22": 7,
+        "R01/training/03": 6,
+        "R01/training/30": 7
+      },
+      "checkpoint_sha256": "d43df2c63e1a69e6153000cbbf18efc7ff44ce8fd0c9c7591d87ae2eb42ec38d",
+      "baseline_sha256": "963eab7b9a7bc9a1049bd2f61b01b757bd544b26c08db4be41904560cb7f8def"
+    },
+    {
+      "seed": 44,
+      "scene": "R01",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/22": 7,
+        "R01/training/08": 7,
+        "R01/training/06": 7,
+        "R01/training/24": 7
+      },
+      "checkpoint_sha256": "9d2fa47f4e9abad16224c184b2b703d0d830e7316aa3362c74af5e3f2f83e3ce",
+      "baseline_sha256": "bd46fbd45eafb85e95f38d900a7a659e478f1325ee69e18744d176f5e2248b63"
+    },
+    {
+      "seed": 44,
+      "scene": "R01",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/18": 7,
+        "R01/training/07": 7,
+        "R01/training/23": 7,
+        "R01/training/13": 7
+      },
+      "checkpoint_sha256": "29c898b4beef3794ba69727acc80acc0b7f376a2d157e78b0bda9bffa8aaa106",
+      "baseline_sha256": "6e9f41d770acfa41a70a5bf195a763f3b0d30fabcac3627fa90e9606bcd06ec7"
+    },
+    {
+      "seed": 44,
+      "scene": "R01",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/25": 7,
+        "R01/training/15": 7,
+        "R01/training/18": 7,
+        "R01/training/08": 7
+      },
+      "checkpoint_sha256": "3c20a269ef354677ae5a3df3808e8e47b37e3442caedbf59eb448befbee7df82",
+      "baseline_sha256": "2d2271d6e31fe1cd77c06a361084c2968f96c5ea9291e29923801d5db1334369"
+    },
+    {
+      "seed": 44,
+      "scene": "R01",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R01/training/29": 7,
+        "R01/training/06": 7,
+        "R01/training/28": 7,
+        "R01/training/23": 7
+      },
+      "checkpoint_sha256": "513fc97449008e986737e1a7a97f2e3c954501343d67ce15903aaffc0e3e7e3d",
+      "baseline_sha256": "b5af4961fd9897c3bb7ec6d90340c6f10030a11bff630e184d4f4ecf3fc4fc6f"
+    },
+    {
+      "seed": 44,
+      "scene": "R02",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/18": 8,
+        "R02/training/25": 8,
+        "R02/training/10": 8,
+        "R02/training/28": 8
+      },
+      "checkpoint_sha256": "151a09b3f816723cc96a5175ab5ead643c0eef44d6a9088dae25fdf1457f0f73",
+      "baseline_sha256": "98ec8468d3a54de1301abc25d4ee62ccd1df89e39f3bf7b34abe70832993b875"
+    },
+    {
+      "seed": 44,
+      "scene": "R02",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/19": 8,
+        "R02/training/10": 8,
+        "R02/training/02": 8,
+        "R02/training/24": 8
+      },
+      "checkpoint_sha256": "9bfb96d9ad6e447e2ad16607ab17120392f022d90535050e1dbaab4216588637",
+      "baseline_sha256": "54a07efff22d40897f24289f5f1708b3fe39ff67f56fe9afac0a136cd36a758d"
+    },
+    {
+      "seed": 44,
+      "scene": "R02",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/06": 8,
+        "R02/training/01": 9,
+        "R02/training/26": 8,
+        "R02/training/04": 8
+      },
+      "checkpoint_sha256": "992403fd16a75f762b82ff58ec16862e6fc2e9f6b0a0464e486ccb7b1faf2d74",
+      "baseline_sha256": "c8dbf33e806510a6a0da54332c5816ab9f989e1e648e731c6c31be5bcb660978"
+    },
+    {
+      "seed": 44,
+      "scene": "R02",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/23": 8,
+        "R02/training/02": 8,
+        "R02/training/22": 8,
+        "R02/training/10": 8
+      },
+      "checkpoint_sha256": "0828de9f123bb15f6985e654c742937b800c3181a4bae746116aaacb5d9ce544",
+      "baseline_sha256": "6c3cbe16bb71060cb34d350af9f6287703c6e3694acfb3b1d0d947412362754a"
+    },
+    {
+      "seed": 44,
+      "scene": "R02",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R02/training/01": 9,
+        "R02/training/17": 8,
+        "R02/training/02": 8,
+        "R02/training/14": 8
+      },
+      "checkpoint_sha256": "6c74943786f472035c9c054e02a431e18f0694b0b7d7829cbeb53e9fe731e4bd",
+      "baseline_sha256": "5a6982928338201327a39bf0912f8cf43f509f349fe82dceaa9a7fffc1c2fd06"
+    },
+    {
+      "seed": 44,
+      "scene": "R03",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/12": 9,
+        "R03/training/11": 8,
+        "R03/training/20": 8
+      },
+      "checkpoint_sha256": "c16f432ca4a2dbf4938fa549d7e86714de3f614c0e116bc9f1a37746bc580706",
+      "baseline_sha256": "6ff5acf3d06c763b8c847bc346029ab0c81627b837532c554839c25f8d9a397d"
+    },
+    {
+      "seed": 44,
+      "scene": "R03",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/05": 8,
+        "R03/training/06": 8,
+        "R03/training/15": 8
+      },
+      "checkpoint_sha256": "23cc1bbe0901f02cfca39b375d82e594034dd167bc1642997e0183c23adfd721",
+      "baseline_sha256": "64ee833f80b32d7b54281ef5ee405beadbdffcdb2bfda36309cf7f74b12be31d"
+    },
+    {
+      "seed": 44,
+      "scene": "R03",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/09": 9,
+        "R03/training/11": 8,
+        "R03/training/07": 8
+      },
+      "checkpoint_sha256": "06d2bb0d5022fc5ac9b5ba8c0f20798589d47f5ecd590b9ba94a943e5e19660a",
+      "baseline_sha256": "b905fc36e4bbcd11b18a786a7acf8843d0b99412e6342400cc936b3d108eec52"
+    },
+    {
+      "seed": 44,
+      "scene": "R03",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/17": 8,
+        "R03/training/18": 8,
+        "R03/training/09": 9
+      },
+      "checkpoint_sha256": "9b2e2ada920e1a38881b120c1f4ca620a55e5339013784c7ef4f83fb584b4ec3",
+      "baseline_sha256": "fa3e80eee61a4738060162a274e241de42f46e9b1f746edb1eb7971298dcc7c0"
+    },
+    {
+      "seed": 44,
+      "scene": "R03",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R03/training/20": 8,
+        "R03/training/09": 9,
+        "R03/training/11": 8
+      },
+      "checkpoint_sha256": "54652e280b3cf7ddc7f52a56ac0d2f7d3e2c34a9164afc44d43782823091fc71",
+      "baseline_sha256": "15f1d9cc68f6e1bf8efddf96b8842b065a5fbe51fd05ce70ec9251687f7aa99b"
+    },
+    {
+      "seed": 44,
+      "scene": "R04",
+      "fold": 0,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/16": 7,
+        "R04/training/10": 7,
+        "R04/training/24": 7
+      },
+      "checkpoint_sha256": "ba360c62213831c01acb715c06d99f3a2e153cf3718661750882485ec9587b94",
+      "baseline_sha256": "a505ab9cb41a35c1d9f0b791f9a103f301579bd4c7b9d2018511320ddc273e5c"
+    },
+    {
+      "seed": 44,
+      "scene": "R04",
+      "fold": 1,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/12": 7,
+        "R04/training/17": 7,
+        "R04/training/02": 8
+      },
+      "checkpoint_sha256": "901c2d57b29a9de1b2ba3b45e0260bbf6b06ad6da3fed4928cb3aa4e31d64b47",
+      "baseline_sha256": "8cb6ef70f684327d3ed92cb91dcb8eb5a5c85d6a914f95327795fe085179e93c"
+    },
+    {
+      "seed": 44,
+      "scene": "R04",
+      "fold": 2,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/24": 7,
+        "R04/training/22": 8
+      },
+      "checkpoint_sha256": "2ef437b447a6083d899524b2f4111cbaa48860b041dc47788bba550b080435da",
+      "baseline_sha256": "e62a5628de094a9fec68fce3fb3e7db79ad8bc827bfa41cc4247f93a12e9f912"
+    },
+    {
+      "seed": 44,
+      "scene": "R04",
+      "fold": 3,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/06": 9,
+        "R04/training/11": 6,
+        "R04/training/16": 7
+      },
+      "checkpoint_sha256": "695846f207224593ea4b58301b4ecda94a55640fbdde6723a187d589ae920322",
+      "baseline_sha256": "c0bb0b531187ccaea164b91954976f4ece0193138a58e5857d097898c91f72de"
+    },
+    {
+      "seed": 44,
+      "scene": "R04",
+      "fold": 4,
+      "score_max_error": 0.0,
+      "alarm_mismatches": 0,
+      "threshold_exact": true,
+      "threshold_windows": {
+        "R04/training/19": 7,
+        "R04/training/13": 7,
+        "R04/training/20": 8
+      },
+      "checkpoint_sha256": "108a7694a666d43849ce04cbe5bc29a592c28000173f9978ad519f81805e7fe5",
+      "baseline_sha256": "96875297fec80d12a6a9349a72d3a45b7266751691a2d407753c615564ffd623"
+    }
+  ],
+  "feature_caches": {
+    "R01/training/01": {
+      "signature": "47c3fc9cdb8271eb738f4bd59a71f4404fb65567301d2517489880f39375e041",
+      "frames": 207,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/02": {
+      "signature": "1c185186f48c00ac110e3b8ee6ea4950b5e10a6833c59576328bb90319111397",
+      "frames": 214,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/03": {
+      "signature": "f405b4e83b99aff1ee3e7813992978eeceddffb7e239489bb2b08d9e630c35df",
+      "frames": 203,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/04": {
+      "signature": "3460ea010c64f2faafef6390fe9e57cf29633e14e556d4f44db9e7bb1ffea7f2",
+      "frames": 232,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/05": {
+      "signature": "052cd8cc9e5de9dc56f796ab0822c760d417c07bcb994b8a7351960c9c2e62aa",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/06": {
+      "signature": "f9c5f3f6e854dd35b5a956de2233139c442e89ec8a417f97121f0a4b9763cb1c",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/07": {
+      "signature": "635ed4886290d4449e40d47fa36fd519a452388af5e71775b20b05cc8fe36442",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/08": {
+      "signature": "50bdb13f85dfd91f2f60c7b08a22d9cc9f230e6108b080942554f20529e01cad",
+      "frames": 232,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/09": {
+      "signature": "cb78c40772c1c74f21b8a69861eebf287adec411929714795072b1705e92ff13",
+      "frames": 235,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/10": {
+      "signature": "fb34705439c30d99f075420f9bec20f51ef0ac48780c820644a12e8c0c2a0039",
+      "frames": 236,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/11": {
+      "signature": "ffd29d92978242480635053f3e54c7096a75399b6e3deb8a5b31f8255ea56334",
+      "frames": 235,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/12": {
+      "signature": "f433cadeb5d07bf349ea0d363425378b457b6766672e3ab48742fbd57ccf96f7",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/13": {
+      "signature": "dbc895c5919fab0f4eefa1fefceae246b8ba6b041f4042e3434e2386c3575ad6",
+      "frames": 232,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/14": {
+      "signature": "a3f13725f7c17ef57d8da135fe7e7ab7362d1bdfbfb54e50aea2dd0f887bea34",
+      "frames": 232,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/15": {
+      "signature": "0d500f46e48cd198f8c6ff19ea987917637fbf0b57571c1940413d9fdde1e9e6",
+      "frames": 236,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/16": {
+      "signature": "d95e80f6d1c76f7ae84dc91dff912669941ecdff4a7670b4988cee59e12a461f",
+      "frames": 230,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/17": {
+      "signature": "a1ffd4412fb580ddffc9b1ee5f5f4c07f74d90e4cfbdacd9a4c4e243b0c9e96b",
+      "frames": 234,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/18": {
+      "signature": "14aa514b4410e0a917e260cc1e768a0dd4e934ed0a62ae7dd8c4d257906fb44a",
+      "frames": 228,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/19": {
+      "signature": "74bc73eb7e8b08b99e3f1df9f8922ec049bf896f27552962eee713ba5b53bb02",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/20": {
+      "signature": "4eac9bd1ca9bd4c8fce57b70a5267f05f4346b6a88b40c2fe0f0c682682f4bed",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/21": {
+      "signature": "5863eb650489a847ab1ceccd869cf138c0a6264507419f6807ed71143c970b6e",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/22": {
+      "signature": "0d83d11ec798c7b6979c116cf40a23708fe2e2263519a0a202da0187056d8596",
+      "frames": 234,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/23": {
+      "signature": "adef3a704552417a2df548a0c4e1fdb25c8da587e423cc8e539fd0f57e998a09",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/24": {
+      "signature": "925747fb06f37ca0f94887845bdbc4ad6b4e96cf1d1c893da5b4db1db12ee85f",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/25": {
+      "signature": "d5e096241b533210c825f498b7334a0649b2953223a85aeb44611c2a09dc4065",
+      "frames": 225,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/26": {
+      "signature": "75f0e680b54d2df23cbfa8a559bd3352a0fb05ec74e4072bca7c2a0535d966a1",
+      "frames": 238,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/27": {
+      "signature": "be501ed9dcf5b50237d2ade970c3b906c2e8ead5a3d233f08bcb4ce251d5c919",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/28": {
+      "signature": "7cbd3cd2df045df6f82052200e96db3f90fe51faf718003a03bed49d84d048d6",
+      "frames": 228,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/29": {
+      "signature": "1633fc316b75ae1e137e9b0c60b20de3c82c13b541bbd1c3bcb8d5722f55ce7b",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/30": {
+      "signature": "f37a7d80e9c424c34bf1c89078f92dcbbee93364630b0d9bc282fea30710ea51",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/31": {
+      "signature": "733496850dcfeef952d0249a3d4c4d13c66b5f58caca0d835f387b5e922e82a1",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/32": {
+      "signature": "24177c535ae0a778fedcf87cc88aefed0bf41f5e95761b7001d6b8f1b3ca0103",
+      "frames": 230,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/33": {
+      "signature": "54270c4edb83c0842cc97ac3df3073b50327d09270459bafc5e399bfbefae39b",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/training/34": {
+      "signature": "d9cfa673b0a3fb98129f5ebb124ffe400c3314afa82d2fad41e719583dcc5496",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/01": {
+      "signature": "20cb2ba2468e9a2dcaaa4d76dc2df916e8aac22045702d0320dbc9035ffc6577",
+      "frames": 230,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/02": {
+      "signature": "858ba4ed6383eb57f2c9ae01b4b88445a6f38f38e739d5aa4858378392225884",
+      "frames": 256,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/03": {
+      "signature": "e2f4e8651cb2b081d6fdcbb364855bd51460f9412c8d027e4502b4cf15b6bfd9",
+      "frames": 409,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/04": {
+      "signature": "7c826d0caa7d96fd41ad24374eefcaafba0bd7a0c093c073c6ead97f6251c995",
+      "frames": 191,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/05": {
+      "signature": "7c54c68bc0ab61bba12c087550f0e6ae0deafc13706def1fb69ef05608ca9ea4",
+      "frames": 290,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/06": {
+      "signature": "fe4754815e53aa1fb512ddfd7234c6ed5b561255043bd999a12f8becac74252a",
+      "frames": 233,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/07": {
+      "signature": "9506631bbf9b7622abf644834d16a173df8c2f98fa4511efbffae9455a256792",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/08": {
+      "signature": "8a084a533819a6708ea56f3cdc42bc8b28dec922cdbd774c1054e7a877ee05ac",
+      "frames": 235,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/09": {
+      "signature": "6a3be01a0f673ad17423fbcba30e1df3f1335a30fc70a934489b12cba3b292ae",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/10": {
+      "signature": "46cda6f8adc0998e2093d515ec772577bcc0de05c12ba1ac27059958284d7e8f",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/11": {
+      "signature": "47f2ceca748da54e9e3029dde5d3e59d7018397ebcccf53a7888f4cb03307c3d",
+      "frames": 232,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/12": {
+      "signature": "a4ee7c0d10cbf7a1cf8aae5a6bad4e5c363e62e88ee74aac11866346cd8d2625",
+      "frames": 231,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/13": {
+      "signature": "a4e800e3fd8868753bf578fbc0213f4dd2191872be3d60610ed7d5f9b9b33434",
+      "frames": 229,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/14": {
+      "signature": "8690dd7725856816f2668bcf95aadaf455f3f11499b37aede47c11562fc719dd",
+      "frames": 230,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R01/testing/15": {
+      "signature": "08d19b85bacd0cac8924b9287b2e8075bc220ec4697f7c6c57a3c590d657cab3",
+      "frames": 228,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/01": {
+      "signature": "03343de71e3ea6ab0afd7f6cc32b90d6283d0156e086cb2d72512b023394f788",
+      "frames": 642,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/02": {
+      "signature": "1d91701ede598156631aef0658fb71130e9331653e1bdca6198084a7b13dba77",
+      "frames": 608,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/03": {
+      "signature": "f1a154beaf5997f7570f9e815839327bb358e35a51c1e532bd5f485e08503ceb",
+      "frames": 550,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/04": {
+      "signature": "f1bbdf21756a2adbe8e6065300c87c6ed13897e9e23416b030f8002b5d31de62",
+      "frames": 596,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/05": {
+      "signature": "55268f2753d7891babd5c33a64258a2f7f2f5c5fa8175c2cf8ab4ffb86e1b281",
+      "frames": 602,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/06": {
+      "signature": "688cdf99636b4fd8b07e612e636bc15d70d0dc841390102c82398b837f7227f3",
+      "frames": 610,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/07": {
+      "signature": "4248369fbb60c8665120b8b7ef83b62502f2581b65574b3a5e65a8a5137718bd",
+      "frames": 588,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/08": {
+      "signature": "24411599b2638e216d0bf94650ef6c160520e34d50ebe5e738b4b26ce5c596b9",
+      "frames": 585,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/09": {
+      "signature": "069ff9b2723441c1f984698512d9a08ba238258898c6bc73afa7cbb56203f220",
+      "frames": 595,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/10": {
+      "signature": "3258c04258b483b01e635e9da7d765e3136550366118698bca9fbc5a0be55693",
+      "frames": 595,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/11": {
+      "signature": "f63940d805511bbaf4f124f73d5e3ea22ab615f855f19017b70dd6c3fedf6d17",
+      "frames": 600,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/12": {
+      "signature": "029d04d1ed5ea3c459d395022c34fbd2edd2680d33d26565f643ac247987a2b2",
+      "frames": 590,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/13": {
+      "signature": "7ee39210ff6a8cec4942c49e9e67e0fd2f22ad1fd12b55e7ffc9ed5d24a6ad15",
+      "frames": 591,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/14": {
+      "signature": "af81414d1a119fce0d12f69fb03faa9ba239de653c698c85ff400330b958bb71",
+      "frames": 579,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/15": {
+      "signature": "42e7ae680ca739d9ed8a2d14858a7d50480496f6b348f460ef449f97945b635a",
+      "frames": 612,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/16": {
+      "signature": "41826f2ece2257235b198273afdd37994c6a9bf19dd93b19c981c2a2c65d2f87",
+      "frames": 588,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/17": {
+      "signature": "9cae48eac7b3bf21a0ae41ef97834d3c66f5f38a3c32a2bd759d56879d6edcd1",
+      "frames": 574,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/18": {
+      "signature": "583259be2392650493010c8d459b772d495ab10fa1ed9a8f92e63d3f612f99a1",
+      "frames": 579,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/19": {
+      "signature": "1923bd31d027ee0812a453e051c89995d19f5407a3a99ce5e78b2f3136fb83b0",
+      "frames": 602,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/20": {
+      "signature": "7ea93eb9f3c6cd4d87b8e445043455f8f2723b5d217ce3894ceb2dcc946e6e0b",
+      "frames": 609,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/21": {
+      "signature": "5c02f1e2453f619c5c6764553e57956492495c217fb10043a1766c48133c6695",
+      "frames": 584,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/22": {
+      "signature": "b97b0e6706af78f0a1b602c58030900a9b7534d5b4fe76a506e535e981669d63",
+      "frames": 601,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/23": {
+      "signature": "c1e0bad6203c3d77088800981c69f57754f86ce791a99378087432f28875f07e",
+      "frames": 612,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/24": {
+      "signature": "8b38deef77ee1735bb6f970cbffd60c4852ca4855ed31466571a1f2a32a78f3c",
+      "frames": 568,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/25": {
+      "signature": "3e017ca7d8bf9bc75ca2398b8736304ebdff12149320b0cad461d27b4d96f674",
+      "frames": 588,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/26": {
+      "signature": "1d8dbe89c24d366ff1cef43110bbe6a58e286b71ed6903da0db31a4d498d70f0",
+      "frames": 574,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/27": {
+      "signature": "55026c052269759128bf3b3a07618cd3c7c66bd2b72f09af684c45850873975a",
+      "frames": 589,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/28": {
+      "signature": "e874396c46cc5a856c63feba64a27491a4a7535ae53366127905c6893fbd2fdf",
+      "frames": 592,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/29": {
+      "signature": "fac74db0278e3f669823191e218e86900d03617fa36994577a66f41cd86b4d3e",
+      "frames": 585,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/training/30": {
+      "signature": "36f98abbdf6d349dad1f9d9033e0ff19b80dabc0afe7a8d79776f75f2fb29ae5",
+      "frames": 568,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/01": {
+      "signature": "6dc17095b12445cc0357fcc7e6473e33d09d1e007045fe97fb014723804c47e4",
+      "frames": 583,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/02": {
+      "signature": "a0839a13bb74947b6eb0caa1631f645c38b2d6f5e048c475b0b838801e9b6410",
+      "frames": 595,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/03": {
+      "signature": "602ea8949b4166cba58c9c5ec7b14e0434b19e21eba47cad325a9bcb1eb85feb",
+      "frames": 573,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/04": {
+      "signature": "a434c47b60e8eefb446193dd32376e0830cf9de5069007c8015d713c47b12749",
+      "frames": 578,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/05": {
+      "signature": "3d3028c55cf9526a27797721c8d2cae03f16539a09f67d37e028c0fd2c1a5e90",
+      "frames": 583,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/06": {
+      "signature": "c0c1888b6aa302bbf43c24ed2650174e0fb7bbe8360dc002580bb79cc12ab2f3",
+      "frames": 604,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/07": {
+      "signature": "325d66dc21bd663f4b7a05b34599c20502f4bfeb956bd7bd5020f91a2d073f21",
+      "frames": 536,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/08": {
+      "signature": "eb6f1cdb6e6628e468a775be6f17f6abaf8b3f6390489469fc7974148ec25742",
+      "frames": 784,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/09": {
+      "signature": "bf8faf3f30ed4534128414b2c814c062282355d3919911b281635a17a33ad6c2",
+      "frames": 853,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/10": {
+      "signature": "7617c8af433a9eab28a42aad9e9dc4fb915232cc380760bfaedf8053c49dfed5",
+      "frames": 612,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/11": {
+      "signature": "044807b037f9e6d00f239efb87add212823ba65eb48320cf3d1ecbfb2d95833f",
+      "frames": 590,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/12": {
+      "signature": "062a8f057006033066c5e69a5c177f700c09a0bd9e0b6eaec9f9138ea12fb1cc",
+      "frames": 806,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/13": {
+      "signature": "64c29320c4075f3fdb286b07fc890b444f181b9e3809e76304aece896a7e2381",
+      "frames": 609,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/14": {
+      "signature": "a598f9f219c7d0abca0d399ce862fe6dc293a05148e80e6bbfd5007f7c441040",
+      "frames": 497,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R02/testing/15": {
+      "signature": "7f215e81a737604e2d36e7eea029b2db9e6b061ccb0d666350800f82efa2c569",
+      "frames": 815,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/01": {
+      "signature": "5b735656dcd14c14431fecc405507d9a06e9b682b274cce9a2b4a696c1d3f083",
+      "frames": 668,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/02": {
+      "signature": "37bcf6d88e8628cfba41f4baee6305f4986271ca035b1d36dec4f476a76c7c8f",
+      "frames": 692,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/03": {
+      "signature": "0f38f080bd24cf54443dc51a407ce7bb1b04f96948acf3c8463d478e4e1a63c9",
+      "frames": 723,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/04": {
+      "signature": "1981d494aa7cbf4fe2e2c8ad5e7a8d09a76ee6f8af1581d32cd9a68f9b98bcb4",
+      "frames": 688,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/05": {
+      "signature": "1ae6d63270b301514bb492678c4dfa3ba5bea1f7ccb3dbeb2e628e1ab1068b0a",
+      "frames": 705,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/06": {
+      "signature": "a91296cc54ee8cb12504d383439d52ba7cf56f1878d42491492e6c95244134de",
+      "frames": 706,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/07": {
+      "signature": "d735ac9d1fe456f7dd3fb07d1935df9f7b191a82b60d36b9097469b53453a812",
+      "frames": 689,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/08": {
+      "signature": "0cc2805c57b8fbc96eaa49cad48fc695296e1dc9c312fae4aff4cffb424f5f34",
+      "frames": 708,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/09": {
+      "signature": "3927917efa896583dc2adbad8f1b45627e84d6979452e6182b623929a8e443e1",
+      "frames": 742,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/10": {
+      "signature": "43f7fff51d00508d459af569a40218079eec914401cd64a219dad699664b7960",
+      "frames": 697,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/11": {
+      "signature": "79d4f051805ad7a2ba4cd49bef8b634cf8023c2d77164a38eadf1e041af485b5",
+      "frames": 696,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/12": {
+      "signature": "ca0334eb50e01fbc1805907ef93e0664dd4ef49fefa038f5ffe6cb7e500f502a",
+      "frames": 745,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/13": {
+      "signature": "3a5235cdbd23e32719bf78fcf2b65e6bfc49c6475f46e817b273c27595dbf3dc",
+      "frames": 720,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/14": {
+      "signature": "bccc02bbcfca347519589767f5e1189aff6d0f131b6a6b717bf2e898f7957d65",
+      "frames": 630,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/15": {
+      "signature": "1087c4cdf2d555423707b1d7d4791e08b5ec6cea25d1bcf83aca466cc7d6d38a",
+      "frames": 706,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/16": {
+      "signature": "2186ac4d52767893d4b0dc09d554711c020dffa07275273e6e0ae7ca9ce07ea2",
+      "frames": 656,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/17": {
+      "signature": "cdc4e4885f0aacfa360eb66ab3e18d5517d6284c59d7699b60eb986ecc192f34",
+      "frames": 685,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/18": {
+      "signature": "f0f97edbe20f13110abd9da749ea94729b9a303aaa45a466ab9cb017b5fcd65f",
+      "frames": 690,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/19": {
+      "signature": "8af37d2af512ed105117d075eb9ecd3cfae9baeeef2d968948f9543efe5d2fe5",
+      "frames": 694,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/20": {
+      "signature": "1cc9628d39da297a99ba7f2f08da5a192341c0db4597636b93c332340b8a4a78",
+      "frames": 690,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/21": {
+      "signature": "8e34d311d7b3eb396e6813ee759cca414d1eedaaa7d7cbc5c779b9ac3c03df61",
+      "frames": 713,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/training/22": {
+      "signature": "1da86dee61cdf4c16b14192770c26ba72b5e65816d1214c560e9bd3d272c056c",
+      "frames": 703,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/01": {
+      "signature": "21540f798c06e554e3ef7d3546dac1b2d330a8dddaedc8e738cbc19e43158e18",
+      "frames": 720,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/02": {
+      "signature": "7a22e41e3934d8d80a7bb7418b1ae5b94533d8bfe3c244d3e7b5d2da268d2426",
+      "frames": 676,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/03": {
+      "signature": "2b6e0344c34b6dc7d78fa8a12b5db961c4d86643655f8ca2061a3bc54abce526",
+      "frames": 674,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/04": {
+      "signature": "fd7e425703294dd8c68f4a1f9baba270b8923311bc2d132f6d5a60ec083429df",
+      "frames": 683,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/05": {
+      "signature": "c1df9f63d6860ec267525d50f49c7ee73d80b637ab7a08ed59b6eb1bb38a19aa",
+      "frames": 574,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/06": {
+      "signature": "571ca34a4c141992356ea99767d789c232be9d794095458b242d3096197574e8",
+      "frames": 582,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/07": {
+      "signature": "610a3d722fdb7dfca83975419000262209d7634afe5e19b778c15466e7ab378a",
+      "frames": 686,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/08": {
+      "signature": "0ca3e94de72591317ffd73f1c103d878fbbbde77ca381efc8ee6e828df43b8d6",
+      "frames": 695,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/09": {
+      "signature": "860fafaa0b9230346df3edea245c08a2c97443861cb5fa19d8e6fc3600a48c67",
+      "frames": 712,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/10": {
+      "signature": "675a43626a14706b473bc31457823788279f111eac74bdae3ae59e3d49803f22",
+      "frames": 647,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/11": {
+      "signature": "bda43debc98c4b5611d1437fdf3fc98f6e24fd2fdc1f1cb53b45de6b814fde52",
+      "frames": 706,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/12": {
+      "signature": "5f280addbfb09a7e6caac89f0ab98dfc87c6956432c67a3bc772971ef92a8a98",
+      "frames": 841,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/13": {
+      "signature": "5f9679c08bac311a9a124ce4d6420117cb1ccabcbfe7b6058d14d632044efa19",
+      "frames": 766,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/14": {
+      "signature": "2ad50302c52fcddee8c6eb33b75f43da668aa81b1e09371a4d409f8a65771617",
+      "frames": 908,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/15": {
+      "signature": "7eb5e18e4032581ac7b359c019ba9ff475f4b25b8f83807a271a4801f9e261bf",
+      "frames": 692,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/16": {
+      "signature": "0097c056326e871d76d5f6b7f2821065fad3ff0b9ee52344b6ffd3c3804efea4",
+      "frames": 730,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R03/testing/17": {
+      "signature": "c16556a599564cd95d28647029d678bcb6421969ee4df9b2dd9d4a0014e5613e",
+      "frames": 713,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/01": {
+      "signature": "0788ab5b20043471adefb0ea32fc5be5d73a81fc8efc6156e89e1f5b58e96bf0",
+      "frames": 309,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/02": {
+      "signature": "e5ada20feac2ea0de72b27d904b0604d539e8c224fe08c7b6486a4b7363de599",
+      "frames": 409,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/03": {
+      "signature": "f2ce4964691c7d070a216ffeb41249e01251c1ac2eada1ac4997067232976121",
+      "frames": 461,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/04": {
+      "signature": "0b0c3ee631cd6a04e04ee34841c87e2a9ddce3c9c87bea6cb5b0e096f385ea7f",
+      "frames": 408,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/05": {
+      "signature": "844cd4fe7919aee5bcbcd56465ea7a5d332b90dc66a97e5bd0f2115f59481233",
+      "frames": 437,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/06": {
+      "signature": "f6143bf6700a63fdb7a85aa1e4fde6e6b49c8d144da3728705adb69d6a2e51dd",
+      "frames": 448,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/07": {
+      "signature": "07a77104dc7618ad0a91b921854275a5a500af40c776dc41cf689345899a0e27",
+      "frames": 385,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/08": {
+      "signature": "53b03d31429d01c89a18a839db8f4aa97c2ad33a61c1315b97d969f5cb7c2830",
+      "frames": 413,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/09": {
+      "signature": "a2141356a0ba52e143a32c9858ad110e23dd306e33cd1379ed28af3bc7c61df3",
+      "frames": 417,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/10": {
+      "signature": "a921b8b23590a75bc91585be9db71caace20785a951bf0ccdc3f6842774dae9f",
+      "frames": 376,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/11": {
+      "signature": "df1048722a6be2f2b1b0788776223c20015ffe2574f4f2a092a405fdf6dc74d1",
+      "frames": 340,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/12": {
+      "signature": "74f5fd2549192603c268424f7d65b0403401d6d0af6c3f39b87e1e8be021d040",
+      "frames": 382,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/13": {
+      "signature": "45361268296292afb236fa8918e13f09264d73f8f0192c1a20775628c7f14984",
+      "frames": 382,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/14": {
+      "signature": "179cb4cfd50a48e3018a6a2ec70e43100566334a45c33ce6e686a262da8df313",
+      "frames": 323,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/15": {
+      "signature": "934ee26c343a848c09327f890b64b26ce6ef8b88defb8da191ee7615b5133784",
+      "frames": 340,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/16": {
+      "signature": "4792217e3dbeabb4bbc6603d0d3011ffcd65b803379dd07be8ebaabe20a8b000",
+      "frames": 373,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/17": {
+      "signature": "c2f488bb335aaad64a74a52122091f2f318df92aa28b6619dde1c8559cb84d1b",
+      "frames": 372,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/18": {
+      "signature": "d26ab708627190f9bcf428fb26e344cd4dc36e487e4b0687fbd76577573291ea",
+      "frames": 412,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/19": {
+      "signature": "567cd2928f12f50b58ca06395de26c493560a4c76d66c3173bda3d78eea0f80d",
+      "frames": 396,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/20": {
+      "signature": "66b9e1092573e70fa3f8cf87a0cbdfa42676b56ef252c99c72af1e7a53bc232a",
+      "frames": 404,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/21": {
+      "signature": "3cfc9af0214995eda83d6621bc53075f95543dc944a84d2953cc6aeb28ba9654",
+      "frames": 417,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/22": {
+      "signature": "434a77626fae05286a56b9301de7230806bdcf5093e9d9e6cd6f95d0d671b727",
+      "frames": 380,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/23": {
+      "signature": "2a4b623b57e40323c488c950f0e4177c04d95d1c9d7e807725ba2d159ae0a3eb",
+      "frames": 377,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/24": {
+      "signature": "ad51084ef47703583dfc4dbb1e515c50ad9ed9164a1c11a926968dceb979a62a",
+      "frames": 368,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/training/25": {
+      "signature": "9bf138455f888179d2bbe1efa8f288144fbabe4de0f93c2c76e6d4bb57d3d5a1",
+      "frames": 403,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/01": {
+      "signature": "ebf8955f9f943f4f1b8bcdce0d0d5d7f1be9b9acc1701d5714d0d3069a720d3a",
+      "frames": 411,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/02": {
+      "signature": "42344a38e4018b2d0d7a57cf4ef64d25b4c7e1c172f4ed130d766a1dac267ef3",
+      "frames": 398,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/03": {
+      "signature": "248ca7105c5599554ef637d461b3ac2b22f2ed7ac5acb67c7d5bdd7af77fb939",
+      "frames": 381,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/04": {
+      "signature": "e88d9536aed4723d5c3dc46422e100eb5657f36737394d36bd86aa6ac85f8c44",
+      "frames": 379,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/05": {
+      "signature": "5247793bdb4815302ec3822c1a6fc9cc0e1bef9b434b4aaa2e538029ae9eae40",
+      "frames": 465,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/06": {
+      "signature": "c19f00b27213eddb771a7972be16440993ee7d17ec6bd9e6402ebce7789a3a68",
+      "frames": 505,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/07": {
+      "signature": "889ba98ea433b185f8b021a473d04a9323d9ae89b90b7d6d82be8a7f526eafe7",
+      "frames": 550,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/08": {
+      "signature": "6e7be91a2e7410c25f794963eda1d63d0f09d24b83d8bc71d61a37b5aca077f4",
+      "frames": 653,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/09": {
+      "signature": "755db6b537567f52f1e548d0246c40ec6a3e9719b72019d53b0a7a476e10d0ef",
+      "frames": 334,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/10": {
+      "signature": "8e67aed2849331016cbe02cf34003a2e00ebc55c74fd4f86b3c9198f9ee73ded",
+      "frames": 223,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/11": {
+      "signature": "d8ea709fcb2c0c463ca5d6949853c8f86bac047c52a9e44890c71f40470c9fbf",
+      "frames": 424,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/12": {
+      "signature": "2010c816b71848b8231e368fafa9b388310ca44be7d8375f3b028669300b6fdf",
+      "frames": 686,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/13": {
+      "signature": "451a756721c5f7b774775e90d4a72fb9c5d62e981ac1caf188bce9a5cc6b39d9",
+      "frames": 464,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/14": {
+      "signature": "b45c8df640a9d09e848f491cfb18f76a3981a4509d6020be8ceeb9ba3dc6fdc5",
+      "frames": 385,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/15": {
+      "signature": "15dab55e0ee32a1f7b8bd5f470901bb91b36f441a8f7daa530488de99ed6e0ec",
+      "frames": 376,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/16": {
+      "signature": "c8e04abdcd81510506641f4735705378a589a0fc70cf21ef280eaa06159d307b",
+      "frames": 418,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/17": {
+      "signature": "62d4a4701951156e7c56f3ff8edfdc769e0f450b57601de31eb77f6d7077ac59",
+      "frames": 582,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/18": {
+      "signature": "b9a82c82df6b9e4688d9c90634a91bcf2ddfac4641bcb628fe24dc322845e245",
+      "frames": 243,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    },
+    "R04/testing/19": {
+      "signature": "f34ca5346a6ed5a0db912253e31d6d25212109991f98bdbb1b7d44dc97526cb6",
+      "frames": 277,
+      "encoder": {
+        "device": "cuda",
+        "extractor_version": 1,
+        "family": "dinov2",
+        "feature_layers": [
+          -1,
+          -3
+        ],
+        "image_size": 336,
+        "model_id": "facebook/dinov2-base",
+        "patch_dim": 64,
+        "patch_grid": 6,
+        "preprocessing": "full_frame_letterbox",
+        "resolved_revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+        "revision": "main",
+        "seed": 42,
+        "torch": "2.9.1+cu128"
+      }
+    }
+  },
+  "normal_sources": 111,
+  "test_sources": 66,
+  "test_frames": 33462,
+  "valid_test_frames": 31550,
+  "excluded_test_sources": [
+    "R02/testing/12",
+    "R02/testing/13",
+    "R02/testing/14"
+  ],
+  "wall_seconds": 2.785876839014236
+}

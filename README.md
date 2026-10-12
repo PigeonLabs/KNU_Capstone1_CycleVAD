@@ -107,7 +107,7 @@ Stride 2의 입력 FPS를 매 프레임 새 추론 속도로 해석하면 안 �
 
 <!-- BEGIN EXPERIMENT RESULTS -->
 
-[평가 규칙](#result-evaluation-detail) · [초기 요약](#result-early-notes) · [E0](#result-e0) · [E1](#result-e1) · [E2](#result-e2) · [E3](#result-e3) · [E4](#result-e4) · [E5](#result-e5) · [초기 실행 비용](#result-e5z) · [E6](#result-e6) · [E8 (seed 42)](#result-e8) · [E8 (seed 43·44)](#result-e8-2) · [E8B](#result-e8b) · [E9S](#result-e9s) · [E11](#result-e11) · [E11B](#result-e11b) · [E12](#result-e12) · [E14A](#result-e14a) · [E15A](#result-e15a) · [E15B0](#result-e15b0) · [E15B/C](#result-e15b1) · [E16](#result-e16) · [E17](#result-e17)
+[평가 규칙](#result-evaluation-detail) · [초기 요약](#result-early-notes) · [E0](#result-e0) · [E1](#result-e1) · [E2](#result-e2) · [E3](#result-e3) · [E4](#result-e4) · [E5](#result-e5) · [초기 실행 비용](#result-e5z) · [E6](#result-e6) · [E8 (seed 42)](#result-e8) · [E8 (seed 43·44)](#result-e8-2) · [E8B](#result-e8b) · [E9S](#result-e9s) · [E11](#result-e11) · [E11B](#result-e11b) · [E12](#result-e12) · [E14A](#result-e14a) · [E15A](#result-e15a) · [E15B0](#result-e15b0) · [E15B/C](#result-e15b1) · [E16](#result-e16) · [E17](#result-e17) · [E18A](#result-e18a)
 
 <a id="result-evaluation-detail"></a>
 
@@ -985,6 +985,29 @@ E16의 별도 속도 측정에서 C+P stride 1은 **87.36 FPS**, 새 점수 지�
 PYTHONPATH=src python scripts/evaluate_streaming.py --resume
 MPLCONFIGDIR=/tmp/cyclevad-mpl PYTHONPATH=src python scripts/report_online_accuracy.py
 ```
+
+<a id="result-e18a"></a>
+
+### E18A 정지·적응형 경보 사전 검증 완료
+
+R01–R04만 사용하며 실제 test를 주 평가로 고정했습니다. 기존 RTX PRO 6000 CUDA 특징과 E11 체크포인트를 재사용합니다. 아래는 신규 성능 결과가 아니라 재현·분할 검증입니다.
+
+| 검증 | 결과 |
+|---|---:|
+| 체크포인트 | 60개 (4장면 × 5-fold × 3-seed) |
+| 정상 training 원본 | 111개 |
+| 실제 test 원본 / 프레임 | 66개 / 33,462 |
+| 유효 test 프레임 | 31,550 |
+| C/P 재계산 최대 오차 | 0 |
+| 기존 C/CP 경보 불일치 | 0 |
+| 기존 임계값 | 60개 단위 모두 정확히 일치 |
+| 역할 내 source 중복 / 정상 OOF 중복 | 0 / 0 |
+
+R02 testing 12·13·14는 기존 strict-v1과 동일하게 라벨 길이 불일치로 평가에서 제외합니다. 이후 모델 설정은 실제 test 또는 합성 결과로 선택하지 않습니다. 기존 test를 반복 사용한 개발 검증이며 독립 확증 평가가 아닙니다.
+
+[고정 실험 설정](configs/experiments/followup/e18_v1.json) · [60개 단위 검증·특징 provenance](results/E18A/summary.json)
+
+E18B 정지 점수, E18C 적응형 경보, E18D 온라인 검증은 진행 중입니다.
 
 <!-- END EXPERIMENT RESULTS -->
 
