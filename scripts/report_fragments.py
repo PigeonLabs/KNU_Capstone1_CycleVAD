@@ -24,6 +24,20 @@ def online_accuracy_fragment(root):
     return path.read_text().replace('](../results/','](results/').replace('](../configs/','](configs/').replace('](../scripts/','](scripts/').replace('](figures/','](docs/figures/')
 
 
+def stall_fragment(root):
+    path=root/'docs/E18_RESULTS.md'
+    if not path.exists():return ''
+    return path.read_text().replace('](../results/','](results/').replace('](../configs/','](configs/').replace('](../scripts/','](scripts/').replace('](figures/','](docs/figures/')
+
+
+def write_stall_fragment(root,text):
+    doc=text.replace('](results/','](../results/').replace('](configs/','](../configs/').replace('](scripts/','](../scripts/').replace('](docs/figures/','](figures/')
+    (root/'docs/E18_RESULTS.md').write_text(doc)
+    path=root/'EXPERIMENTS.md';prefix=path.read_text().split('\n## E18A',1)[0]
+    path.write_text(prefix+'\n'+text)
+    sync_readme_results(root)
+
+
 def sync_readme_results(root):
     """Keep every detailed result inline, ordered independently of report arrival."""
     import re
@@ -57,6 +71,12 @@ def sync_readme_results(root):
                     if child=='다음 실험 계획':child='당시 후속 계획과 결과 연결'
                     records[-1]['body']+='\n#### '+child+'\n\n'+content
         else:records.append({'title':title,'body':body,'level':2})
+    # E18 is canonical in its own report, so regenerating older reports cannot
+    # remove or duplicate the newly completed experiments in the README.
+    if (root/'docs/E18_RESULTS.md').exists():
+        records=[r for r in records if not re.match(r'E18[A-D]\b',r['title'])]
+        _,new=sections(stall_fragment(root),2)
+        records.extend({'title':title,'body':body,'level':2} for title,body in new)
     def order(record):
         title=record['title']
         if title=='방법과 평가 규칙':return (-2,'')

@@ -1,0 +1,327 @@
+{
+  "source_id": "R04/testing/15",
+  "scene": "R04",
+  "frames": 376,
+  "valid_frames": 376,
+  "unknown_frames": 0,
+  "joint_replay_seconds": 4.424328520020936,
+  "parity": {
+    "1": {
+      "frames": 376,
+      "max_trace_error": 4.263256414560601e-14,
+      "max_C_error": 3.552713678800501e-15,
+      "max_P_error": 0.0,
+      "alarm_agreement": 1.0,
+      "stall_max_error": 0.0,
+      "prefix_exact": true,
+      "threshold_parity": true,
+      "alarm_parity": true
+    },
+    "2": {
+      "frames": 188,
+      "max_trace_error": 4.263256414560601e-14,
+      "max_C_error": 5.329070518200751e-15,
+      "max_P_error": 0.0,
+      "alarm_agreement": 1.0,
+      "stall_max_error": 0.0,
+      "prefix_exact": true,
+      "threshold_parity": true,
+      "alarm_parity": true
+    }
+  },
+  "metrics": {
+    "1": {
+      "C0": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9749539912583391,
+        "ap": 0.9957164880826511,
+        "fpr": 0.0,
+        "recall": 0.18012422360248448,
+        "threshold": 7.10467703226711
+      },
+      "C1": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9565792500575109,
+        "ap": 0.9918931835706026,
+        "fpr": 0.0,
+        "recall": 0.18012422360248448,
+        "threshold": 7.10467703226711
+      },
+      "B0": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9277662755923626,
+        "ap": 0.9849278475538142,
+        "fpr": 0.018518518518518517,
+        "recall": 0.2422360248447205,
+        "threshold": 8.155473770171225
+      },
+      "B1": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9239705544053369,
+        "ap": 0.9843277716537724,
+        "fpr": 0.018518518518518517,
+        "recall": 0.2422360248447205,
+        "threshold": 8.155473770171225
+      },
+      "B2": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9277662755923626,
+        "ap": 0.9849278475538142,
+        "fpr": 0.018518518518518517,
+        "recall": 0.2422360248447205,
+        "threshold": "causal per-frame threshold"
+      },
+      "B3": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9239705544053369,
+        "ap": 0.9843277716537724,
+        "fpr": 0.018518518518518517,
+        "recall": 0.2422360248447205,
+        "threshold": "causal per-frame threshold"
+      }
+    },
+    "2": {
+      "C0": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9797561536691972,
+        "ap": 0.9966438849994769,
+        "fpr": 0.0,
+        "recall": 0.2484472049689441,
+        "threshold": 7.10467703226711
+      },
+      "C1": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9636530940878767,
+        "ap": 0.9931050672070192,
+        "fpr": 0.0,
+        "recall": 0.2484472049689441,
+        "threshold": 7.10467703226711
+      },
+      "B0": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9610075914423739,
+        "ap": 0.9927558073234258,
+        "fpr": 0.0,
+        "recall": 0.09937888198757763,
+        "threshold": 8.155473770171225
+      },
+      "B1": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9531861053600184,
+        "ap": 0.9914069679455204,
+        "fpr": 0.0,
+        "recall": 0.09937888198757763,
+        "threshold": 8.155473770171225
+      },
+      "B2": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9610075914423739,
+        "ap": 0.9927558073234258,
+        "fpr": 0.0,
+        "recall": 0.09937888198757763,
+        "threshold": "causal per-frame threshold"
+      },
+      "B3": {
+        "frames": 376,
+        "valid_frames": 376,
+        "unknown_frames": 0,
+        "anomaly_frames": 322,
+        "auroc": 0.9531861053600184,
+        "ap": 0.9914069679455204,
+        "fpr": 0.0,
+        "recall": 0.09937888198757763,
+        "threshold": "causal per-frame threshold"
+      }
+    }
+  },
+  "events": {
+    "1": [
+      {
+        "id": "R04/testing/15:event0",
+        "source_id": "R04/testing/15",
+        "onset": 54,
+        "end": 376,
+        "deadline_frames": 79,
+        "hit": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "delay": [
+          [
+            17,
+            17,
+            17,
+            17,
+            17,
+            17
+          ]
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "R04/testing/15:event0",
+        "source_id": "R04/testing/15",
+        "onset": 54,
+        "end": 376,
+        "deadline_frames": 79,
+        "hit": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "delay": [
+          [
+            46,
+            46,
+            48,
+            48,
+            48,
+            48
+          ]
+        ]
+      }
+    ]
+  },
+  "frame_counts": {
+    "1": [
+      {
+        "id": "R04/testing/15",
+        "stratum": "normal",
+        "frames": 54,
+        "alarm_count": [
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "id": "R04/testing/15",
+        "stratum": "anomaly",
+        "frames": 322,
+        "alarm_count": [
+          [
+            58,
+            58,
+            78,
+            78,
+            78,
+            78
+          ]
+        ]
+      },
+      {
+        "id": "R04/testing/15",
+        "stratum": "normal_before",
+        "frames": 54,
+        "alarm_count": [
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "R04/testing/15",
+        "stratum": "normal",
+        "frames": 54,
+        "alarm_count": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "R04/testing/15",
+        "stratum": "anomaly",
+        "frames": 322,
+        "alarm_count": [
+          [
+            80,
+            80,
+            32,
+            32,
+            32,
+            32
+          ]
+        ]
+      },
+      {
+        "id": "R04/testing/15",
+        "stratum": "normal_before",
+        "frames": 54,
+        "alarm_count": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "scores_sha256": "98643a6f6805ef2ab24d1e6da901240727a50e2978a02a95d82625130b39958c"
+}

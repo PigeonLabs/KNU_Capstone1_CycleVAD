@@ -1,0 +1,58 @@
+{
+  "id": "B3_s1_r1",
+  "arm": "B3",
+  "stride": 1,
+  "repeat": 1,
+  "paced_fps": null,
+  "source_ids": [
+    "R01/testing/01",
+    "R01/testing/02",
+    "R01/testing/03",
+    "R01/testing/04",
+    "R02/testing/01",
+    "R02/testing/02",
+    "R02/testing/03",
+    "R02/testing/04",
+    "R03/testing/01",
+    "R03/testing/02",
+    "R03/testing/03",
+    "R03/testing/04",
+    "R04/testing/01",
+    "R04/testing/02",
+    "R04/testing/03",
+    "R04/testing/04"
+  ],
+  "input_frames": 2048,
+  "fresh_updates": 2048,
+  "wall_seconds": 22.41293374990346,
+  "input_fps": 91.37581107644247,
+  "fresh_updates_per_second": 91.37581107644247,
+  "service_ms": {
+    "n": 2048,
+    "mean": 10.940126355791335,
+    "p50": 10.742254002252594,
+    "p95": 11.743820505216718,
+    "p99": 12.386383050470613,
+    "max": 14.37012100359425
+  },
+  "fresh_service_ms": {
+    "n": 2048,
+    "mean": 10.940126355791335,
+    "p50": 10.742254002252594,
+    "p95": 11.743820505216718,
+    "p99": 12.386383050470613,
+    "max": 14.37012100359425
+  },
+  "head_ms": {
+    "n": 2048,
+    "mean": 1.1214574504379016,
+    "p50": 1.0572809842415154,
+    "p95": 1.3784218550426885,
+    "p99": 1.4652110543102024,
+    "max": 1.7316109733656049
+  },
+  "arrival_ms": null,
+  "missed_periods": 0,
+  "peak_allocated_mb": 382.96435546875,
+  "scope": "JPEG decode + preprocess + fresh CUDA encoder + causal score/alarm; no camera/codec/network/display; no prefetch; B3 adapter computes six shared readouts"
+}

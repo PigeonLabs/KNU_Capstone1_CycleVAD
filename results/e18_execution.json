@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "scenes": [
+    "R01",
+    "R02",
+    "R03",
+    "R04"
+  ],
+  "primary": "actual test, strict-v1, fold0",
+  "model_units": 60,
+  "auxiliary_cases": 13062,
+  "online_source_frames": 33462,
+  "online_valid_frames": 31550,
+  "online_cadences": [
+    1,
+    2
+  ],
+  "speed_trials": 16,
+  "tests": 74,
+  "validation": "All fixed arms retained; source-paired bootstrap and event ledger, not independent confirmation",
+  "baseline_commit": "21954eb03c8303afe990205e914c30493c6efc61",
+  "E18A_published_commit": "ddb9ad16e7897485fcf9b8b71a4f81753d949b4a",
+  "E18BC_published_commit": "ea8c5bf3243c3516711140c61d2686e055d7e319",
+  "validated_code_sha256": {
+    "src/cycle_vad/stall.py": "ae8227cbdaa22c393a7dce444d7bfdbc91baa21a365faadfcec8b0779a0222fc",
+    "src/cycle_vad/stall_experiment.py": "7e85486ccb7cb22c6f7a40133e6f7ab114f09c37153fee68bc0868672ea0e625",
+    "scripts/run_stall.py": "006981870712723d6e1f6ed030a5306d0be8b85389a2abd05a87874ad770542b",
+    "scripts/evaluate_stall_streaming.py": "99019ba6d346e76a03273dd240eb6028217be97632de86b2b22cab618cec300e",
+    "scripts/summarize_stall.py": "4c522c8c41724882e5d3fb50e002236516ac609a4b8571ce94f4f428c2d2aac5",
+    "scripts/summarize_stall_streaming.py": "78c49be09b2fbb3dca1649b14ed495911b6540f7a63eaa24f3cecb4a94aa1e4f"
+  }
+}

@@ -23,5 +23,5 @@
   "E18A": "complete",
   "E18B": "complete_mixed_actual_test_effect",
   "E18C": "complete_false_alarm_recall_tradeoff",
-  "E18D": "pending"
+  "E18D": "complete_causal_gpu_replay_and_latency"
 }

@@ -1,0 +1,9 @@
+{
+  "selection": "first eligible existing freeze in original manifest order, per scene, seed42 fold0; fixed illustrative cases",
+  "case_ids": [
+    "R01/training/06/f0/freeze/s0.05/o0.2",
+    "R02/training/17/f0/freeze/s0.05/o0.2",
+    "R03/training/19/f0/freeze/s0.05/o0.2",
+    "R04/training/05/f0/freeze/s0.05/o0.2"
+  ]
+}

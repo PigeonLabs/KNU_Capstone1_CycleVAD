@@ -1,0 +1,14 @@
+{
+  "note": "Different cached-batch versus fresh batch-one GPU features; same-feature causal parity separately passed. No retuning.",
+  "changes": [
+    {
+      "source": "R04/testing/08",
+      "event": "R04/testing/08:event0",
+      "arm": "B3",
+      "cached_hit": 0,
+      "online_hit": 1,
+      "cached_delay": -1,
+      "online_delay": 32
+    }
+  ]
+}

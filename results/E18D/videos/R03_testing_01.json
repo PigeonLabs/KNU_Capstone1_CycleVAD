@@ -1,0 +1,267 @@
+{
+  "source_id": "R03/testing/01",
+  "scene": "R03",
+  "frames": 720,
+  "valid_frames": 720,
+  "unknown_frames": 0,
+  "joint_replay_seconds": 8.694103610003367,
+  "parity": {
+    "1": {
+      "frames": 720,
+      "max_trace_error": 2.930988785010413e-14,
+      "max_C_error": 8.881784197001252e-16,
+      "max_P_error": 0.0,
+      "alarm_agreement": 1.0,
+      "stall_max_error": 0.0,
+      "prefix_exact": true,
+      "threshold_parity": true,
+      "alarm_parity": true
+    },
+    "2": {
+      "frames": 360,
+      "max_trace_error": 2.930988785010413e-14,
+      "max_C_error": 0.0,
+      "max_P_error": 0.0,
+      "alarm_agreement": 1.0,
+      "stall_max_error": 0.0,
+      "prefix_exact": true,
+      "threshold_parity": true,
+      "alarm_parity": true
+    }
+  },
+  "metrics": {
+    "1": {
+      "C0": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.022222222222222223,
+        "threshold": 4.173425268859446
+      },
+      "C1": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.02638888888888889,
+        "threshold": 4.3694478524670215
+      },
+      "B0": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.02638888888888889,
+        "threshold": 6.252866810539282
+      },
+      "B1": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 0.9999999999999999,
+        "fpr": null,
+        "recall": 0.02638888888888889,
+        "threshold": 6.252866810539282
+      },
+      "B2": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.02638888888888889,
+        "threshold": "causal per-frame threshold"
+      },
+      "B3": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 0.9999999999999999,
+        "fpr": null,
+        "recall": 0.02638888888888889,
+        "threshold": "causal per-frame threshold"
+      }
+    },
+    "2": {
+      "C0": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 0.9999999999999999,
+        "fpr": null,
+        "recall": 0.022222222222222223,
+        "threshold": 4.173425268859446
+      },
+      "C1": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.027777777777777776,
+        "threshold": 4.3694478524670215
+      },
+      "B0": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.019444444444444445,
+        "threshold": 6.252866810539282
+      },
+      "B1": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 0.9999999999999999,
+        "fpr": null,
+        "recall": 0.019444444444444445,
+        "threshold": 6.252866810539282
+      },
+      "B2": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 1.0,
+        "fpr": null,
+        "recall": 0.019444444444444445,
+        "threshold": "causal per-frame threshold"
+      },
+      "B3": {
+        "frames": 720,
+        "valid_frames": 720,
+        "unknown_frames": 0,
+        "anomaly_frames": 720,
+        "auroc": null,
+        "ap": 0.9999999999999999,
+        "fpr": null,
+        "recall": 0.019444444444444445,
+        "threshold": "causal per-frame threshold"
+      }
+    }
+  },
+  "events": {
+    "1": [
+      {
+        "id": "R03/testing/01:event0",
+        "source_id": "R03/testing/01",
+        "onset": 0,
+        "end": 720,
+        "deadline_frames": 141,
+        "hit": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "delay": [
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "R03/testing/01:event0",
+        "source_id": "R03/testing/01",
+        "onset": 0,
+        "end": 720,
+        "deadline_frames": 141,
+        "hit": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "delay": [
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      }
+    ]
+  },
+  "frame_counts": {
+    "1": [
+      {
+        "id": "R03/testing/01",
+        "stratum": "anomaly",
+        "frames": 720,
+        "alarm_count": [
+          [
+            16,
+            19,
+            19,
+            19,
+            19,
+            19
+          ]
+        ]
+      }
+    ],
+    "2": [
+      {
+        "id": "R03/testing/01",
+        "stratum": "anomaly",
+        "frames": 720,
+        "alarm_count": [
+          [
+            16,
+            20,
+            14,
+            14,
+            14,
+            14
+          ]
+        ]
+      }
+    ]
+  },
+  "scores_sha256": "deb64f85848b9e1720c37d3f7b9794c5725da7e5db9a2659e6fbef2b8c905ce7"
+}

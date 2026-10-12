@@ -6,7 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from cycle_vad.paper_experiments import read
 from cycle_vad.data import write_json
-from report_fragments import sync_readme_results
+from report_fragments import stall_fragment,write_stall_fragment
 ROOT=Path(__file__).resolve().parents[1]
 SCENES=['R01','R02','R03','R04']
 
@@ -40,7 +40,7 @@ def main():
     fig.suptitle('E18C | Fewer false alarms come with reduced anomaly-frame recall\nFixed candidate policies; no test-FPR matching',fontsize=13)
     for ext in ['svg','png']:fig.savefig(ROOT/f'docs/figures/E18C_tradeoff.{ext}',dpi=150,metadata={'Date':None} if ext=='svg' else None)
     plt.close(fig)
-    path=ROOT/'docs/E18_RESULTS.md';pre=path.read_text().split('\n## E18B')[0]
+    path=ROOT/'docs/E18_RESULTS.md';pre=stall_fragment(ROOT).split('\n## E18B')[0]
     pre=pre.replace('E18B 정지 점수, E18C 적응형 경보, E18D 온라인 검증은 진행 중입니다.','E18B·E18C는 완료했으며 E18D 온라인 검증은 별도 진행 상태를 확인하세요.')
     lines=[pre.rstrip(),'','## E18B 정지 신호와 위치 조건 ablation 완료','',
       '**주 평가는 R01–R04 실제 test입니다.** 66개 영상 중 strict-v1 유효 영상은 63개, 유효 프레임은 31,550개입니다. 3개 seed × 4장면 × 5-fold의 60개 단위를 평가했습니다. 아래 수치는 seed 42이며, AUROC/AP/FPR/Recall은 장면별 값의 단순 평균입니다. 이벤트 수는 66개 실제 이벤트의 합계이므로 Macro event recall과 분모가 다릅니다.','',
@@ -87,17 +87,17 @@ def main():
                 vals=[seed['auxiliary'][sc][group][edit][a] for sc in SCENES]
                 auxrows.append([group,edit,a,sum(v['n'] for v in vals),pct(np.mean([v['hit'] for v in vals])),pct(np.mean([v['legacy_D_hit'] for v in vals])),pct(np.mean([v['matched_far'] for v in vals]))])
     lines += [table(['구분','편집','모델','사례 수','탐지 %','기존 D 탐지 %','대응 정상 경보 %'],auxrows),
-      '합성 정지는 동일 영상 프레임 반복에 대한 진단입니다. 실제 기계 정지 유형의 정답이 없으므로 이 결과를 실제 정지 Recall로 부르지 않습니다. 초기 prefix가 이상을 포함할 때의 손실도 위 early_prefix 결과에 포함합니다.','',
+      '합성 정지는 동일 영상 프레임 반복에 대한 진단입니다. 실제 기계 정지 유형의 정답이 없으므로 이 결과를 실제 정지 Recall로 부르지 않습니다. 초기 prefix가 이상을 포함할 때의 손실도 위 early_prefix 결과에 포함합니다. CP+S3는 freeze 내부 탐지율 100%를 기록하지만 reverse·skip·swap 탐지율은 기존 CP보다 낮아집니다. 정지 신호를 추가한 뒤 결합 임계값을 다시 보정하므로 모든 기존 경보가 보존되는 것은 아닙니다.','',
+      '![고정 사례의 위치·정지 점수 궤적](docs/figures/E18_stall_traces.svg)','',
+      '장면별 manifest의 첫 eligible freeze를 고정 예시로 선택했습니다. 성능이 좋은 사례를 고른 것이 아니며, 원본과 편집 영상의 posterior 위치 및 CP·정지 점수·임계값을 보여줍니다. [선정된 사례 ID](results/E18C/trace_examples.json).','',
       '#### 해석과 채택 판단','',
       '정지 신호는 실제 이벤트 탐지를 보완하지만, AP 이득의 불확실성과 R02 의존성이 남습니다. 적응형 경보는 정상 오경보를 줄이는 대신 이상 프레임 Recall과 일부 이벤트를 희생합니다. **기존 C 중심 기여를 유지하고, 정지 신호는 보완 요소, 적응형 임계값은 운영점 선택으로 제시합니다.** C+정지를 후속 후보로 기록하되 test 결과로 새 주 설정을 선택하거나 재튜닝하지 않습니다.','',
       '[전체 장면·seed·운영점·paired CI](results/E18C/summary.json) · [E18B/C 실행 코드](scripts/run_stall.py) · [집계 코드](scripts/summarize_stall.py)','',
       '재현: `PYTHONPATH=src python scripts/check_e18_preflight.py`, `PYTHONPATH=src python scripts/run_stall.py --resume`, `PYTHONPATH=src python scripts/run_stall.py --auxiliary --resume`, `PYTHONPATH=src python scripts/summarize_stall.py`, `PYTHONPATH=src python scripts/report_stall.py`. 로컬 특징·모델은 Git에 포함하지 않습니다.','']
     content='\n'.join(lines)
     # Preserve a separately completed online section when rebuilding B/C.
-    existing=path.read_text();online='\n## E18D'+existing.split('\n## E18D',1)[1] if '\n## E18D' in existing else ''
-    path.write_text(content+online)
-    archive=ROOT/'EXPERIMENTS.md';prefix=archive.read_text().split('\n## E18A',1)[0];archive.write_text(prefix+'\n'+path.read_text())
-    sync_readme_results(ROOT)
+    existing=stall_fragment(ROOT);online='\n## E18D'+existing.split('\n## E18D',1)[1] if '\n## E18D' in existing else ''
+    write_stall_fragment(ROOT,content+online)
     status=read(ROOT/'results/followup_status.json');status.update(E18B='complete_mixed_actual_test_effect',E18C='complete_false_alarm_recall_tradeoff');write_json(ROOT/'results/followup_status.json',status)
 
 def ARMS_FOR_REPORT():return ['C0','C1','B0','B1','B2','B3','B0_T110','B0_T130','B1_T110','B1_T130','Full','P']
